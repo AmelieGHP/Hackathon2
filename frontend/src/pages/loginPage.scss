@@ -1,0 +1,22 @@
+.loginPage {
+  width: auto;
+  min-height: 100vh;
+  display: flex;
+
+  & .visualLogin {
+    width: auto;
+    flex: 1;
+  }
+
+  & .loginSubscribe {
+    flex: 1;
+  }
+
+  & .subscribeForm {
+    width: auto;
+  }
+
+  & .loginForm {
+    width: auto;
+  }
+}

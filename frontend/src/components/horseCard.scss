@@ -1,3 +1,17 @@
 .horseCard {
-  width: auto;
+  width: 170px;
+  height: 230px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+
+  & h4 {
+    margin: 8px 0;
+  }
+
+  & h3 {
+    margin: 8px 0;
+  }
 }

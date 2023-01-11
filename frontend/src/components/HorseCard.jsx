@@ -1,9 +1,11 @@
 import React from "react";
 
-function HorseCard() {
+function HorseCard({ image, model, type }) {
   return (
     <div className="horseCard">
-      <p>a horse card</p>
+      <img alt="horse" src={image} />
+      <h3>{model}</h3>
+      <h4>{type}</h4>
     </div>
   );
 }

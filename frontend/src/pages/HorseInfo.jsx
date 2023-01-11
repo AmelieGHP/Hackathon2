@@ -1,17 +1,15 @@
 import React from "react";
 import Footer from "@components/Footer";
-import HorseCard from "@components/HorseCard";
 import Header from "../components/Header";
 
-function Home() {
+function HorseInfo() {
   return (
-    <div className="home">
+    <div className="horseInfo">
       <Header />
-      <p>Plop</p>
-      <HorseCard />
+      <p>infos</p>
       <Footer />
     </div>
   );
 }
 
-export default Home;
+export default HorseInfo;

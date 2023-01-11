@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link} from "react-router-dom";
 import axios from "axios";
 import Footer from "@components/Footer";
 import HorseCard from "@components/HorseCard";
@@ -6,7 +7,7 @@ import Filters from "@components/Filters";
 import Header from "@components/Header";
 
 function Home() {
-  const [stage0, setStage0] = useState(true);
+  const [stage0, setStage0] = useState(false);
   const [stage1, setStage1] = useState(true);
   const [stage2, setStage2] = useState(true);
   const [stage3, setStage3] = useState(true);
@@ -16,25 +17,29 @@ function Home() {
   const [stage2Required, setStage2Required] = useState([]);
   const [stage3Required, setStage3Required] = useState([]);
   const [stage4Required, setStage4Required] = useState([]);
-  // // 4 unicorn
-  // 3 zebra
-  // 2 horse donkey
-  // 1 shetland pony
-  // 0 rocking-horse
 
   const getHorses = () => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/vehicles`)
       .then((result) => {
         console.log(result);
-        // for (let i = 0; i < result.data.length; i++){
-        // if(result.data[i].type === "rocking-horse"){
-        // setStage0Required(stage0Required.push(result.data[i])
-        //   }
-        // if(result.data[i].type === "shetland" || result.data[i].type === "pony"){
-        // setStage0Required(stage0Required.push(result.data[i])
-        //   }
-        // }
+        for (let i = 0; i < result.data.length; i++) {
+          if (result.data[i].type === "Rocking horse") {
+            setStage0Required(array => [...array, result.data[i]]);
+          }
+          if (result.data[i].type === "Shetland" || result.data[i].type === "Pony") {
+            setStage1Required(array => [...array, result.data[i]]);
+          }
+          if (result.data[i].type === "Horse" || result.data[i].type === "Donkey") {
+            setStage2Required(array => [...array, result.data[i]]);
+          }
+          if (result.data[i].type === "Zebra") {
+            setStage3Required(array => [...array, result.data[i]])
+          }
+          if (result.data[i].type === "Unicorn") {
+            setStage4Required(array => [...array, result.data[i]])
+          }
+        }
       })
       .catch((err) => {
         console.error(err);
@@ -43,6 +48,7 @@ function Home() {
   useEffect(() => {
     getHorses();
   }, []);
+  console.log(stage2Required)
   return (
     <div className="home">
       <Header />
@@ -61,11 +67,47 @@ function Home() {
         />
       </div>
       <div className="horseList">
-        <HorseCard
-          model="model"
-          type="type"
-          image="https://via.placeholder.com/150.png"
-        />
+        {stage0 && stage0Required.map((horse) => {
+          return <Link to={`/info/${horse.id_vehicle}`}><HorseCard
+            model={horse.model}
+            type={horse.type}
+            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+          /></Link>
+        })}
+        {stage1 && stage1Required.map((horse) => {
+          return <Link to={`/info/${horse.id_vehicle}`}><HorseCard
+            model={horse.model}
+            type={horse.type}
+            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+          /></Link>
+        })}
+        {stage2 && stage2Required.map((horse) => {
+          return <Link to={`/info/${horse.id_vehicle}`}>
+           <HorseCard
+            model={horse.model}
+            type={horse.type}
+            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+            />
+            </Link>
+        })}
+        {stage3 && stage3Required.map((horse) => {
+          return <Link to={`/info/${horse.id_vehicle}`}>
+          <HorseCard
+            model={horse.model}
+            type={horse.type}
+            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+            />
+            </Link>
+        })}
+        {stage4 && stage4Required.map((horse) => {
+          return <Link to={`/info/${horse.id_vehicle}`}>
+            <HorseCard
+            model={horse.model}
+            type={horse.type}
+            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+            />
+            </Link>
+        })}
       </div>
       <Footer />
     </div>

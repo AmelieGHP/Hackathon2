@@ -2,7 +2,7 @@ const VehicleModel = require("../models/VehicleModel");
 
 const getAllVehicles = (req, res) => {
   VehicleModel.findAll()
-    .then(([[vehicles]]) => {
+    .then(([vehicles]) => {
       res.status(200).send(vehicles);
     })
     .catch((err) => {

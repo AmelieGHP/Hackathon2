@@ -30,10 +30,6 @@ const getVehiclesById = (req, res) => {
     });
 };
 
-// const getVehiclesByCompanyId = (req, res) => {
-//
-// }
-
 module.exports = {
   getAllVehicles,
   getVehiclesById,

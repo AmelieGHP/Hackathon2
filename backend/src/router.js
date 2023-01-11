@@ -10,6 +10,8 @@ const userController = require("./controllers/UserController");
 // Route pour récupérer tous les véhicules
 
 router.get("/vehicles", vehicleController.getAllVehicles);
+router.get("/vehicles/:id", vehicleController.getVehiclesById);
+
 router.get("/users", userController.getUsers);
 
 // Route pour la création d'un utilisateur

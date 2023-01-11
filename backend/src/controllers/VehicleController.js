@@ -19,7 +19,7 @@ const getVehiclesById = (req, res) => {
   VehicleModel.findVehicleById(id)
     .then(([vehicle]) => {
       if (vehicle[0] != null) {
-        res.status(200).send(id);
+        res.status(200).send(vehicle);
       } else {
         res.sendStatus(404);
       }

@@ -2,12 +2,18 @@ const express = require("express");
 
 const router = express.Router();
 
-const itemControllers = require("./controllers/itemControllers");
+// Controllers :
 
-router.get("/items", itemControllers.browse);
-router.get("/items/:id", itemControllers.read);
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-router.delete("/items/:id", itemControllers.destroy);
+const vehicleController = require("./controllers/VehicleController");
+const userController = require("./controllers/UserController");
+
+// Route pour récupérer tous les véhicules
+
+router.get("/vehicles", vehicleController.getAllVehicles);
+router.get("/users", userController.getUsers);
+
+// Route pour la création d'un utilisateur
+
+router.post("/users", userController.signInUser);
 
 module.exports = router;

@@ -1,0 +1,35 @@
+.loginPage {
+  width: auto;
+  min-height: 100vh;
+  display: flex;
+
+  & .visualLogin {
+    width: auto;
+    flex: 1;
+  }
+
+  & .loginSubscribe {
+    flex: 1;
+
+    & form {
+      display: flex;
+      flex-direction: column;
+
+      & input {
+        width: 300px;
+      }
+
+      & button {
+        max-width: 100px;
+      }
+    }
+  }
+
+  & .subscribeForm {
+    width: auto;
+  }
+
+  & .loginForm {
+    width: auto;
+  }
+}

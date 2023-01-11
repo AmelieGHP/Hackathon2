@@ -10,6 +10,19 @@
 
   & .loginSubscribe {
     flex: 1;
+
+    & form {
+      display: flex;
+      flex-direction: column;
+
+      & input {
+        width: 300px;
+      }
+
+      & button {
+        max-width: 100px;
+      }
+    }
   }
 
   & .subscribeForm {

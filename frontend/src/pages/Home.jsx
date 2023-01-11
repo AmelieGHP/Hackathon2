@@ -7,7 +7,6 @@ function Home() {
   return (
     <div className="home">
       <Header />
-      <p>Plop</p>
       <HorseCard />
       <Footer />
     </div>

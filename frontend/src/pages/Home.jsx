@@ -11,11 +11,11 @@ function Home() {
   const [stage2, setStage2] = useState(true);
   const [stage3, setStage3] = useState(true);
   const [stage4, setStage4] = useState(true);
-  // const [stage0Required, setStage0Required] = useState([]);
-  // const [stage1Required, setStage1Required] = useState([]);
-  // const [stage2Required, setStage2Required] = useState([]);
-  // const [stage3Required, setStage3Required] = useState([]);
-  // const [stage4Required, setStage4Required] = useState([]);
+  const [stage0Required, setStage0Required] = useState([]);
+  const [stage1Required, setStage1Required] = useState([]);
+  const [stage2Required, setStage2Required] = useState([]);
+  const [stage3Required, setStage3Required] = useState([]);
+  const [stage4Required, setStage4Required] = useState([]);
   // // 4 unicorn
   // 3 zebra
   // 2 horse donkey
@@ -24,9 +24,9 @@ function Home() {
 
   const getHorses = () => {
     axios
-      .get("/vehicles")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/vehicles`)
       .then((result) => {
-        //console.log(result);
+        console.log(result);
         // for (let i = 0; i < result.data.length; i++){
         // if(result.data[i].type === "rocking-horse"){
         // setStage0Required(stage0Required.push(result.data[i])
@@ -34,7 +34,7 @@ function Home() {
         // if(result.data[i].type === "shetland" || result.data[i].type === "pony"){
         // setStage0Required(stage0Required.push(result.data[i])
         //   }
-        // })
+        // }
       })
       .catch((err) => {
         console.error(err);

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // style in pages/loginPage.scss
 

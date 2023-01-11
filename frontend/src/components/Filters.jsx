@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-function Filters() {
-  // 4 unicorn
-  // 3 zebra
-  // 2 horse donkey
-  // 1 shetland pony
-  // 0 rocking-horse
-  const [stage0, setStage0] = useState(true);
-  const [stage1, setStage1] = useState(true);
-  const [stage2, setStage2] = useState(true);
-  const [stage3, setStage3] = useState(true);
-  const [stage4, setStage4] = useState(true);
-
+function Filters({
+  stage0,
+  setStage0,
+  stage1,
+  setStage1,
+  stage2,
+  setStage2,
+  stage3,
+  setStage3,
+  stage4,
+  setStage4,
+}) {
   return (
     <div className="filters">
       <div className="type filter">

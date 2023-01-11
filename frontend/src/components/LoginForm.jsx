@@ -17,7 +17,7 @@ function LoginForm() {
   const handleClick = (e) => {
     e.preventDefault();
     if (email && password) {
-      //     axios.post("http://localhost:5000/connexion", {
+      //     axios.post("http://localhost:5000/login", {
       //       email,
       //       password,
       //     })

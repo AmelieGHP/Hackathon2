@@ -10,7 +10,7 @@ const findAll = () => {
 
 // Requête pour trouver un véhicule selon son id
 const findVehicleById = (id) => {
-  return db.query(`SELECT * FROM ${table} WHERE id=?`, [id]);
+  return db.query(`SELECT * FROM ${table} WHERE id_vehicle=?`, [id]);
 };
 
 // A CONTINUER SUR LE CONTROLLER !!!!!!!!!!!!!!!!!!!!!

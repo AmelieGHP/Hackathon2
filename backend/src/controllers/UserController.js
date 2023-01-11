@@ -1,8 +1,12 @@
 const UserModel = require("../models/UserModel");
 
+const welcome = (req, res) => {
+  res.send("Welcome ! This is our website 😊 !");
+};
+
 const getUsers = (req, res) => {
   UserModel.getAllUsers()
-    .then(([[users]]) => {
+    .then(([users]) => {
       res.status(200).send(users);
     })
     .catch((err) => {
@@ -23,6 +27,7 @@ const signInUser = (req, res) => {
 };
 
 module.exports = {
+  welcome,
   getUsers,
   signInUser,
 };

@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `blackMount`.`user` (
   `firstname` VARCHAR(45) NULL,
   `lastname` VARCHAR(45) NULL,
   `email` VARCHAR(255) NULL,
-  `password` VARCHAR(45) NULL,
+  `password` VARCHAR(255) NULL,
   `phone` VARCHAR(45) NULL,
   `type_of_license` VARCHAR(45) NULL,
   PRIMARY KEY (`id_user`))

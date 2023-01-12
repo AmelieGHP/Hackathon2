@@ -68,7 +68,9 @@ button {
   font-weight: 600;
 }
 
-input {
+input[type=text],
+input[type=email],
+input[type=number] {
   all: unset;
 }
 
@@ -100,6 +102,5 @@ input {
 @import "./pages/horseInfo.scss";
 @import "./pages/loginPage.scss";
 
-@import "./components/footer.scss";
 @import "./components/header.scss";
 @import "./components/horseCard.scss";

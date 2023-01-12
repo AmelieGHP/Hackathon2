@@ -83,7 +83,7 @@ function LoginForm() {
         </div>
         <button
           type="submit"
-          className="buttonOk"
+          className="primaryButton"
           disabled={!email || !password}
           onClick={(e) => {
             handleClick(e);

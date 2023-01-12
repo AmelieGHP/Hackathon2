@@ -12,13 +12,13 @@ function Login() {
       <div className="loginSubscribe">
         <img src={blackLogo} alt="Blach Mount Logo" width="220px" />
         <h1>{userExist ? "Hello rider !" : "Welcome !"}</h1>
-        <p>
+        <p className="accentText">
           {userExist ? "Welcome back ! " : "Create your account ! "}Please enter
           your details.
         </p>
         {userExist ? <LoginForm /> : <SubscribeForm />}
         <div className="switchContainer">
-          <p>
+          <p className="accentText">
             {userExist
               ? "Don't have an account ?"
               : "Already have an account ?"}

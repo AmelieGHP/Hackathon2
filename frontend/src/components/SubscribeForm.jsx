@@ -70,19 +70,21 @@ function SubscribeForm() {
             />
           </div>
         </div>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="jane.doe@example.com"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          required
-        />
-        <label htmlFor="password">Password</label>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="jane.doe@example.com"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            required
+          />
+        </div>
         <div className="passwordInput">
+          <label htmlFor="password">Password</label>
           <input
             type={!visiblePassword ? "password" : "text"}
             name="pwd"
@@ -96,7 +98,7 @@ function SubscribeForm() {
           <button type="button" onClick={handlePwdClick}>
             {visiblePassword ? (
               <AiOutlineEye
-                color="#B5C5F4"
+                color={password ? "#5871bd" : "#B5C5F4"}
                 size={20}
                 style={{ backgroundColor: "#F3F6FF" }}
               />
@@ -109,33 +111,38 @@ function SubscribeForm() {
             )}
           </button>
         </div>
-        <label htmlFor="phone">Phone number</label>
-        <input
-          type="text"
-          name="phone"
-          id="phone"
-          placeholder="07 00 00 00 00"
-          onChange={(e) => {
-            setPhone(e.target.value);
-          }}
-          required
-        />
-        <label htmlFor="license">License type - BHS stage</label>
-        <input
-          type="number"
-          name="license"
-          id="license"
-          min="0"
-          max="4"
-          placeholder="1 - 4 / Enter 0 if you don't have any"
-          onChange={(e) => {
-            setLicense(e.target.value);
-          }}
-          required
-        />
+        <div>
+          <label htmlFor="phone">Phone number</label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="07 00 00 00 00"
+            onChange={(e) => {
+              setPhone(e.target.value);
+            }}
+            required
+          />
+        </div>
+        <div>
+
+          <label htmlFor="license">License type - BHS stage</label>
+          <input
+            type="number"
+            name="license"
+            id="license"
+            min="0"
+            max="4"
+            placeholder="1 - 4 / Enter 0 if you don't have any"
+            onChange={(e) => {
+              setLicense(e.target.value);
+            }}
+            required
+          />
+        </div>
         <button
           type="submit"
-          className="buttonOk"
+          className="primaryButton"
           disabled={
             !email || !password || !firstname || !lastname || !phone || !license
           }
@@ -143,7 +150,7 @@ function SubscribeForm() {
             handleClick(e);
           }}
         >
-          Subscribe
+          Sign in
         </button>
       </form>
     </div>

@@ -9,7 +9,8 @@ const getAllUsers = () => {
 // Requête pour s'inscrire
 
 const postUser = async (req) => {
-  const { firstname, lastname, email, password, phone, typeOfLicense } = req.body;
+  const { firstname, lastname, email, password, phone, typeOfLicense } =
+    req.body;
 
   const request = await db.query(
     `INSERT INTO user(firstname, lastname, email, password, phone, type_of_license) VALUES (?, ?, ?, ?, ?, ?)`,

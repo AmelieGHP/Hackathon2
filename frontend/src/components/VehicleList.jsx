@@ -2,10 +2,11 @@ import React from "react";
 import Proptypes from "prop-types";
 
 function VehicleList({ model, type, image }) {
+  const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${image}`;
   return (
     <li className="dash_vehicle_elements_list">
       <div className="dash_vehicle_elements_list_image">
-        <img src={image} alt="profile of our horse" />
+        <img src={pathToImages} alt="profile of our horse" />
       </div>
       <div className="dash_vehicle_elements_list_paragraph">
         <p>{model}</p>

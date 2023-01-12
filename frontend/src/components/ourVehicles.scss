@@ -1,26 +1,51 @@
 .dash_vehicle_elements {
+  margin-left: 24px;
   width: 35vw;
   display: flex;
   flex-direction: column;
   gap: 16px;
 
+  .our_vehicles {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+  }
+
   &_list {
+    height: 20vh;
+    border-radius: 12px;
     display: flex;
-    padding-block: 12px;
+    align-items: center;
     justify-content: space-around;
     list-style: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     &_image {
-      object-fit: cover;
-      height: 15px;
-      width: 15px;
-      border-radius: 50%;
+      img {
+        object-fit: cover;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
     }
 
     button {
       background-color: $buttonColor;
       padding: 12px 16px;
+
+    }
+  }
+
+  .more_vehicles {
+    width: 13vw;
+    text-align: center;
+    color: $secondaryTextColor;
+    transition: all .2s ease-in;
+
+    
+    &:hover {
+      font-weight: bold;
+      cursor: pointer;
     }
   }
 }

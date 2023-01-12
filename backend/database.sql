@@ -136,9 +136,9 @@ INSERT INTO employee(firstname, lastname, email, password, phone, is_admin, id_c
 ("Marie-Antoinette", "Delaguillotine", "marie-antoinette.delaguillotine@black-mount.com", "12093", "0771209675", 0, 1);
 
 INSERT INTO vehicle(type, model, horsepower, nb_of_places, nb_of_km, is_in_repair, id_company, image) VALUES
-("Horse", "Tornado", 1, 2, 245, 0, 1,"/assets/vehicles/black-mount-vehicle-image-horse-tornado.jpg"),
-("Zebra", "Tictac", 6, 1, 1376, 0, 1,"/assets/vehicles/black-mount-vehicle-image-zebra-tictac.jpg"),
-("Unicorn", "Joly", 7, 2, 10789, 0, 1, "/assets/vehicles/black-mount-vehicle-image-unicorn-joly.jpg"),
+("Horse", "Tornado", 1, 2, 245, 0, 1,"/assets/vehicles/black-mount-icon-horse-1.svg"),
+("Zebra", "Tictac", 6, 1, 1376, 0, 1,"/assets/vehicles/black-mount-icon-horse-2.svg"),
+("Unicorn", "Joly", 7, 2, 10789, 0, 1, "/assets/vehicles/black-mount-icon-horse-3.svg"),
 ("Pony", "Pepito", 3, 1, 45, 0, 1, "/assets/vehicles/black-mount-vehicle-image-pony-pepito.jpg"),
 ("Donkey", "Donkey", 1.25, 1, 1, 0, 1, "/assets/vehicles/black-mount-vehicle-image-donkey-donkey.jpg"),
 ("Horse", "Pegasus", 1, 2, 132, 0, 1, "/assets/vehicles/black-mount-vehicle-image-horse-pegase.jpg"),

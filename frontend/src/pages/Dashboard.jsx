@@ -1,6 +1,6 @@
 import React from "react";
-import HorseList from "@pages/HorseList";
-import Chart from "@components/Chart";
+import HorseList from "./HorseList";
+import Chart from "../components/Chart";
 
 function Dashboard() {
   return (

@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import UserContext from "./context/UserContext";
 import axios from "axios";
+import UserContext from "./context/UserContext";
 
 // style in pages/loginPage.scss
 
@@ -25,18 +25,26 @@ function SubscribeForm() {
   const handleClick = (e) => {
     e.preventDefault();
     if (email && password && firstname && lastname && phone && license) {
-      axios.post(`${import.meta.env.VITE_BACKEND_URL}/signin`, {
-        email,
-        password,
-        firstname,
-        lastname,
-        phone,
-        license
-      })
+      axios
+        .post(`${import.meta.env.VITE_BACKEND_URL}/signin`, {
+          email,
+          password,
+          firstname,
+          lastname,
+          phone,
+          license,
+        })
         .then((result) => {
           const userInfo = result.data;
           console.log(result);
-          setUser({ phone: userInfo.user.phone, type_of_license: parseInt(userInfo.user.license), firstname: userInfo.user.firstname, lastname: userInfo.user.lastname, email: userInfo.user.email, id_user: userInfo.id_user });
+          setUser({
+            phone: userInfo.user.phone,
+            type_of_license: parseInt(userInfo.user.license),
+            firstname: userInfo.user.firstname,
+            lastname: userInfo.user.lastname,
+            email: userInfo.user.email,
+            id_user: userInfo.id_user,
+          });
           const { token } = result.data;
           navigate("/home", {
             state: {

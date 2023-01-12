@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const List = () => {
-    return (
-        <div className='list'>
-            
-        </div>
-    );
-};
+function List() {
+  return <div className="list" />;
+}
 
 export default List;

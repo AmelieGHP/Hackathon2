@@ -68,9 +68,9 @@ button {
   font-weight: 600;
 }
 
-input[type=text],
-input[type=email],
-input[type=number] {
+input[type="text"],
+input[type="email"],
+input[type="number"] {
   all: unset;
 }
 
@@ -87,7 +87,6 @@ input[type=number] {
 
 .primaryButton:hover {
   background-color: $hoverColor;
-
 }
 
 .secondaryButton {
@@ -102,7 +101,7 @@ input[type=number] {
 @import "./pages/dashboard.scss";
 @import "./pages/horseInfo.scss";
 @import "./pages/loginPage.scss";
-
+@import "./components/ourVehicles.scss";
 @import "./components/header.scss";
 @import "./components/horseCard.scss";
 @import "./components/horseList.scss";

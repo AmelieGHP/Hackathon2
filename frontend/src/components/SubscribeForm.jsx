@@ -23,23 +23,24 @@ function SubscribeForm() {
   const handleClick = (e) => {
     e.preventDefault();
     if (email && password && firstname && lastname && phone && license) {
-      axios.post("http://localhost:5000/signin", {
-        email,
-        password,
-        firstname,
-        lastname,
-        phone,
-        license
-      })
+      axios
+        .post("http://localhost:5000/signin", {
+          email,
+          password,
+          firstname,
+          lastname,
+          phone,
+          license,
+        })
         .then((result) => {
           const { token } = result.data;
           const user = result.data;
-          console.log(user)
+          console.log(user);
           navigate("/home", {
             state: {
               token,
             },
-          })
+          });
         })
         .catch((err) => {
           console.error(err);

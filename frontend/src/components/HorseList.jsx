@@ -54,7 +54,7 @@ function Home() {
   useEffect(() => {
     getHorses();
   }, []);
-  console.log(user)
+  console.log(user);
   return (
     <div className="home">
       <div className="filter">

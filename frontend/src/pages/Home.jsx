@@ -53,6 +53,7 @@ function Home() {
   useEffect(() => {
     getHorses();
   }, []);
+  console.log(stage2Required);
   return (
     <div className="home">
       <Header />

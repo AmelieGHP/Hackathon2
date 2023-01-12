@@ -158,4 +158,9 @@ INSERT INTO vehicle(type, model, horsepower, nb_of_places, nb_of_km, is_in_repai
 ("Pony", "Rock", 3, 1, 189, 0, 1,"/assets/vehicles/black-mount-vehicle-image-pony-rock.jpg");
 
 INSERT INTO loan (borrowing_date, return_date, id_vehicle, id_user) VALUES
-("2018-09-24", "2018-09-29", 1, 1);
+("2023-01-24", "2023-01-29", 1, 1),
+("2023-02-05", "2018-02-17", 2, 5),
+("2023-02-10", "2023-02-14", 1, 4),
+("2023-03-05", "2023-03-22", 1, 1),
+("2023-01-14", "2023-01-17", 2, 2)
+;

@@ -1,4 +1,5 @@
 import React from "react";
+import Proptypes from "prop-types";
 
 function HorseCard({ image, model, type }) {
   return (
@@ -9,5 +10,9 @@ function HorseCard({ image, model, type }) {
     </div>
   );
 }
-
+HorseCard.propTypes = {
+  image: Proptypes.string.isRequired,
+  model: Proptypes.string.isRequired,
+  type: Proptypes.string.isRequired,
+};
 export default HorseCard;

@@ -1,5 +1,5 @@
 import React from "react";
-// import Chart from "@components/Chart";
+import Chart from "../components/Chart";
 import Header from "../components/Header";
 import Presentation from "../components/Presentation";
 import OurVehicles from "../components/OurVehicles";
@@ -12,7 +12,7 @@ function Dashboard() {
         <Presentation />
         <div className="stat">
           <OurVehicles />
-          {/* <Chart /> */}
+          <Chart />
         </div>
       </div>
     </div>

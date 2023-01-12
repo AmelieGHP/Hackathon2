@@ -156,3 +156,6 @@ INSERT INTO vehicle(type, model, horsepower, nb_of_places, nb_of_km, is_in_repai
 ("Shetland", "Zumba", 0.5, 1, 540, 0, 1,"/assets/vehicles/black-mount-vehicle-image-shetland-zumba.jpg"),
 ("Rocking horse", "Babytrote", 0.25, 1, 0, 0, 1,"/assets/vehicles/black-mount-vehicle-image-rockinghorse-babytrote.jpg"),
 ("Pony", "Rock", 3, 1, 189, 0, 1,"/assets/vehicles/black-mount-vehicle-image-pony-rock.jpg");
+
+INSERT INTO loan (borrowing_date, return_date, id_vehicle, id_user) VALUES
+("2018-09-24", "2018-09-29", 1, 1);

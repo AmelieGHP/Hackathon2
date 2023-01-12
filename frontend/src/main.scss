@@ -6,6 +6,7 @@ $accentColor: #5871bd;
 $primaryTextColor: #00062b;
 $buttonColor: #d9a25f;
 $hoverColor: #bf8415;
+$shadowCard: 4px 4px 20px rgba(181, 197, 244, 0.25);
 
 $textFont: "Noto Sans", sans-serif;
 $titleFont: "DM Serif Display", serif;
@@ -40,6 +41,13 @@ h2 {
 h3 {
   font-size: 32px;
   line-height: 42px;
+  color: $hoverColor;
+  font-family: $titleFont;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 32px;
   color: $hoverColor;
   font-family: $textFont;
 }

@@ -55,6 +55,10 @@ p {
   color: $accentColor;
 }
 
+.boldText {
+  font-weight: 700;
+}
+
 small {
   font-size: 13px;
   color: $hoverColor;
@@ -68,9 +72,9 @@ button {
   font-weight: 600;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"] {
+input[type=text],
+input[type=email],
+input[type=number] {
   all: unset;
 }
 

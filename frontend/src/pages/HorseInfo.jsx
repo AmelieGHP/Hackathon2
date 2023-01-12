@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Calendar from "react-calendar";
 import axios from "axios";
 import Header from "../components/Header";
-import Calendar from "react-calendar";
 
 function HorseInfo() {
   const params = useParams();
@@ -43,15 +43,16 @@ function HorseInfo() {
         minDate={new Date()}
         selectRange="true"
         returnValue="range"
-      //tileDisabled={}
-      //onClickDay={(e) => {
-      //   rangeSelected(e);
-      // }}
-      //tileClassName={(e) => tileSelected(e)}
+        // tileDisabled={}
+        // onClickDay={(e) => {
+        //   rangeSelected(e);
+        // }}
+        // tileClassName={(e) => tileSelected(e)}
       />
 
-      <button className="primaryButton" type="button">Book this vehicle</button>
-
+      <button className="primaryButton" type="button">
+        Book this vehicle
+      </button>
     </div>
   );
 }

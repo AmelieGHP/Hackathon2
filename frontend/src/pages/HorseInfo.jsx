@@ -7,7 +7,7 @@ import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 import UserContext from "@components/context/UserContext";
 import axios from "axios";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 
 function HorseInfo() {
   const params = useParams();
@@ -95,7 +95,7 @@ function HorseInfo() {
   console.log(notAvailable);
   return (
     <div className="horseInfo">
-      <Header />
+      {/* <Header /> */}
       {vehicle && (
         <img
           alt="horse"

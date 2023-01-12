@@ -7,7 +7,7 @@ function OurVehicles() {
 
   const getAllCars = () => {
     axios
-      .get(`http://localhost:5000/vehicles`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/vehicles`)
       .then((res) => {
         setAllCars(res.data.slice(0, 3));
         console.warn(allCars);

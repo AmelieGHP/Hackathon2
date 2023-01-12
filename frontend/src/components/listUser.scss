@@ -1,0 +1,18 @@
+.listuser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  & .listEmp {
+    display: flex;
+    gap: 30px;
+    width: 420px;
+    height: 60px;
+  }
+
+  img {
+    width: 60px;
+    border-radius: 50%;
+  }
+}

@@ -8,7 +8,7 @@ import Header from "@components/Header";
 
 function Home() {
   const { user } = useContext(UserContext);
-  const [stage0, setStage0] = useState(false);
+  const [stage0, setStage0] = useState(true);
   const [stage1, setStage1] = useState(true);
   const [stage2, setStage2] = useState(true);
   const [stage3, setStage3] = useState(true);
@@ -56,18 +56,13 @@ function Home() {
   }, []);
   console.log(user);
   return (
-    <div className="home">
-      <div className="filter">
+    <div className="horseListPage">
+      <div className="filtersBox">
         <Filters
-          stage0={stage0}
           setStage0={setStage0}
-          stage1={stage1}
           setStage1={setStage1}
-          stage2={stage2}
           setStage2={setStage2}
-          stage3={stage3}
           setStage3={setStage3}
-          stage4={stage4}
           setStage4={setStage4}
         />
       </div>

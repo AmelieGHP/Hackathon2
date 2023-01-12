@@ -63,6 +63,10 @@ p {
   color: $accentColor;
 }
 
+.boldText {
+  font-weight: 700;
+}
+
 small {
   font-size: 13px;
   color: $hoverColor;
@@ -111,7 +115,6 @@ input[type="number"] {
 @import "./pages/loginPage.scss";
 @import "./pages/horseList.scss";
 
-
 @import "./components/ourVehicles.scss";
 @import "./components/header.scss";
 @import "./components/horseCard.scss";
@@ -119,3 +122,5 @@ input[type="number"] {
 @import "./components/list.scss";
 @import "./components/presentation.scss";
 @import "./components/visualLogin.scss";
+@import "./components/listUser.scss";
+

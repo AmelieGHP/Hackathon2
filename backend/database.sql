@@ -136,9 +136,9 @@ INSERT INTO employee(firstname, lastname, email, password, phone, is_admin, id_c
 ("Marie-Antoinette", "Delaguillotine", "marie-antoinette.delaguillotine@black-mount.com", "12093", "0771209675", 0, 1);
 
 INSERT INTO vehicle(type, model, horsepower, nb_of_places, nb_of_km, is_in_repair, id_company, image) VALUES
-("Horse", "Tornado", 1, 2, 245, 0, 1,"/assets/vehicles/black-mount-vehicle-image-horse-tornado.jpg"),
-("Zebra", "Tictac", 6, 1, 1376, 0, 1,"/assets/vehicles/black-mount-vehicle-image-zebra-tictac.jpg"),
-("Unicorn", "Joly", 7, 2, 10789, 0, 1, "/assets/vehicles/black-mount-vehicle-image-unicorn-joly.jpg"),
+("Horse", "Tornado", 1, 2, 245, 0, 1,"/assets/vehicles/black-mount-icon-horse-1.svg"),
+("Zebra", "Tictac", 6, 1, 1376, 0, 1,"/assets/vehicles/black-mount-icon-horse-2.svg"),
+("Unicorn", "Joly", 7, 2, 10789, 0, 1, "/assets/vehicles/black-mount-icon-horse-3.svg"),
 ("Pony", "Pepito", 3, 1, 45, 0, 1, "/assets/vehicles/black-mount-vehicle-image-pony-pepito.jpg"),
 ("Donkey", "Donkey", 1.25, 1, 1, 0, 1, "/assets/vehicles/black-mount-vehicle-image-donkey-donkey.jpg"),
 ("Horse", "Pegasus", 1, 2, 132, 0, 1, "/assets/vehicles/black-mount-vehicle-image-horse-pegase.jpg"),
@@ -159,8 +159,8 @@ INSERT INTO vehicle(type, model, horsepower, nb_of_places, nb_of_km, is_in_repai
 
 INSERT INTO loan (borrowing_date, return_date, id_vehicle, id_user) VALUES
 ("2023-01-24", "2023-01-29", 1, 1),
-("2023-02-05", "2018-02-17", 2, 5),
+("2023-02-05", "2023-02-17", 2, 5),
 ("2023-02-10", "2023-02-14", 1, 4),
 ("2023-03-05", "2023-03-22", 1, 1),
-("2023-01-14", "2023-01-17", 2, 2)
+("2023-01-19", "2023-01-21", 2, 2)
 ;

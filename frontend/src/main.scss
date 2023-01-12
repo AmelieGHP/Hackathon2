@@ -1,12 +1,14 @@
-@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
 
-@import "./pages/home.scss";
-@import "./pages/horseInfo.scss";
-@import "./pages/loginPage.scss";
+$secondaryTextColor: #b5c5f4;
+$backgroundColor: #f3f6ff;
+$accentColor: #5871bd;
+$primaryTextColor: #00062b;
+$buttonColor: #d9a25f;
+$hoverColor: #bf8415;
 
-@import "./components/footer.scss";
-@import "./components/header.scss";
-@import "./components/horseCard.scss";
+$textFont: "Noto Sans", sans-serif;
+$titleFont: "DM Serif Display", serif;
 
 * {
   margin: 0;
@@ -17,62 +19,87 @@
 
 a {
   text-decoration: none;
-  color: $darkblue;
-  font-family: $classicFont;
+  color: $primaryTextColor;
+  font-family: $textFont;
 }
 
 h1 {
   font-size: 80px;
   line-height: 92px;
-  color: $darkblue;
+  color: $primaryTextColor;
   font-family: $titleFont;
 }
 
 h2 {
   font-size: 40px;
-  color: $darkblue;
+  line-height: 52px;
+  color: $primaryTextColor;
   font-family: $titleFont;
 }
 
 h3 {
   font-size: 32px;
-  color: $darkgold;
-  font-family: $classicFont;
+  line-height: 42px;
+  color: $hoverColor;
+  font-family: $textFont;
 }
 
 p {
   font-size: 16px;
-  color: $darkblue;
-  font-family: $classicFont;
+  line-height: 26px;
+  color: $primaryTextColor;
+  font-family: $textFont;
+}
+
+.accentText {
+  color: $accentColor;
 }
 
 small {
   font-size: 13px;
-  color: $darkgold;
-  font-family: $classicFont;
+  color: $hoverColor;
+  font-family: $textFont;
 }
 
 button {
   border-radius: 4px;
-  border: 1px $darkgold;
-  font-family: $classicFont;
+  border: 1px $hoverColor;
+  font-family: $textFont;
   font-weight: 600;
 }
 
-.buttonOk {
-  background-color: $darkgold;
-  color: $lightblue2;
+input {
+  all: unset;
+}
+
+.primaryButton {
+  background-color: $buttonColor;
+  color: #ffffff;
+  height: 50px;
+  min-width: 89px;
+  width: fit-content;
+  font-size: 16px;
+  transition: .3s ease-in-out;
+  padding: 0 20px;
+}
+
+.primaryButton:hover {
+  color: $hoverColor;
+}
+
+.secondaryButton {
+  background-color: #ffffff;
+  color: $buttonColor;
   height: 50px;
   min-width: 89px;
   width: fit-content;
   font-size: 16px;
 }
 
-.buttonCancel {
-  background-color: $lightblue2;
-  color: $darkgold;
-  height: 50px;
-  min-width: 89px;
-  width: fit-content;
-  font-size: 16px;
-}
+@import "./pages/home.scss";
+@import "./pages/horseInfo.scss";
+@import "./pages/loginPage.scss";
+
+@import "./components/footer.scss";
+@import "./components/header.scss";
+@import "./components/horseCard.scss";

@@ -7,6 +7,7 @@ const { hashPassword, verifyPassword, verifyToken } = require("./auth");
 
 const vehicleController = require("./controllers/VehicleController");
 const userController = require("./controllers/UserController");
+const loanController = require("./controllers/LoanController");
 const userModel = require("./models/UserModel");
 
 // Route pour authoriser le log si le token existe
@@ -20,9 +21,12 @@ router.get("/vehicles/:id", vehicleController.getVehiclesById);
 
 router.get("/users", userController.getUsers);
 
+router.get("/loan/:id", loanController.getLoanByVehicleId);
+router.post("/postLoan", loanController.postLoan);
+
 // Route pour la création d'un utilisateur
 
-router.post("/users", hashPassword, userController.signInUser);
+router.post("/signin", hashPassword, userController.signInUser);
 
 // ROUTES PROTEGEES /!\
 

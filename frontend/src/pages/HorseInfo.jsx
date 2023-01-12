@@ -1,26 +1,91 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import Calendar from "react-calendar";
+import isWithinInterval from 'date-fns/isWithinInterval';
+//import  areIntervalsOverlapping  from 'date-fns/areIntervalsOverlapping';
+import format from "date-fns/format";
+import parseISO from 'date-fns/parseISO';
+import UserContext from "@components/context/UserContext";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
-import Calendar from "react-calendar";
 
 function HorseInfo() {
   const params = useParams();
+  const navigate = useNavigate();
   const { id } = params;
+  const id_user = useContext(UserContext).user.id_user;
   const [vehicle, setVehicle] = useState("");
+  const [notAvailable, setNotAvailable] = useState([]);
+  const [borrowingDate, setBorrowingDate] = useState('');
+  const [returnDate, setreturnDate] = useState('');
+
   const getHorse = () => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/vehicles/${id}`, [id])
       .then((result) => {
         setVehicle(result.data[0]);
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/loan/${id}`, [id])
+          .then((result) => {
+            console.log(result.data)
+            if (result.data.length >= 0) {
+              for (let i = 0; i < result.data.length; i++) {
+                let start = result.data[i].borrowing_date;
+                let end = result.data[i].return_date;
+                let range = [start, end];
+                setNotAvailable(notAvailable => [...notAvailable, range])
+              }
+            };
+          })
+          .catch((err) => {
+            console.error(err);
+          });
       })
       .catch((err) => {
         console.error(err);
       });
   };
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (returnDate !== '') {
+      axios.post(`${import.meta.env.VITE_BACKEND_URL}/postLoan`, {
+        id_user, id, borrowingDate, returnDate
+      })
+        .then((result) => {
+          if (result) {
+            navigate("/home", {
+
+            })
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+    else return alert('please select a date range in the calendar')
+  };
+  const showRange = (e) => {
+    let startDate = format(e[0], `yyyy-MM-dd`);
+    let endDate = format(e[1], `yyyy-MM-dd`);
+    setBorrowingDate(startDate);
+    setreturnDate(endDate);
+  }
+
   useEffect(() => {
     getHorse();
   }, []);
+
+  const disableTile = (e) => {
+    if (notAvailable[0]) {
+      let result = false;
+      for (let i = 0; i < notAvailable.length; i++) {
+        if (isWithinInterval(e.date, { start: parseISO(notAvailable[i][0]), end: parseISO(notAvailable[i][1]) })) {
+          result = true;
+        }
+      } return result
+    }
+  }
+  console.log(notAvailable);
   return (
     <div className="horseInfo">
       <Header />
@@ -41,18 +106,15 @@ function HorseInfo() {
         minDetail="month"
         maxDetail="month"
         minDate={new Date()}
-        selectRange="true"
+        selectRange={true}
         returnValue="range"
-      //tileDisabled={}
-      //onClickDay={(e) => {
-      //   rangeSelected(e);
-      // }}
-      //tileClassName={(e) => tileSelected(e)}
+        tileDisabled={(e) => disableTile(e)}
+        onChange={(e) => showRange(e)}
       />
 
-      <button className="primaryButton" type="button">Book this vehicle</button>
+      <button className="primaryButton" type="button" onClick={(e) => handleClick(e)}>Book this vehicle</button>
 
-    </div>
+    </div >
   );
 }
 

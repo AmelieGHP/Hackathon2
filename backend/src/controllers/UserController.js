@@ -1,4 +1,5 @@
 const UserModel = require("../models/UserModel");
+const jwt = require("jsonwebtoken");
 
 const welcome = (req, res) => {
   res.send("Welcome ! This is our website 😊 !");
@@ -18,7 +19,12 @@ const getUsers = (req, res) => {
 const signInUser = (req, res) => {
   UserModel.postUser(req)
     .then((result) => {
-      res.location(`/users/${result.insertId}`).sendStatus(201);
+      const payload = { sub: result.insertId };
+      const token = jwt.sign(payload, process.env.JWT_SECRET, {
+        expiresIn: "1h",
+      });
+      const id_user = result[0].insertId;
+      res.location(`/users/${result.insertId}`).send({ id_user: id_user, token, user: req.body, }).status(201);
     })
     .catch((err) => {
       console.error(err);

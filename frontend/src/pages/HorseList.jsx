@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "@components/context/UserContext";
 import axios from "axios";
 import HorseCard from "@components/HorseCard";
 import Filters from "@components/Filters";
 import Header from "@components/Header";
 
 function Home() {
+  const { user } = useContext(UserContext);
   const [stage0, setStage0] = useState(false);
   const [stage1, setStage1] = useState(true);
   const [stage2, setStage2] = useState(true);
@@ -52,10 +54,9 @@ function Home() {
   useEffect(() => {
     getHorses();
   }, []);
-  console.log(stage2Required);
+  console.log(user);
   return (
     <div className="home">
-      <Header />
       <div className="filter">
         <Filters
           stage0={stage0}

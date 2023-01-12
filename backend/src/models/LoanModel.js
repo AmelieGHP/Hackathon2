@@ -7,11 +7,11 @@ const findLoanByVehicleId = (id) => {
 };
 
 const postLoan = async (req) => {
-  const { id_user, id, borrowingDate, returnDate } = req.body;
+  const { id_user_forSure, id, borrowingDate, returnDate } = req.body;
 
   const request = await db.query(
     `INSERT INTO loan(id_user, id_vehicle, borrowing_date, return_date) VALUES (?, ?, ?, ?)`,
-    [id_user, id, borrowingDate, returnDate]
+    [id_user_forSure, id, borrowingDate, returnDate]
   );
 
   return request;

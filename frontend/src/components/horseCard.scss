@@ -6,8 +6,8 @@
   align-items: center;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 1px 1px 6px grey; // delete this later
-  // box-shadow: $shadowCard;
+  box-shadow: $shadowCard;
+
   & img {
     width: 200px;
     height: 200px;

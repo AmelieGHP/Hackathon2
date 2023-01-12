@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import isWithinInterval from "date-fns/isWithinInterval";
-// import  areIntervalsOverlapping  from 'date-fns/areIntervalsOverlapping';
 import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 import UserContext from "@components/context/UserContext";
@@ -45,12 +44,18 @@ function HorseInfo() {
         console.error(err);
       });
   };
+
   const handleClick = (e) => {
     e.preventDefault();
     if (returnDate !== "") {
+      let id_user_forSure = id_user;
+      if (id_user === undefined || id_user === null) {
+        id_user_forSure = 2;
+        console.log(id_user_forSure)
+      }
       axios
         .post(`${import.meta.env.VITE_BACKEND_URL}/postLoan`, {
-          id_user,
+          id_user_forSure,
           id,
           borrowingDate,
           returnDate,
@@ -92,40 +97,53 @@ function HorseInfo() {
       return result;
     }
   };
-  console.log(notAvailable);
   return (
     <div className="horseInfo">
       <Header />
-      {vehicle && (
-        <img
-          alt="horse"
-          src={`${import.meta.env.VITE_BACKEND_URL}${vehicle.image}`}
+      <div className="horseCardInfo">
+        <div className="imageContainer">
+
+          {vehicle && (
+            <img
+              alt="horse"
+              src={`${import.meta.env.VITE_BACKEND_URL}${vehicle.image}`}
+            />
+          )}
+        </div>
+        <div>
+
+          <h3 >{vehicle && vehicle.model}</h3>
+          <p > <span className="accentText boldText">Type : </span>{vehicle && vehicle.type}</p>
+          <p > <span className="accentText boldText">Horsepower : </span>  {vehicle && vehicle.horsepower}</p>
+          <p > <span className="accentText boldText">Seats : </span> {vehicle && vehicle.nb_of_places}</p>
+          <p > <span className="accentText boldText">Mileage : </span> {vehicle && vehicle.nb_of_km} km</p>
+          <p className="accentText boldText">Description : </p>
+          <p> Horses share many of the same physiologic characteristics of people and domestic pets, in that they have a circulatory system, a respiratory system, a nervous system, and so on.</p>
+        </div>
+      </div>
+      <div className="booking">
+        <Calendar
+          showNeighboringMonth={false}
+          minDetail="month"
+          maxDetail="month"
+          minDate={new Date()}
+          selectRange
+          returnValue="range"
+          tileDisabled={(e) => disableTile(e)}
+          onChange={(e) => showRange(e)}
         />
-      )}
-      <h3>{vehicle && vehicle.model}</h3>
-      <p>Type : {vehicle && vehicle.type}</p>
-      <p> Horsepower : {vehicle && vehicle.horsepower}</p>
-      <p> Seats : {vehicle && vehicle.nb_of_places}</p>
-      <p> Mileage : {vehicle && vehicle.nb_of_km} km</p>
-
-      <Calendar
-        showNeighboringMonth={false}
-        minDetail="month"
-        maxDetail="month"
-        minDate={new Date()}
-        selectRange
-        returnValue="range"
-        tileDisabled={(e) => disableTile(e)}
-        onChange={(e) => showRange(e)}
-      />
-
-      <button
-        className="primaryButton"
-        type="button"
-        onClick={(e) => handleClick(e)}
-      >
-        Book this vehicle
-      </button>
+        <div className="confirm">
+          <p className="boldText">Book this vehicle </p>
+          <p>From  {borrowingDate || '...'} to  {returnDate || '...'}</p>
+          <button
+            className="primaryButton"
+            type="button"
+            onClick={(e) => handleClick(e)}
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

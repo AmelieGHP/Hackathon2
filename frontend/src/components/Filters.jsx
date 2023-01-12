@@ -57,6 +57,7 @@ function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
       setStage1(true);
       setStage1(true);
     }
+
   };
 
   useState(() => {

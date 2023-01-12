@@ -16,7 +16,6 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/info/:id" element={<HorseInfo />} />
           <Route path="/home" element={<Dashboard />} />
-          <Route path="/dashboard" element={<OurVehicles />} />
           <Route path="/horseList" element={<HorseList />} />
         </Routes>
       </UserContext.Provider>

@@ -15,6 +15,8 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/info/:id" element={<HorseInfo />} />
+          <Route path="/dashbord" element={<Dashbord />} />
+
         </Routes>
       </UserContext.Provider>
     </div>

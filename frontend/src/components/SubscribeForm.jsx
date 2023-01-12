@@ -132,7 +132,6 @@ function SubscribeForm() {
           />
         </div>
         <div>
-
           <label htmlFor="license">License type - BHS stage</label>
           <input
             type="number"

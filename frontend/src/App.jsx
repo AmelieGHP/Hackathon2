@@ -4,6 +4,7 @@ import UserContext from "./components/context/UserContext";
 import OurVehicles from "./components/OurVehicles";
 import Dashboard from "./pages/Dashboard";
 import HorseInfo from "./pages/HorseInfo";
+import HorseList from "./pages/HorseList";
 import LoginPage from "./pages/LoginPage";
 
 function App() {

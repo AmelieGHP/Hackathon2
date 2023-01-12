@@ -12,7 +12,7 @@ function Dashboard() {
             <Presentation />
           <div className="stat">
             <List />
-            <Chart />
+           {/* <Chart /> */}
           </div>
         </div>
     </div>

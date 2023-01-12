@@ -17,7 +17,7 @@ const data = {
 
 function Chart() {
   return (
-    <div className="dashbord">
+    <div className="chart">
       <div className="card">
         <Doughnut data={data} />
       </div>

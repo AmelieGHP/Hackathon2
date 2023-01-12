@@ -15,12 +15,18 @@ function Filters({
   const handleChange = () => {
     setStage0(!stage0);
     if (stage0 === false) {
-      setStage1(false); setStage2(false); setStage3(false); setStage4(false)
+      setStage1(false);
+      setStage2(false);
+      setStage3(false);
+      setStage4(false);
     }
     if (stage0 === true) {
-      setStage1(true); setStage2(true); setStage3(true); setStage4(true)
+      setStage1(true);
+      setStage2(true);
+      setStage3(true);
+      setStage4(true);
     }
-  }
+  };
   return (
     <div className="filters">
       <div className="type filter">
@@ -31,7 +37,9 @@ function Filters({
             id="stage0"
             name="stage0"
             checked={stage0}
-            onChange={() => { handleChange() }}
+            onChange={() => {
+              handleChange();
+            }}
           />
           <label htmlFor="stage0">None</label>
         </div>

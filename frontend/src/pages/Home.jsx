@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "@components/Footer";
 import HorseCard from "@components/HorseCard";
@@ -25,19 +25,25 @@ function Home() {
         console.log(result);
         for (let i = 0; i < result.data.length; i++) {
           if (result.data[i].type === "Rocking horse") {
-            setStage0Required(array => [...array, result.data[i]]);
+            setStage0Required((array) => [...array, result.data[i]]);
           }
-          if (result.data[i].type === "Shetland" || result.data[i].type === "Pony") {
-            setStage1Required(array => [...array, result.data[i]]);
+          if (
+            result.data[i].type === "Shetland" ||
+            result.data[i].type === "Pony"
+          ) {
+            setStage1Required((array) => [...array, result.data[i]]);
           }
-          if (result.data[i].type === "Horse" || result.data[i].type === "Donkey") {
-            setStage2Required(array => [...array, result.data[i]]);
+          if (
+            result.data[i].type === "Horse" ||
+            result.data[i].type === "Donkey"
+          ) {
+            setStage2Required((array) => [...array, result.data[i]]);
           }
           if (result.data[i].type === "Zebra") {
-            setStage3Required(array => [...array, result.data[i]])
+            setStage3Required((array) => [...array, result.data[i]]);
           }
           if (result.data[i].type === "Unicorn") {
-            setStage4Required(array => [...array, result.data[i]])
+            setStage4Required((array) => [...array, result.data[i]]);
           }
         }
       })
@@ -48,7 +54,7 @@ function Home() {
   useEffect(() => {
     getHorses();
   }, []);
-  console.log(stage2Required)
+  console.log(stage2Required);
   return (
     <div className="home">
       <Header />
@@ -67,47 +73,66 @@ function Home() {
         />
       </div>
       <div className="horseList">
-        {stage0 && stage0Required.map((horse) => {
-          return <Link to={`/info/${horse.id_vehicle}`}><HorseCard
-            model={horse.model}
-            type={horse.type}
-            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
-          /></Link>
-        })}
-        {stage1 && stage1Required.map((horse) => {
-          return <Link to={`/info/${horse.id_vehicle}`}><HorseCard
-            model={horse.model}
-            type={horse.type}
-            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
-          /></Link>
-        })}
-        {stage2 && stage2Required.map((horse) => {
-          return <Link to={`/info/${horse.id_vehicle}`}>
-           <HorseCard
-            model={horse.model}
-            type={horse.type}
-            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
-            />
-            </Link>
-        })}
-        {stage3 && stage3Required.map((horse) => {
-          return <Link to={`/info/${horse.id_vehicle}`}>
-          <HorseCard
-            model={horse.model}
-            type={horse.type}
-            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
-            />
-            </Link>
-        })}
-        {stage4 && stage4Required.map((horse) => {
-          return <Link to={`/info/${horse.id_vehicle}`}>
-            <HorseCard
-            model={horse.model}
-            type={horse.type}
-            image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
-            />
-            </Link>
-        })}
+        {stage0 &&
+          stage0Required.map((horse) => {
+            return (
+              <Link to={`/info/${horse.id_vehicle}`}>
+                <HorseCard
+                  model={horse.model}
+                  type={horse.type}
+                  image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+                />
+              </Link>
+            );
+          })}
+        {stage1 &&
+          stage1Required.map((horse) => {
+            return (
+              <Link to={`/info/${horse.id_vehicle}`}>
+                <HorseCard
+                  model={horse.model}
+                  type={horse.type}
+                  image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+                />
+              </Link>
+            );
+          })}
+        {stage2 &&
+          stage2Required.map((horse) => {
+            return (
+              <Link to={`/info/${horse.id_vehicle}`}>
+                <HorseCard
+                  model={horse.model}
+                  type={horse.type}
+                  image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+                />
+              </Link>
+            );
+          })}
+        {stage3 &&
+          stage3Required.map((horse) => {
+            return (
+              <Link to={`/info/${horse.id_vehicle}`}>
+                <HorseCard
+                  model={horse.model}
+                  type={horse.type}
+                  image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+                />
+              </Link>
+            );
+          })}
+        {stage4 &&
+          stage4Required.map((horse) => {
+            return (
+              <Link to={`/info/${horse.id_vehicle}`}>
+                <HorseCard
+                  model={horse.model}
+                  type={horse.type}
+                  image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+                />
+              </Link>
+            );
+          })}
       </div>
       <Footer />
     </div>

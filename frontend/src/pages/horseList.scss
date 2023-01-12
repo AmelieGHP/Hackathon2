@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  background-color: $backgroundColor ; // comment this later
+  background-color: $backgroundColor; // comment this later
 
   & .horseList {
     display: flex;
@@ -42,7 +42,6 @@
         color: $primaryTextColor;
         border: 1px solid $secondaryTextColor;
         border-radius: 4px;
-
       }
 
       & .calendarsBox {
@@ -59,7 +58,7 @@
           width: 200px;
           border: 1px solid $secondaryTextColor;
           border-radius: 4px;
-          padding: 0 20px
+          padding: 0 20px;
         }
       }
     }

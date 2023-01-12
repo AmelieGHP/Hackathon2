@@ -6,17 +6,17 @@
   align-items: center;
   padding: 30px;
   border-radius: 10px;
-  box-shadow : 1px 1px 6px grey; // delete this later
+  box-shadow: 1px 1px 6px grey; // delete this later
   // box-shadow: $shadowCard;
   & img {
-    width : 200px;
-    height:200px;
-    margin : 0 0 10px;
+    width: 200px;
+    height: 200px;
+    margin: 0 0 10px;
   }
 
-& button {
-  margin : 20px 0 0;
-}
+  & button {
+    margin: 20px 0 0;
+  }
 
   & h4 {
     margin: 8px 0;

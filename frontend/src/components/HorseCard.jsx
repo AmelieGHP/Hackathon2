@@ -7,7 +7,9 @@ function HorseCard({ image, model, type }) {
       <img alt="horse" src={image} />
       <h4>{model}</h4>
       <p>{type}</p>
-      <button type="button" className="primaryButton">Book</button>
+      <button type="button" className="primaryButton">
+        Book
+      </button>
     </div>
   );
 }

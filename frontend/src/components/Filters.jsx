@@ -1,71 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import Proptypes from "prop-types";
-import { useState } from "react";
-import Select from 'react-select';
+import Select from "react-select";
 
-
-function Filters({
-  setStage0,
-  setStage1,
-  setStage2,
-  setStage3,
-  setStage4,
-}) {
+function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
   const options = [
-    { value: '0', label: 'None' },
-    { value: '1', label: 'BHS stage 1' },
-    { value: '2', label: 'BHS stage 2' },
-    { value: '3', label: 'BHS stage 3' },
-    { value: '4', label: 'BHS stage 4' },
+    { value: "0", label: "None" },
+    { value: "1", label: "BHS stage 1" },
+    { value: "2", label: "BHS stage 2" },
+    { value: "3", label: "BHS stage 3" },
+    { value: "4", label: "BHS stage 4" },
   ];
   const [selectedOption, setSelectedOption] = useState([]);
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const handleChange = (e) => {
-    let tempArray = []
+    const tempArray = [];
     for (let i = 0; i < e.length; i++) {
-      let value = e[i].value;
+      const { value } = e[i];
       tempArray.push(value);
-      console.log(e[i].value)
+      console.log(e[i].value);
     }
-    console.log(tempArray)
+    console.log(tempArray);
     setSelectedOption(tempArray);
-  }
+  };
   const handleClick = () => {
     if (selectedOption.length > 0) {
-      if (selectedOption.includes('0')) {
+      if (selectedOption.includes("0")) {
         setStage0(true);
-      } else { setStage0(false) }
-      if (selectedOption.includes('1')) {
+      } else {
+        setStage0(false);
+      }
+      if (selectedOption.includes("1")) {
         setStage1(true);
-      } else { setStage1(false) }
-      if (selectedOption.includes('2')) {
+      } else {
+        setStage1(false);
+      }
+      if (selectedOption.includes("2")) {
         setStage2(true);
-      } else { setStage2(false) }
-      if (selectedOption.includes('3')) {
+      } else {
+        setStage2(false);
+      }
+      if (selectedOption.includes("3")) {
         setStage3(true);
-      } else { setStage3(false) }
-      if (selectedOption.includes('4')) {
+      } else {
+        setStage3(false);
+      }
+      if (selectedOption.includes("4")) {
         setStage4(true);
-      } else { setStage4(false) }
+      } else {
+        setStage4(false);
+      }
+    } else {
+      setStage0(true);
+      setStage1(true);
+      setStage1(true);
+      setStage1(true);
+      setStage1(true);
     }
-    else {
-      setStage0(true); setStage1(true); setStage1(true); setStage1(true); setStage1(true);
-    }
-  }
+  };
 
   useState(() => {
-    console.log(selectedOption)
-  }, [selectedOption])
+    console.log(selectedOption);
+  }, [selectedOption]);
   return (
     <div className="filters">
       <p className="accentText boldText">Filter by</p>
       <div className="typeFilter">
         <label>Type of license needed</label>
         <Select
-          onChange={(e) => { handleChange(e) }}
+          onChange={(e) => {
+            handleChange(e);
+          }}
           options={options}
-          isMulti={true}
+          isMulti
           placeholder="Type of License"
           className="dropdown"
         />
@@ -95,7 +102,13 @@ function Filters({
           />
         </div>
       </div>
-      <button type="button" className="primaryButton" onClick={() => handleClick()}>Search</button>
+      <button
+        type="button"
+        className="primaryButton"
+        onClick={() => handleClick()}
+      >
+        Search
+      </button>
     </div>
   );
 }

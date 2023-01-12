@@ -1,5 +1,5 @@
-const UserModel = require("../models/UserModel");
 const jwt = require("jsonwebtoken");
+const UserModel = require("../models/UserModel");
 
 const welcome = (req, res) => {
   res.send("Welcome ! This is our website 😊 !");
@@ -24,7 +24,10 @@ const signInUser = (req, res) => {
         expiresIn: "1h",
       });
       const id_user = result[0].insertId;
-      res.location(`/users/${result.insertId}`).send({ id_user: id_user, token, user: req.body, }).status(201);
+      res
+        .location(`/users/${result.insertId}`)
+        .send({ id_user, token, user: req.body })
+        .status(201);
     })
     .catch((err) => {
       console.error(err);

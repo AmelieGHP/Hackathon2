@@ -1,5 +1,5 @@
 .loginPage {
-  width: auto;
+  width: 100%;
   min-height: 100vh;
   display: flex;
 
@@ -9,27 +9,105 @@
   }
 
   & .loginSubscribe {
+    padding: 80px;
     flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h1 {
+      margin-top: 60px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    & .switchContainer {
+      display: flex;
+      gap: 4px;
+    }
+
+    & .clearButton {
+      color: $accentColor;
+      font-weight: 700;
+      font-size: 16px;
+      font-family: $textFont;
+    }
 
     & form {
+      margin: 60px 0 0;
       display: flex;
       flex-direction: column;
+      width: 350px;
+      gap: 20px;
+
+      & div {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      & .identity {
+        display: flex;
+        width: 300px;
+        gap: 20px;
+        flex-direction: row;
+
+        & div {
+          flex: 1;
+
+          & input {
+            width: 120px;
+          }
+        }
+      }
 
       & input {
         width: 300px;
+        height: 50px;
+        background-color: $backgroundColor;
+        border: 1px solid $secondaryTextColor;
+        border-radius: 4px;
+        color: $primaryTextColor;
+        font-family: $textFont;
+        padding: 0 20px;
       }
 
-      & button {
-        max-width: 100px;
+      & input:focus-within {
+        outline: 1.5px solid $accentColor;
+      }
+
+      & input:valid {
+        outline: 1.5px solid $accentColor;
+      }
+
+      & input::placeholder {
+        color: $secondaryTextColor;
+      }
+
+      & label {
+        font-family: $textFont;
+        font-weight: 600;
+        color: $accentColor;
+      }
+
+      & .passwordInput {
+        position: relative;
+
+        & button {
+          position: absolute;
+          right: 10px;
+          top: 35px;
+          height: 40px;
+          width: 40px;
+          background-color: $backgroundColor;
+        }
+      }
+
+      & .primaryButton {
+        align-self: center;
+        margin: 4vh 0 2vh;
       }
     }
-  }
-
-  & .subscribeForm {
-    width: auto;
-  }
-
-  & .loginForm {
-    width: auto;
   }
 }

@@ -19,7 +19,7 @@ const getVehiclesById = (req, res) => {
   VehicleModel.findVehicleById(id)
     .then(([vehicle]) => {
       if (vehicle[0] != null) {
-        res.status(200).send(id);
+        res.status(200).send(vehicle);
       } else {
         res.sendStatus(404);
       }
@@ -29,10 +29,6 @@ const getVehiclesById = (req, res) => {
       return res.status(500).send("Error retrieving data from database");
     });
 };
-
-// const getVehiclesByCompanyId = (req, res) => {
-//
-// }
 
 module.exports = {
   getAllVehicles,

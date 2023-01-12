@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `blackMount`.`user` (
   `firstname` VARCHAR(45) NULL,
   `lastname` VARCHAR(45) NULL,
   `email` VARCHAR(255) NULL,
-  `password` VARCHAR(45) NULL,
+  `password` VARCHAR(255) NULL,
   `phone` VARCHAR(45) NULL,
   `type_of_license` VARCHAR(45) NULL,
   PRIMARY KEY (`id_user`))
@@ -145,5 +145,14 @@ INSERT INTO vehicle(type, model, horsepower, nb_of_places, nb_of_km, is_in_repai
 ("Shetland", "Caramel", 0.5, 1, 340, 0, 1,"/assets/vehicles/black-mount-vehicle-image-shetland-caramel.jpg"),
 ("Rocking horse", "Tonnerre", 0.25, 1, 0, 0, 1,"/assets/vehicles/black-mount-vehicle-image-rockinghorse-tonnerre.jpg"),
 ("Horse", "Lucky", 1, 2, 562, 0, 1,"/assets/vehicles/black-mount-vehicle-image-horse-lucky.jpg"),
-("Pony", "Froufrou", 3, 1, 1089, 0, 1,"/assets/vehicles/black-mount-vehicle-image-pony-froufrou.jpg");
-
+("Pony", "Froufrou", 3, 1, 1089, 0, 1,"/assets/vehicles/black-mount-vehicle-image-pony-froufrou.jpg"),
+("Horse", "Etincelle", 1, 2, 1032, 0, 1, "/assets/vehicles/black-mount-vehicle-image-horse-etincelle.jpg"),
+("Horse", "Altesse", 1, 2, 1562, 0, 1,"/assets/vehicles/black-mount-vehicle-image-horse-altesse.jpg"),
+("Horse", "Calipso", 1, 2, 2305, 0, 1,"/assets/vehicles/black-mount-vehicle-image-horse-calipso.jpg"),
+("Horse", "Cleopatre", 1, 2, 1562, 0, 1,"/assets/vehicles/black-mount-vehicle-image-horse-cleopatre.jpg"),
+("Unicorn", "Mia", 7, 2, 15789, 0, 1, "/assets/vehicles/black-mount-vehicle-image-unicorn-mia.jpg"),
+("Donkey", "Dardar", 1.25, 1, 15, 0, 1, "/assets/vehicles/black-mount-vehicle-image-donkey-dardar.jpg"),
+("Pony", "Mistik", 3, 1, 75, 0, 1, "/assets/vehicles/black-mount-vehicle-image-pony-mistik.jpg"),
+("Shetland", "Zumba", 0.5, 1, 540, 0, 1,"/assets/vehicles/black-mount-vehicle-image-shetland-zumba.jpg"),
+("Rocking horse", "Babytrote", 0.25, 1, 0, 0, 1,"/assets/vehicles/black-mount-vehicle-image-rockinghorse-babytrote.jpg"),
+("Pony", "Rock", 3, 1, 189, 0, 1,"/assets/vehicles/black-mount-vehicle-image-pony-rock.jpg");

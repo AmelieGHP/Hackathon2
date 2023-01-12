@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 // style in pages/loginPage.scss
 
@@ -17,7 +17,7 @@ function LoginForm() {
   const handleClick = (e) => {
     e.preventDefault();
     if (email && password) {
-      //     axios.post("http://localhost:5000/connexion", {
+      //     axios.post("http://localhost:5000/login", {
       //       email,
       //       password,
       //     })
@@ -45,7 +45,7 @@ function LoginForm() {
           type="email"
           name="email"
           id="email"
-          value={email}
+          placeholder="jane.doe@example.com"
           onKeyPress={handleKeyPress}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -58,7 +58,7 @@ function LoginForm() {
             type={!visiblePassword ? "password" : "text"}
             name="pwd"
             id="pwd"
-            value={password}
+            placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
             onKeyPress={handleKeyPress}
             onInput={(e) => {
               setPassword(e.target.value);
@@ -66,12 +66,24 @@ function LoginForm() {
             required
           />
           <button type="button" onClick={handlePwdClick}>
-            {visiblePassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+            {visiblePassword ? (
+              <AiOutlineEye
+                color="#B5C5F4"
+                size={20}
+                style={{ backgroundColor: "#F3F6FF" }}
+              />
+            ) : (
+              <AiOutlineEyeInvisible
+                size={20}
+                color="#B5C5F4"
+                style={{ backgroundColor: "#F3F6FF" }}
+              />
+            )}
           </button>
         </div>
         <button
           type="submit"
-          className="btnSubmit"
+          className="primaryButton"
           disabled={!email || !password}
           onClick={(e) => {
             handleClick(e);

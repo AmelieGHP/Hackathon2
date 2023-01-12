@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 // style in pages/loginPage.scss
 
@@ -42,83 +42,107 @@ function SubscribeForm() {
   return (
     <div className="subscribeForm">
       <form>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          required
-        />
-        <label htmlFor="password">Password</label>
+        <div className="identity">
+          <div>
+            <label htmlFor="firstname">Firstname</label>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="Jane"
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="lastname">Lastname</label>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="Doe"
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+              required
+            />
+          </div>
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="jane.doe@example.com"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            required
+          />
+        </div>
         <div className="passwordInput">
+          <label htmlFor="password">Password</label>
           <input
             type={!visiblePassword ? "password" : "text"}
             name="pwd"
             id="pwd"
-            value={password}
+            placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
             onInput={(e) => {
               setPassword(e.target.value);
             }}
             required
           />
           <button type="button" onClick={handlePwdClick}>
-            {visiblePassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+            {visiblePassword ? (
+              <AiOutlineEye
+                color={password ? "#5871bd" : "#B5C5F4"}
+                size={20}
+                style={{ backgroundColor: "#F3F6FF" }}
+              />
+            ) : (
+              <AiOutlineEyeInvisible
+                size={20}
+                color="#B5C5F4"
+                style={{ backgroundColor: "#F3F6FF" }}
+              />
+            )}
           </button>
         </div>
-        <label htmlFor="firstname">Firstname</label>
+        <div>
+          <label htmlFor="phone">Phone number</label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="07 00 00 00 00"
+            onChange={(e) => {
+              setPhone(e.target.value);
+            }}
+            required
+          />
+        </div>
+        <div>
 
-        <input
-          type="text"
-          name="firstname"
-          id="firstname"
-          value={firstname}
-          onChange={(e) => {
-            setFirstName(e.target.value);
-          }}
-          required
-        />
-        <label htmlFor="lastname">Lastname</label>
-
-        <input
-          type="text"
-          name="lastname"
-          id="lastname"
-          value={lastname}
-          onChange={(e) => {
-            setLastName(e.target.value);
-          }}
-          required
-        />
-        <label htmlFor="phone">Phone number</label>
-        <input
-          type="text"
-          name="phone"
-          id="phone"
-          value={phone}
-          onChange={(e) => {
-            setPhone(e.target.value);
-          }}
-          required
-        />
-        <label htmlFor="license">License type - BHS stage</label>
-        <input
-          type="number"
-          name="license"
-          id="license"
-          min="0"
-          max="4"
-          onChange={(e) => {
-            setLicense(e.target.value);
-          }}
-          required
-        />
+          <label htmlFor="license">License type - BHS stage</label>
+          <input
+            type="number"
+            name="license"
+            id="license"
+            min="0"
+            max="4"
+            placeholder="1 - 4 / Enter 0 if you don't have any"
+            onChange={(e) => {
+              setLicense(e.target.value);
+            }}
+            required
+          />
+        </div>
         <button
           type="submit"
-          className="btnSubmit"
+          className="primaryButton"
           disabled={
             !email || !password || !firstname || !lastname || !phone || !license
           }
@@ -126,7 +150,7 @@ function SubscribeForm() {
             handleClick(e);
           }}
         >
-          Subscribe
+          Sign in
         </button>
       </form>
     </div>

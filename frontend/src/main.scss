@@ -1,9 +1,106 @@
-@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
+
+$secondaryTextColor: #b5c5f4;
+$backgroundColor: #f3f6ff;
+$accentColor: #5871bd;
+$primaryTextColor: #00062b;
+$buttonColor: #d9a25f;
+$hoverColor: #bf8415;
+
+$textFont: "Noto Sans", sans-serif;
+$titleFont: "DM Serif Display", serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: $primaryTextColor;
+  font-family: $textFont;
+}
+
+h1 {
+  font-size: 80px;
+  line-height: 92px;
+  color: $primaryTextColor;
+  font-family: $titleFont;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 52px;
+  color: $primaryTextColor;
+  font-family: $titleFont;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 42px;
+  color: $hoverColor;
+  font-family: $textFont;
+}
+
+p {
+  font-size: 16px;
+  line-height: 26px;
+  color: $primaryTextColor;
+  font-family: $textFont;
+}
+
+.accentText {
+  color: $accentColor;
+}
+
+small {
+  font-size: 13px;
+  color: $hoverColor;
+  font-family: $textFont;
+}
+
+button {
+  border-radius: 4px;
+  border: 1px $hoverColor;
+  font-family: $textFont;
+  font-weight: 600;
+}
+
+input[type=text],
+input[type=email],
+input[type=number] {
+  all: unset;
+}
+
+.primaryButton {
+  background-color: $buttonColor;
+  color: #ffffff;
+  height: 50px;
+  min-width: 89px;
+  width: fit-content;
+  font-size: 16px;
+  transition: .3s ease-in-out;
+  padding: 0 20px;
+}
+
+.primaryButton:hover {
+  color: $hoverColor;
+}
+
+.secondaryButton {
+  background-color: #ffffff;
+  color: $buttonColor;
+  height: 50px;
+  min-width: 89px;
+  width: fit-content;
+  font-size: 16px;
+}
 
 @import "./pages/home.scss";
 @import "./pages/horseInfo.scss";
 @import "./pages/loginPage.scss";
 
-@import "./components/footer.scss";
 @import "./components/header.scss";
 @import "./components/horseCard.scss";

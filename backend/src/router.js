@@ -22,7 +22,7 @@ router.get("/users", userController.getUsers);
 
 // Route pour la création d'un utilisateur
 
-router.post("/users", hashPassword, userController.signInUser);
+router.post("/signin", hashPassword, userController.signInUser);
 
 // ROUTES PROTEGEES /!\
 

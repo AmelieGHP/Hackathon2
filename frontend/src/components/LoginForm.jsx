@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-// import axios from "axios";
+import UserContext from "./context/UserContext";
+import axios from "axios";
 
 // style in pages/loginPage.scss
 
 function LoginForm() {
+  const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [visiblePassword, setVisiblePassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -17,19 +19,27 @@ function LoginForm() {
   const handleClick = (e) => {
     e.preventDefault();
     if (email && password) {
-      //     axios.post("http://localhost:5000/login", {
-      //       email,
-      //       password,
-      //     })
-      //       .then(()=>{
-      navigate("/home");
-      // })
-      //       .catch((err) => {
-      //         console.error(err)
-      //       });
-      //   }
+      axios.post("http://localhost:5000/login", {
+        email,
+        password,
+      })
+        .then((res) => {
+          const { token } = res.data;
+          console.log(res.data.user)
+          setUser({ phone: res.data.user.phone, type_of_license: res.data.user.type_of_license, firstname: res.data.user.firstname, lastname: res.data.user.lastname, email: res.data.user.email, id_user: res.data.user.id_user });
+          navigate("/home", {
+            state: {
+              token
+            }
+          }
+          )
+        })
+        .catch((err) => {
+          console.error(err)
+        });
     }
-  };
+  }
+
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {

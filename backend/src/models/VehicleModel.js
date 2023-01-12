@@ -20,6 +20,14 @@ const findVehicleByCompanyId = () => {
   );
 };
 
+const findVehiclesAndLoans = () => {
+  return db.query(
+    `SELECT * FROM vehicle 
+    LEFT JOIN loan 
+    ON vehicle.id_vehicle = loan.id_vehicle `
+  );
+}
+
 //  Requête pour chercher la date d'emprunt et de retour
 const findDatesOfBorrowing = (id) => {
   return db.query(
@@ -36,4 +44,5 @@ module.exports = {
   findVehicleById,
   findDatesOfBorrowing,
   findVehicleByCompanyId,
+  findVehiclesAndLoans,
 };

@@ -20,7 +20,7 @@ function LoginForm() {
     e.preventDefault();
     if (email && password) {
       axios
-        .post("http://localhost:5000/login", {
+        .post(`${import.meta.env.VITE_BACKEND_URL}/login`, {
           email,
           password,
         })

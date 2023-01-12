@@ -3,9 +3,10 @@
   height: 30vh;
   padding: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+
   border-radius: 10px;
-  // box-shadow: $shadowCard;
+  box-shadow: $shadowCard;
 
   & .log {
     display: flex;

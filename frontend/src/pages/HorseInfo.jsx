@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Calendar from "react-calendar";
 import axios from "axios";
+import Calendar from "react-calendar";
 import Header from "../components/Header";
 
 function HorseInfo() {
@@ -21,6 +22,7 @@ function HorseInfo() {
   useEffect(() => {
     getHorse();
   }, []);
+
   return (
     <div className="horseInfo">
       <Header />

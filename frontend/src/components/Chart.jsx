@@ -21,7 +21,6 @@ function Chart() {
       <div className="card">
         <Doughnut data={data} />
       </div>
-      
     </div>
   );
 }

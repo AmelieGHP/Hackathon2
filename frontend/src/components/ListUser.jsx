@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const ListUser = () => {
-    return (
-        <div className='listuser'>
-
-          <h3>Our team</h3>
-            <div className="listEmp">
+function ListUser() {
+  return (
+    <div className="listuser">
+      <h3>Our team</h3>
+      <div className="listEmp">
         <img
           src={`${
             import.meta.env.VITE_BACKEND_URL
@@ -37,9 +36,8 @@ const ListUser = () => {
           alt="utilisateur5"
         />
       </div>
-            
-        </div>
-    );
-};
+    </div>
+  );
+}
 
 export default ListUser;

@@ -42,7 +42,7 @@ function SubscribeForm() {
             state: {
               token,
             },
-          })
+          });
         })
         .catch((err) => {
           console.error(err);

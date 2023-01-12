@@ -1,0 +1,26 @@
+.dash_vehicle_elements {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &_list {
+    display: flex;
+    padding-block: 12px;
+    justify-content: space-around;
+    list-style: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    &_image {
+      object-fit: cover;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+    }
+
+    button {
+      background-color: $buttonColor;
+      padding: 12px 16px;
+    }
+  }
+}

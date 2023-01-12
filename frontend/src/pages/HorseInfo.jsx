@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import Header from "../components/Header";
 import Calendar from "react-calendar";
 import isWithinInterval from 'date-fns/isWithinInterval';
 //import  areIntervalsOverlapping  from 'date-fns/areIntervalsOverlapping';
@@ -9,6 +7,8 @@ import format from "date-fns/format";
 import parseISO from 'date-fns/parseISO';
 import UserContext from "@components/context/UserContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Header from "../components/Header";
 
 function HorseInfo() {
   const params = useParams();
@@ -114,7 +114,7 @@ function HorseInfo() {
 
       <button className="primaryButton" type="button" onClick={(e) => handleClick(e)}>Book this vehicle</button>
 
-    </div>
+    </div >
   );
 }
 

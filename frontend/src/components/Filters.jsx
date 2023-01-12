@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import Proptypes from "prop-types";
 
 function Filters({
   stage0,
@@ -87,5 +88,16 @@ function Filters({
     </div>
   );
 }
-
+Filters.propTypes = {
+  stage0: Proptypes.node.isRequired,
+  setStage0: Proptypes.node.isRequired,
+  stage1: Proptypes.node.isRequired,
+  setStage1: Proptypes.node.isRequired,
+  stage2: Proptypes.node.isRequired,
+  setStage2: Proptypes.node.isRequired,
+  stage3: Proptypes.node.isRequired,
+  setStage3: Proptypes.node.isRequired,
+  stage4: Proptypes.node.isRequired,
+  setStage4: Proptypes.node.isRequired,
+};
 export default Filters;

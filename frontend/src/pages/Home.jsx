@@ -22,8 +22,7 @@ function Home() {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/vehicles`)
       .then((result) => {
-        console.log(result);
-        for (let i = 0; i < result.data.length; i++) {
+        for (let i = 0; i < result.data.length; i += 1) {
           if (result.data[i].type === "Rocking horse") {
             setStage0Required((array) => [...array, result.data[i]]);
           }

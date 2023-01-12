@@ -56,20 +56,23 @@ function LoginForm() {
   return (
     <div className="loginForm">
       <form>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="jane.doe@example.com"
-          onKeyPress={handleKeyPress}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          required
-        />
-        <label htmlFor="password">Password</label>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="jane.doe@example.com"
+            onKeyPress={handleKeyPress}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            required
+          />
+        </div>
+
         <div className="passwordInput">
+          <label htmlFor="password">Password</label>
           <input
             type={!visiblePassword ? "password" : "text"}
             name="pwd"

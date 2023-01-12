@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 
 // style in pages/loginPage.scss
 
@@ -23,20 +23,27 @@ function SubscribeForm() {
   const handleClick = (e) => {
     e.preventDefault();
     if (email && password && firstname && lastname && phone && license) {
-      //   axios.post("http://localhost:5000/inscription", {
-      //     email,
-      //     password,
-      //     firstname,
-      //     lastname,
-      //     phone,
-      //     license
-      //   })
-      //     .then(() => {
-      navigate("/home");
-      //     })
-      //     .catch((err) => {
-      //       console.error(err);
-      //     });
+      axios.post("http://localhost:5000/signin", {
+        email,
+        password,
+        firstname,
+        lastname,
+        phone,
+        license
+      })
+        .then((result) => {
+          const { token } = result.data;
+          const user = result.data;
+          console.log(user)
+          navigate("/home", {
+            state: {
+              token,
+            },
+          })
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     }
   };
   return (

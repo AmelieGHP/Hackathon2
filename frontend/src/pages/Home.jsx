@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Footer from "@components/Footer";
 import HorseCard from "@components/HorseCard";
 import Filters from "@components/Filters";
 import Header from "@components/Header";
@@ -133,7 +132,6 @@ function Home() {
             );
           })}
       </div>
-      <Footer />
     </div>
   );
 }

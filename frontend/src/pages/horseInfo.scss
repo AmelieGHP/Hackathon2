@@ -1,3 +1,102 @@
 .horseInfo {
-  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .react-calendar {
+    height: fit-content;
+    max-width: 400px;
+    margin: 1vh auto;
+    font-family: $textFont;
+
+    &__navigation {
+      display: flex;
+      justify-content: space-evenly;
+
+      &__arrow {
+        background: none;
+        color: $buttonColor;
+        font-size: 20px;
+      }
+
+      &__prev2-button {
+        display: none;
+      }
+
+      &__label {
+        flex-grow: 0 !important;
+        padding: 5px 10px;
+
+        & span {
+          color: $buttonColor;
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: capitalize;
+        }
+      }
+
+      &__next2-button {
+        display: none;
+      }
+    }
+
+    &__month-view {
+      margin-top: 20px;
+
+      &__weekdays {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $buttonColor;
+
+        &__weekday {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          & abbr {
+            text-transform: capitalize;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &__days {
+        &__day {
+          border-bottom: 1px dashed $buttonColor;
+          border-radius: 0;
+          width: 50px;
+          height: 50px;
+          padding: 10px;
+          background: none;
+        }
+      }
+    }
+
+
+    &__tile--active {
+      color: #ffffff;
+      background: $buttonColor;
+      font-weight: 400;
+      border-radius: 0;
+
+      & abbr {
+        background: $buttonColor;
+        font-weight: 700;
+      }
+    }
+
+    & .select {
+      background-color: #f0f0f0;
+      color: $buttonColor;
+      font-weight: 500;
+      text-decoration: line-through;
+    }
+  }
+
+  & .notWorked {
+    & .react-calendar__month-view__days {
+      & abbr {
+        opacity: 0.4;
+      }
+    }
+  }
 }

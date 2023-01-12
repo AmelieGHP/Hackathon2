@@ -7,7 +7,7 @@ function OurVehicles() {
 
   const getAllCars = () => {
     axios
-      .get(`http://localhost:5000/vehicles`)
+      .get(`http://localhost:5001/vehicles`)
       .then((res) => {
         setAllCars(res.data.slice(0, 3));
         console.warn(allCars);

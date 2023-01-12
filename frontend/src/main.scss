@@ -41,14 +41,14 @@ h2 {
 h3 {
   font-size: 32px;
   line-height: 42px;
-  color: $hoverColor;
+  color: $primaryTextColor;
   font-family: $titleFont;
 }
 
 h4 {
   font-size: 20px;
   line-height: 32px;
-  color: $hoverColor;
+  color: $primaryTextColor;
   font-family: $textFont;
 }
 
@@ -115,6 +115,5 @@ input[type="number"] {
 @import "./components/header.scss";
 @import "./components/horseCard.scss";
 @import "./components/chart.scss";
-@import "./components/list.scss";
 @import "./components/presentation.scss";
 @import "./components/listUser.scss";

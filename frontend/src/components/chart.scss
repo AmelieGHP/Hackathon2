@@ -1,5 +1,7 @@
 .chart {
   & .card {
+    display: flex;
+    justify-content: center;
     width: 460px;
     height: 254px;
   }

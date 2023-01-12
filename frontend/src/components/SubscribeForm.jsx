@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import UserContext from "./context/UserContext";
 import axios from "axios";
 
 // style in pages/loginPage.scss
 
 function SubscribeForm() {
+  const { user, setUser } = useContext(UserContext);
   const [visiblePassword, setVisiblePassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,19 +25,19 @@ function SubscribeForm() {
   const handleClick = (e) => {
     e.preventDefault();
     if (email && password && firstname && lastname && phone && license) {
-      axios
-        .post("http://localhost:5000/signin", {
-          email,
-          password,
-          firstname,
-          lastname,
-          phone,
-          license,
-        })
+      axios.post(`${import.meta.env.VITE_BACKEND_URL}/signin`, {
+        email,
+        password,
+        firstname,
+        lastname,
+        phone,
+        license
+      })
         .then((result) => {
+          const userInfo = result.data;
+          console.log(result);
+          setUser({ phone: userInfo.user.phone, type_of_license: parseInt(userInfo.user.license), firstname: userInfo.user.firstname, lastname: userInfo.user.lastname, email: userInfo.user.email, id_user: userInfo.id_user });
           const { token } = result.data;
-          const user = result.data;
-          console.log(user);
           navigate("/home", {
             state: {
               token,
@@ -47,6 +49,7 @@ function SubscribeForm() {
         });
     }
   };
+
   return (
     <div className="subscribeForm">
       <form>
@@ -142,7 +145,7 @@ function SubscribeForm() {
             max="4"
             placeholder="1 - 4 / Enter 0 if you don't have any"
             onChange={(e) => {
-              setLicense(e.target.value);
+              setLicense(e.target.value.toString());
             }}
             required
           />

@@ -45,7 +45,7 @@ function LoginForm() {
           console.error(err);
         });
     }
-  };
+  }
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {

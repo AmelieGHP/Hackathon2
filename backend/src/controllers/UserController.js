@@ -23,7 +23,8 @@ const signInUser = (req, res) => {
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: "1h",
       });
-      res.location(`/users/${result.insertId}`).send({ token, user: req.body }).status(201);
+      const id_user = result[0].insertId;
+      res.location(`/users/${result.insertId}`).send({ id_user: id_user, token, user: req.body, }).status(201);
     })
     .catch((err) => {
       console.error(err);

@@ -1,7 +1,5 @@
-.home {
-  & .horseList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
+ .horseList {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+ }

@@ -99,9 +99,10 @@ input[type=number] {
   font-size: 16px;
 }
 
-@import "./pages/home.scss";
+@import "./pages/dashboard.scss";
 @import "./pages/horseInfo.scss";
 @import "./pages/loginPage.scss";
 
 @import "./components/header.scss";
 @import "./components/horseCard.scss";
+@import "./components/horseList.scss";

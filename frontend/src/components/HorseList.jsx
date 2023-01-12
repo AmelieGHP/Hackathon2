@@ -57,7 +57,6 @@ function Home() {
   console.log(user)
   return (
     <div className="home">
-      <Header />
       <div className="filter">
         <Filters
           stage0={stage0}

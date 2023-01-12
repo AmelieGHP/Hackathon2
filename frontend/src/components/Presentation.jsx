@@ -1,4 +1,11 @@
-<svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+import React from 'react';
+
+const Presentation = () => {
+    return (
+        <div className='vehicleofmonth'>
+            <div className='month'>
+                <div className='log'>
+                <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clipPath="url(#clip0_166_430)">
 <path d="M90.0176 16.2816L101.93 9.25247C102.519 10.1471 103.108 11.0417 103.698 11.9619L91.6571 19.1188C91.1192 18.1219 90.5556 17.1762 90.0176 16.2816Z" fill="#FFA726"/>
 <path d="M8.3731 68.527C9.73085 48.411 17.1857 27.2214 26.8692 11.8085C27.4585 10.8884 28.0477 9.96819 28.6369 9.09914L35.7074 13.3166L40.5236 16.1794C39.9856 17.074 39.422 17.9941 38.8841 18.991C29.7385 35.4519 19.8755 66.5333 29.2005 88.4129C35.0157 102.19 49.9766 109.117 65.0143 109.245C80.0777 109.245 95.0898 102.394 100.982 88.6686C110.461 66.8656 100.854 35.7075 91.8363 19.1955C91.2983 18.1986 90.7347 17.2529 90.1968 16.3583L95.0386 13.5211L102.135 9.35474C102.724 10.2494 103.313 11.144 103.877 12.0897C113.483 27.5793 120.759 48.8199 121.989 68.9615C121.989 69.1149 122.014 69.2938 121.989 69.4727C121.989 117.194 87.1482 130.076 65.4498 130L64.9375 130L64.4251 130C42.7267 129.923 8.01445 116.759 8.3731 69.0382C8.3731 68.8593 8.3731 68.6803 8.3731 68.527V68.527Z" fill="#D9A25F"/>
@@ -20,3 +27,28 @@
 </clipPath>
 </defs>
 </svg>
+            </div>
+                <div className='descript'>
+                    <h3>Vehicule of the month</h3>
+            <div className='alt'>
+            <h4>Altesse</h4>
+            
+                    <div className='plus'>
+                        <div className='type'>
+                        <p><span className='label'>Type:</span> Horse</p>
+                        <p><span className='label'>Horsepower:</span> 1cv</p>
+                        </div>
+                        <div className='type'>
+                        <p><span className='label'>Nb of seats:</span> 2</p> 
+                        <p><span className='label'>Mileage:</span> 1562 kms</p>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <img className="altesse" src={`${import.meta.env.VITE_BACKEND_URL}/assets/vehicles/black-mount-vehicle-image-horse-altesse.jpg`} alt="altesse"/>
+        </div>
+        </div>
+    );
+};
+
+export default Presentation;

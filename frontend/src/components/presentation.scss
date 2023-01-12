@@ -1,0 +1,10 @@
+.vehicleofmonth {
+    padding: 160, 80, 80, 80;
+    height: 20px;
+    width: 100%;
+    background-color: aqua;
+    
+    & p {
+        color: red;
+    }
+}

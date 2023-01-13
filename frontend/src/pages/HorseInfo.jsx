@@ -109,7 +109,6 @@ function HorseInfo() {
           )}
         </div>
         <div>
-
           <h3 >{vehicle && vehicle.model}</h3>
           <p > <span className="accentText boldText">Type : </span>{vehicle && vehicle.type}</p>
           <p > <span className="accentText boldText">Horsepower : </span>  {vehicle && vehicle.horsepower}</p>
@@ -120,16 +119,19 @@ function HorseInfo() {
         </div>
       </div>
       <div className="booking">
-        <Calendar
-          showNeighboringMonth={false}
-          minDetail="month"
-          maxDetail="month"
-          minDate={new Date()}
-          selectRange
-          returnValue="range"
-          tileDisabled={(e) => disableTile(e)}
-          onChange={(e) => showRange(e)}
-        />
+        <div className="calendarContainer">
+
+          <Calendar
+            showNeighboringMonth={false}
+            minDetail="month"
+            maxDetail="month"
+            minDate={new Date()}
+            selectRange
+            returnValue="range"
+            tileDisabled={(e) => disableTile(e)}
+            onChange={(e) => showRange(e)}
+          />
+        </div>
         <div className="confirm">
           <p className="boldText">Book this vehicle </p>
           <p>From  {borrowingDate || '...'} to  {returnDate || '...'}</p>

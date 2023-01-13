@@ -12,6 +12,7 @@
     padding: 30px;
     border-radius: 10px;
     gap: 30px;
+    background-color: #ffffff;
 
     & h3 {
       text-align: center;
@@ -32,6 +33,14 @@
     height: fit-content;
     margin-top: 40px;
     gap: 60px;
+
+    & .calendarContainer {
+      width: fit-content;
+      height: fit-content;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: $shadowCard ;
+    }
 
     & .confirm {
       display: flex;
@@ -54,9 +63,7 @@
     max-width: 400px;
     margin: 1vh auto;
     font-family: $textFont;
-    box-shadow: $shadowCard ;
     padding: 20px;
-    border-radius: 10px;
 
     &__navigation {
       display: flex;
@@ -76,6 +83,7 @@
       &__label {
         flex-grow: 0 !important;
         padding: 5px 10px;
+        background-color: #ffffff;
 
         & span {
           color: $buttonColor;

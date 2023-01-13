@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import VehicleList from "./VehicleList";
+import { Link } from "react-router-dom";
 
 function OurVehicles() {
   const [allCars, setAllCars] = useState([]);
@@ -31,7 +32,7 @@ function OurVehicles() {
             <VehicleList model={el.model} type={el.type} image={el.image} id_vehicle={el.id_vehicle} />
           );
         })}
-      <p className="more_vehicles">See more vehicles...</p>
+      <Link to={"/horseList"} ><button className="clearButton">See all vehicles</button></Link>
     </ul>
   );
 }

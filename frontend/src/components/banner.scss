@@ -1,0 +1,14 @@
+.bannerImage {
+    position: relative;
+    z-index: -1;
+    height: 20vh;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        position: relative;
+        top: -250px;
+        width: 100%;
+        height: auto;
+    }
+}

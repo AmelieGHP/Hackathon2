@@ -20,7 +20,7 @@ function LoginForm() {
     e.preventDefault();
     if (email && password) {
       axios
-        .post("http://localhost:5000/login", {
+        .post(`${import.meta.env.VITE_BACKEND_URL}/login`, {
           email,
           password,
         })
@@ -56,20 +56,23 @@ function LoginForm() {
   return (
     <div className="loginForm">
       <form>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="jane.doe@example.com"
-          onKeyPress={handleKeyPress}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          required
-        />
-        <label htmlFor="password">Password</label>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="jane.doe@example.com"
+            onKeyPress={handleKeyPress}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            required
+          />
+        </div>
+
         <div className="passwordInput">
+          <label htmlFor="password">Password</label>
           <input
             type={!visiblePassword ? "password" : "text"}
             name="pwd"

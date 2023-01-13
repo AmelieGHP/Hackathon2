@@ -5,38 +5,36 @@
   flex-direction: column;
   gap: 16px;
 
-  .our_vehicles {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
+  & .clearButton {
+    color: $secondaryTextColor;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $textFont;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $accentColor;
+    }
   }
 
   &_list {
-    height: 20vh;
+    height: 115px;
+    width: 400px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     list-style: none;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: $shadowCard;
+    background-color: white;
 
     &_image {
       img {
         object-fit: cover;
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-      }
-    }
-
-    button {
-      transition: all 0.2s ease-in;
-      background: $buttonColor;
-      padding: 12px 16px;
-
-      &:hover {
-        background: $hoverColor;
-        cursor: pointer;
+        height: 80px;
+        width: 80px;
+        border-radius: 6px;
       }
     }
   }

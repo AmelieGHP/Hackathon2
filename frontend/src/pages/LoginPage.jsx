@@ -5,7 +5,7 @@ import SubscribeForm from "../components/SubscribeForm";
 import blackLogo from "../assets/black-mount-logo-black.svg";
 
 function Login() {
-  const [userExist, setUserExist] = useState(false);
+  const [userExist, setUserExist] = useState(true);
   return (
     <div className="loginPage">
       <VisualLogin />

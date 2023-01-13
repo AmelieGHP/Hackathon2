@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import VehicleList from "./VehicleList";
+import { Link } from "react-router-dom";
 
 function OurVehicles() {
   const [allCars, setAllCars] = useState([]);
 
   const getAllCars = () => {
     axios
-      .get(`http://localhost:5000/vehicles`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/vehicles`)
       .then((res) => {
         setAllCars(res.data.slice(0, 3));
         console.warn(allCars);
@@ -23,20 +24,15 @@ function OurVehicles() {
 
   return (
     <ul className="dash_vehicle_elements">
-      <p className="our_vehicles">Our vehicles</p>
+      <h4>Our vehicles</h4>
       {allCars.length > 0 &&
         allCars.map((el) => {
           console.warn(el);
           return (
-            <VehicleList
-              model={el.model}
-              type={el.type}
-              image={el.image}
-              id={el.id_vehicle}
-            />
+            <VehicleList model={el.model} type={el.type} image={el.image} id_vehicle={el.id_vehicle} />
           );
         })}
-      <p className="more_vehicles">See more vehicles...</p>
+      <Link to={"/horseList"}><button className="clearButton">See all vehicles</button></Link>
     </ul>
   );
 }

@@ -8,7 +8,14 @@ import Reservation from "./pages/Reservation";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState({
+    phone: "",
+    type_of_license: "0",
+    firstname: "Nicolas",
+    lastname: "Ryngite",
+    email: "",
+    id_user: 1,
+  });
   return (
     <div className="App">
       <UserContext.Provider value={{ user, setUser }}>
@@ -20,7 +27,7 @@ function App() {
           <Route path="/reservation/:id" element={<Reservation />} />
         </Routes>
       </UserContext.Provider>
-    </div>
+    </div >
   );
 }
 

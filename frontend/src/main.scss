@@ -15,7 +15,10 @@ $titleFont: "DM Serif Display", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffffff;
+}
+
+body {
+  background-color: $backgroundColor;
 }
 
 a {
@@ -36,19 +39,21 @@ h2 {
   line-height: 52px;
   color: $primaryTextColor;
   font-family: $titleFont;
+  letter-spacing: 1.5px;
 }
 
 h3 {
   font-size: 32px;
   line-height: 42px;
-  color: $hoverColor;
+  color: $primaryTextColor;
   font-family: $titleFont;
+  letter-spacing: 1px;
 }
 
 h4 {
   font-size: 20px;
   line-height: 32px;
-  color: $hoverColor;
+  color: $primaryTextColor;
   font-family: $textFont;
 }
 
@@ -61,6 +66,10 @@ p {
 
 .accentText {
   color: $accentColor;
+}
+
+.boldText {
+  font-weight: 700;
 }
 
 small {
@@ -78,8 +87,11 @@ button {
 
 input[type="text"],
 input[type="email"],
-input[type="number"] {
+input[type="number"],
+input[type="date"],
+select {
   all: unset;
+  font-family: $textFont;
 }
 
 .primaryButton {
@@ -91,10 +103,12 @@ input[type="number"] {
   font-size: 16px;
   transition: 0.3s ease-in-out;
   padding: 0 20px;
-}
+  transition: 0.3s ease-in;
+  cursor: pointer;
 
-.primaryButton:hover {
-  background-color: $hoverColor;
+  &:hover {
+    background-color: $hoverColor;
+  }
 }
 
 .secondaryButton {
@@ -104,6 +118,13 @@ input[type="number"] {
   min-width: 89px;
   width: fit-content;
   font-size: 16px;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    color: $hoverColor;
+    background-color: $hoverColor;
+  }
 }
 
 @import "./pages/dashboard.scss";
@@ -116,3 +137,6 @@ input[type="number"] {
 @import "./components/horseCard.scss";
 @import "./components/chart.scss";
 @import "./components/presentation.scss";
+@import "./components/listUser.scss";
+@import "./components/visualLogin.scss";
+@import "./components/banner.scss";

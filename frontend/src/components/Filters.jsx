@@ -1,90 +1,115 @@
-import React from "react";
+import React, { useState } from "react";
 import Proptypes from "prop-types";
+import Select from "react-select";
 
-function Filters({
-  stage0,
-  setStage0,
-  stage1,
-  setStage1,
-  stage2,
-  setStage2,
-  stage3,
-  setStage3,
-  stage4,
-  setStage4,
-}) {
-  const handleChange = () => {
-    setStage0(!stage0);
-    if (stage0 === false) {
-      setStage1(false);
-      setStage2(false);
-      setStage3(false);
-      setStage4(false);
+function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
+  const options = [
+    { value: "0", label: "None" },
+    { value: "1", label: "BHS stage 1" },
+    { value: "2", label: "BHS stage 2" },
+    { value: "3", label: "BHS stage 3" },
+    { value: "4", label: "BHS stage 4" },
+  ];
+  const [selectedOption, setSelectedOption] = useState([]);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const handleChange = (e) => {
+    const tempArray = [];
+    for (let i = 0; i < e.length; i++) {
+      const { value } = e[i];
+      tempArray.push(value);
+      console.log(e[i].value);
     }
-    if (stage0 === true) {
-      setStage1(true);
-      setStage2(true);
-      setStage3(true);
-      setStage4(true);
-    }
+    console.log(tempArray);
+    setSelectedOption(tempArray);
   };
+  const handleClick = () => {
+    if (selectedOption.length > 0) {
+      if (selectedOption.includes("0")) {
+        setStage0(true);
+      } else {
+        setStage0(false);
+      }
+      if (selectedOption.includes("1")) {
+        setStage1(true);
+      } else {
+        setStage1(false);
+      }
+      if (selectedOption.includes("2")) {
+        setStage2(true);
+      } else {
+        setStage2(false);
+      }
+      if (selectedOption.includes("3")) {
+        setStage3(true);
+      } else {
+        setStage3(false);
+      }
+      if (selectedOption.includes("4")) {
+        setStage4(true);
+      } else {
+        setStage4(false);
+      }
+    } else {
+      setStage0(true);
+      setStage1(true);
+      setStage1(true);
+      setStage1(true);
+      setStage1(true);
+    }
+
+  };
+
+  useState(() => {
+    console.log(selectedOption);
+  }, [selectedOption]);
   return (
     <div className="filters">
-      <div className="type filter">
-        <h4>License required</h4>
-        <div className="inputContainer">
+      <p className="accentText boldText">Filter by</p>
+      <div className="typeFilter">
+        <label>Type of license needed</label>
+        <Select
+          onChange={(e) => {
+            handleChange(e);
+          }}
+          options={options}
+          isMulti
+          placeholder="Type of License"
+          className="dropdown"
+        />
+      </div>
+      <div className="calendarsBox">
+        <div>
+          <label htmlFor="startDate"> Pick up date </label>
           <input
-            type="checkbox"
-            id="stage0"
-            name="stage0"
-            checked={stage0}
-            onChange={() => {
-              handleChange();
-            }}
+            type="date"
+            id="startDate"
+            name="startDate"
+            value={startDate}
+            placeholder="Pick up date"
+            onChange={(e) => setStartDate(e.target.value)}
           />
-          <label htmlFor="stage0">None</label>
         </div>
-        <div className="inputContainer">
+        <div>
+          <label htmlFor="endDate"> Return date </label>
           <input
-            type="checkbox"
-            id="stage1"
-            name="stage1"
-            checked={stage1}
-            onChange={() => setStage1(!stage1)}
+            type="date"
+            min={startDate}
+            id="endDate"
+            name="endDate"
+            value={endDate}
+            placeholder="Return date"
+            onChange={(e) => setEndDate(e.target.value)}
           />
-          <label htmlFor="stage1">BHS stage 1</label>
-        </div>
-        <div className="inputContainer">
-          <input
-            type="checkbox"
-            id="stage2"
-            name="stage2"
-            checked={stage2}
-            onChange={() => setStage2(!stage2)}
-          />
-          <label htmlFor="stage2">BHS stage 2</label>
-        </div>
-        <div className="inputContainer">
-          <input
-            type="checkbox"
-            id="stage3"
-            name="stage3"
-            checked={stage3}
-            onChange={() => setStage3(!stage3)}
-          />
-          <label htmlFor="stage3">BHS stage 3</label>
-        </div>
-        <div className="inputContainer">
-          <input
-            type="checkbox"
-            id="stage4"
-            name="stage4"
-            checked={stage4}
-            onChange={() => setStage4(!stage4)}
-          />
-          <label htmlFor="stage4">BHS stage 4</label>
         </div>
       </div>
+      <button
+        type="button"
+        className="primaryButton"
+        onClick={() => handleClick()}
+      >
+        Search
+      </button>
     </div>
   );
 }

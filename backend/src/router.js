@@ -17,6 +17,8 @@ router.get("/verif", verifyToken, userController.welcome);
 // Route pour récupérer tous les véhicules
 
 router.get("/vehicles", vehicleController.getAllVehicles);
+router.get("/vehiclesAndLoans", vehicleController.getAllVehiclesAndLoans)
+
 router.get("/vehicles/:id", vehicleController.getVehiclesById);
 
 router.get("/users", userController.getUsers);

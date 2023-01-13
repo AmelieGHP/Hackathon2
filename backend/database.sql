@@ -119,10 +119,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 INSERT INTO user(firstname, lastname, email, password, phone, type_of_license) VALUES
 ("Nicolas", "Ryngite", "nicolas.ryngite@gmail.com", "$argon2id$v=19$m=65536,t=5,p=1$lo23UvsV7KbmlnOKa7NesA$OB/HDk192k8dstBDHygpiezBxyAiMZefKNx7l11Ok9A", "0678658978", "7"),
-("Amelie", "Poulin", "amelie.poulin@gmail.com", "50980", "0756457876", "3"),
-("Naomi", "Molette", "naomi.molettegmail.com", "67409", "0796789876", "6"),
-("Nathalie", "Bounty", "nathalie.bounty@gmail.com", "07934", "07998704435", "4"),
-("Lucas", "Pote", "lucas.pote@gmail.com", "09087","0677856537", "5");
+("Amelie", "Poulin", "amelie.poulin@gmail.com", "$argon2id$v=19$m=65536,t=5,p=1$lo23UvsV7KbmlnOKa7NesA$OB/HDk192k8dstBDHygpiezBxyAiMZefKNx7l11Ok9A", "0756457876", "3"),
+("Naomi", "Molette", "naomi.molettegmail.com", "$argon2id$v=19$m=65536,t=5,p=1$lo23UvsV7KbmlnOKa7NesA$OB/HDk192k8dstBDHygpiezBxyAiMZefKNx7l11Ok9A", "0796789876", "6"),
+("Nathalie", "Bounty", "nathalie.bounty@gmail.com", "$argon2id$v=19$m=65536,t=5,p=1$lo23UvsV7KbmlnOKa7NesA$OB/HDk192k8dstBDHygpiezBxyAiMZefKNx7l11Ok9A", "07998704435", "4"),
+("Lucas", "Pote", "lucas.pote@gmail.com", "$argon2id$v=19$m=65536,t=5,p=1$lo23UvsV7KbmlnOKa7NesA$OB/HDk192k8dstBDHygpiezBxyAiMZefKNx7l11Ok9A","0677856537", "5");
 
 INSERT INTO company(name, phone, address) VALUES
 ("Black Mount", "0244276809", "4 rue Baron 44000 Nantes");

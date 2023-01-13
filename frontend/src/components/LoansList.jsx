@@ -1,10 +1,8 @@
 import React from "react";
 import Proptypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-
-function VehicleList({ model, type, image, id_vehicle }) {
+function VehicleList({ model, type, image, id }) {
   const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${image}`;
   const navigate = useNavigate();
   return (
@@ -13,13 +11,13 @@ function VehicleList({ model, type, image, id_vehicle }) {
         <img src={pathToImages} alt="profile of our horse" />
       </div>
       <div className="dash_vehicle_elements_list_paragraph">
-        <p><strong>{model}</strong></p>
+        <p>{model}</p>
         <p>{type}</p>
       </div>
       <div>
-        <Link to={`/info/${id_vehicle}`}>
-          <button type="button" className="primaryButton">Book</button>
-        </Link>
+        <button type="button" onClick={() => navigate(`/info/${id}`)}>
+          Book
+        </button>
       </div>
     </li>
   );

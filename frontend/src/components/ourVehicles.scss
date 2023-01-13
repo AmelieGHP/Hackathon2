@@ -11,8 +11,16 @@
     text-align: center;
   }
 
+  & .clearButton {
+    color: $accentColor;
+    font-size: 16px;
+    font-family: $textFont;
+    background: none;
+  }
+
   &_list {
-    height: 20vh;
+    height: 115px;
+    width: 400px;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -24,16 +32,12 @@
     &_image {
       img {
         object-fit: cover;
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        border-radius: 6px;
       }
     }
 
-    button {
-      background-color: $buttonColor;
-      padding: 12px 16px;
-    }
   }
 
   .more_vehicles {

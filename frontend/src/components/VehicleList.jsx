@@ -1,7 +1,9 @@
 import React from "react";
 import Proptypes from "prop-types";
+import { Link } from "react-router-dom";
 
-function VehicleList({ model, type, image }) {
+
+function VehicleList({ model, type, image, id_vehicle }) {
   const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${image}`;
   return (
     <li className="dash_vehicle_elements_list">
@@ -13,7 +15,10 @@ function VehicleList({ model, type, image }) {
         <p>{type}</p>
       </div>
       <div>
-        <button type="button">Book</button>
+        <Link to={`/info/${id_vehicle}`}>
+
+          <button type="button" className="primaryButton">Book</button>
+        </Link>
       </div>
     </li>
   );

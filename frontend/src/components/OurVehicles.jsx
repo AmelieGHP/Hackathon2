@@ -28,7 +28,7 @@ function OurVehicles() {
         allCars.map((el) => {
           console.warn(el);
           return (
-            <VehicleList model={el.model} type={el.type} image={el.image} />
+            <VehicleList model={el.model} type={el.type} image={el.image} id_vehicle={el.id_vehicle} />
           );
         })}
       <p className="more_vehicles">See more vehicles...</p>

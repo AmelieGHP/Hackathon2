@@ -8,7 +8,7 @@ import OurVehicles from "../components/OurVehicles";
 function Dashboard() {
   return (
     <div className="dashboard">
-      <Header />
+      {/* <Header /> */}
       <div className="toto">
         <div className="pres">
           <Presentation />

@@ -19,8 +19,8 @@ function VehicleList({ model, type, imageSrc, borrowDate, returnDate, id }) {
         </div>
         </div>
         <div>
-        <p>Borrowing date :{borrowDate}</p>
-        <p>Return date :{returnDate}</p>
+        <p>Borrowing date : {borrowDate}</p>
+        <p>Return date : {returnDate}</p>
         </div>
       <div>
         <button type="button" className="secondaryButton" onClick={() => navigate(`/info/${id}`)}>

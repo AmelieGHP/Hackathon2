@@ -15,7 +15,6 @@ $titleFont: "DM Serif Display", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffffff;
 }
 
 a {
@@ -85,8 +84,11 @@ button {
 
 input[type="text"],
 input[type="email"],
-input[type="number"] {
+input[type="number"],
+input[type="date"],
+select {
   all: unset;
+  font-family: $textFont;
 }
 
 .primaryButton {
@@ -113,6 +115,8 @@ input[type="number"] {
   font-size: 16px;
 }
 
+@import "./app.scss";
+
 @import "./pages/dashboard.scss";
 @import "./pages/horseInfo.scss";
 @import "./pages/loginPage.scss";
@@ -126,4 +130,3 @@ input[type="number"] {
 @import "./components/listUser.scss";
 @import "./components/visualLogin.scss";
 @import "./components/listUser.scss";
-

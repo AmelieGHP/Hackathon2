@@ -4,7 +4,6 @@ import UserContext from "@components/context/UserContext";
 import axios from "axios";
 import HorseCard from "@components/HorseCard";
 import Filters from "@components/Filters";
-// import Header from "@components/Header";
 
 function Home() {
   const { user } = useContext(UserContext);

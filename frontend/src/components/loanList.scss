@@ -1,21 +1,27 @@
-.loanList{
-margin-left:640px;
-    & .dash_vehicle_elements_list {
-width : 800px;
-height : 140px;
-margin : 15px 0;
-    }
-    & button {
-        border : 1px solid $buttonColor
-    }
+.rightContainer {
+    display: flex;
+    flex-direction: column;
 
-    & .description {
-        display:flex;
 
-        & div {
-            display: flex; 
-            flex-direction: column;
-            gap:8px;
+    .loanList {
+        display: flex;
+        margin-left: 640px;
+        gap: 60px;
+
+        & .dash_vehicle_elements_list {
+            width: 800px;
+            height: 140px;
+            margin: 15px 0;
+        }
+
+        & .description {
+            display: flex;
+
+            & div {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
         }
     }
 }

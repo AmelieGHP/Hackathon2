@@ -119,11 +119,12 @@ select {
   width: fit-content;
   font-size: 16px;
   transition: 0.3s ease-in;
+  border: 1px solid $buttonColor;
   cursor: pointer;
 
   &:hover {
     color: $hoverColor;
-    background-color: $hoverColor;
+    border: 1px solid $hoverColor;
   }
 }
 

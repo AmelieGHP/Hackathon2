@@ -1,9 +1,9 @@
 .dash_vehicle_elements {
-  margin-left: 24px;
   width: 35vw;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
+  align-items: center;
 
   & .clearButton {
     color: $secondaryTextColor;

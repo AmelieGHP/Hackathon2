@@ -17,6 +17,10 @@ $titleFont: "DM Serif Display", serif;
   box-sizing: border-box;
 }
 
+body {
+  background-color: $backgroundColor;
+}
+
 a {
   text-decoration: none;
   color: $primaryTextColor;
@@ -135,4 +139,4 @@ select {
 @import "./components/presentation.scss";
 @import "./components/listUser.scss";
 @import "./components/visualLogin.scss";
-// @import "./components/banner.scss";
+@import "./components/banner.scss";

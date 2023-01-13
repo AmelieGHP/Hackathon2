@@ -43,6 +43,7 @@
 
         & label {
           font-family: $textFont;
+          color: $accentColor;
           padding: 4px 20px;
         }
 
@@ -73,6 +74,7 @@
             border: 1px solid $secondaryTextColor;
             border-radius: 4px;
             padding: 0 20px;
+            align-items: center;
           }
         }
       }

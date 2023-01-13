@@ -109,7 +109,6 @@ function HorseInfo() {
           )}
         </div>
         <div>
-
           <h3 >{vehicle && vehicle.model}</h3>
           <p > <span className="accentText boldText">Type : </span>{vehicle && vehicle.type}</p>
           <p > <span className="accentText boldText">Horsepower : </span>  {vehicle && vehicle.horsepower}</p>

@@ -1,6 +1,5 @@
 import React from "react";
 import Chart from "@components/Chart";
-// import Header from "@components/Header";
 import Presentation from "@components/Presentation";
 import ListUser from "@components/ListUser";
 import OurVehicles from "../components/OurVehicles";
@@ -8,7 +7,6 @@ import OurVehicles from "../components/OurVehicles";
 function Dashboard() {
   return (
     <div className="dashboard">
-      <Header />
       <div className="toto">
         <div className="pres">
           <Presentation />

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $backgroundColor; // comment this later
+  background-color: $backgroundColor;
 
   & .horseList {
     display: flex;
@@ -28,6 +28,7 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: $shadowCard;
+    background-color: white;
 
     & .filters {
       display: flex;

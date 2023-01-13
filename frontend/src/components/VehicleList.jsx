@@ -11,12 +11,11 @@ function VehicleList({ model, type, image, id_vehicle }) {
         <img src={pathToImages} alt="profile of our horse" />
       </div>
       <div className="dash_vehicle_elements_list_paragraph">
-        <p>{model}</p>
+        <p><strong>{model}</strong></p>
         <p>{type}</p>
       </div>
       <div>
         <Link to={`/info/${id_vehicle}`}>
-
           <button type="button" className="primaryButton">Book</button>
         </Link>
       </div>

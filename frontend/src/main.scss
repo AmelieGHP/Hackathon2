@@ -28,7 +28,6 @@ h1 {
   line-height: 92px;
   color: $primaryTextColor;
   font-family: $titleFont;
-  letter-spacing: 2px;
 }
 
 h2 {
@@ -100,10 +99,12 @@ select {
   font-size: 16px;
   transition: 0.3s ease-in-out;
   padding: 0 20px;
-}
+  transition: 0.3s ease-in;
+  cursor: pointer;
 
-.primaryButton:hover {
-  background-color: $hoverColor;
+  &:hover {
+    background-color: $hoverColor;
+  }
 }
 
 .secondaryButton {
@@ -113,9 +114,14 @@ select {
   min-width: 89px;
   width: fit-content;
   font-size: 16px;
-}
+  transition: 0.3s ease-in;
+  cursor: pointer;
 
-@import "./app.scss";
+  &:hover {
+    color: $hoverColor;
+    background-color: $hoverColor;
+  }
+}
 
 @import "./pages/dashboard.scss";
 @import "./pages/horseInfo.scss";
@@ -129,3 +135,4 @@ select {
 @import "./components/presentation.scss";
 @import "./components/listUser.scss";
 @import "./components/visualLogin.scss";
+// @import "./components/banner.scss";

@@ -1,5 +1,33 @@
 const LoanModel = require("../models/LoanModel");
 
+const getAllLoans = (req, res) => {
+  LoanModel.allLoans()
+    .then(([loan]) => {
+      res.status(200).send(loan);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const getLoansByUserId = (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  console.warn(id);
+
+  LoanModel.findLoanByUserId(id)
+    .then(([user]) => {
+      if (user[0] != null) {
+        res.status(200).json(user);
+      } else {
+        res.sendStatus(404);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
 const getLoanByVehicleId = (req, res) => {
   const id = parseInt(req.params.id, 10);
 
@@ -20,7 +48,7 @@ const getLoanByVehicleId = (req, res) => {
 const postLoan = (req, res) => {
   LoanModel.postLoan(req)
     .then((result) => {
-      console.log(result);
+      console.warn(result);
       res.send({ loan: req.body }).status(201);
     })
     .catch((err) => {
@@ -30,6 +58,8 @@ const postLoan = (req, res) => {
 };
 
 module.exports = {
+  getAllLoans,
   getLoanByVehicleId,
+  getLoansByUserId,
   postLoan,
 };

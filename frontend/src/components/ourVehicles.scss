@@ -30,8 +30,14 @@
     }
 
     button {
-      background-color: $buttonColor;
+      transition: all 0.2s ease-in;
+      background: $buttonColor;
       padding: 12px 16px;
+
+      &:hover {
+        background: $hoverColor;
+        cursor: pointer;
+      }
     }
   }
 

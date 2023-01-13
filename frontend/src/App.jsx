@@ -4,6 +4,7 @@ import UserContext from "./components/context/UserContext";
 import Dashboard from "./pages/Dashboard";
 import HorseInfo from "./pages/HorseInfo";
 import HorseList from "./pages/HorseList";
+import Reservation from "./pages/Reservation";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/info/:id" element={<HorseInfo />} />
           <Route path="/home" element={<Dashboard />} />
           <Route path="/horseList" element={<HorseList />} />
+          <Route path="/reservation/:id" element={<Reservation />} />
         </Routes>
       </UserContext.Provider>
     </div>

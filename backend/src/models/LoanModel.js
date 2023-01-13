@@ -12,7 +12,7 @@ const allLoans = () => {
 
 const findLoanByUserId = (id) => {
   return db.query(
-    `SELECT id_loan, borrowing_date, return_date, vehicle.model, vehicle.type, vehicle.image 
+    `SELECT id_loan, borrowing_date, return_date, id_user, vehicle.id_vehicle, vehicle.model, vehicle.type, vehicle.image 
     FROM ${table} 
     INNER JOIN vehicle 
     ON loan.id_vehicle=vehicle.id_vehicle

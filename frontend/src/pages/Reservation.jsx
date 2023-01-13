@@ -12,7 +12,6 @@ function Reservation({ user }) {
       .get(`${import.meta.env.VITE_BACKEND_URL}/reservation/${id}`)
       .then(([res]) => {
         setAllLoansById(res.data);
-        console.warn(res);
       })
       .catch((err) => {
         console.error(err);

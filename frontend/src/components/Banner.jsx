@@ -1,4 +1,5 @@
 import React from 'react';
+import BannerImage from '@assets/black-mount-background-image.jpg';
 
 const Banner = () => {
     return (

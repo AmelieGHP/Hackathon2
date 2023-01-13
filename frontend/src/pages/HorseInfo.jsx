@@ -7,6 +7,7 @@ import parseISO from "date-fns/parseISO";
 import UserContext from "@components/context/UserContext";
 import axios from "axios";
 import Header from "../components/Header";
+import Banner from "../components/Banner";
 
 function HorseInfo() {
   const params = useParams();
@@ -99,54 +100,57 @@ function HorseInfo() {
   };
   return (<>
     <Header />
+    <div className="rightContainer">
+      <Banner />
+      <div className="horseInfo">
+        <div className="horseCardInfo">
+          <div className="imageContainer">
+            {vehicle && (
+              <img
+                alt="horse"
+                src={`${import.meta.env.VITE_BACKEND_URL}${vehicle.image}`}
+              />
+            )}
+          </div>
+          <div>
+            <h3 >{vehicle && vehicle.model}</h3>
+            <p > <span className="accentText boldText">Type : </span>{vehicle && vehicle.type}</p>
+            <p > <span className="accentText boldText">Horsepower : </span>  {vehicle && vehicle.horsepower}</p>
+            <p > <span className="accentText boldText">Seats : </span> {vehicle && vehicle.nb_of_places}</p>
+            <p > <span className="accentText boldText">Mileage : </span> {vehicle && vehicle.nb_of_km} km</p>
+            <p className="accentText boldText">Description : </p>
+            <p> Horses share many of the same physiologic characteristics of people and domestic pets, in that they have a circulatory system, a respiratory system, a nervous system, and so on.</p>
+          </div>
+        </div>
+        <div className="booking">
+          <div className="calendarContainer">
 
-    <div className="horseInfo">
-      <div className="horseCardInfo">
-        <div className="imageContainer">
-          {vehicle && (
-            <img
-              alt="horse"
-              src={`${import.meta.env.VITE_BACKEND_URL}${vehicle.image}`}
+            <Calendar
+              showNeighboringMonth={false}
+              minDetail="month"
+              maxDetail="month"
+              minDate={new Date()}
+              selectRange
+              returnValue="range"
+              tileDisabled={(e) => disableTile(e)}
+              onChange={(e) => showRange(e)}
             />
-          )}
-        </div>
-        <div>
-          <h3 >{vehicle && vehicle.model}</h3>
-          <p > <span className="accentText boldText">Type : </span>{vehicle && vehicle.type}</p>
-          <p > <span className="accentText boldText">Horsepower : </span>  {vehicle && vehicle.horsepower}</p>
-          <p > <span className="accentText boldText">Seats : </span> {vehicle && vehicle.nb_of_places}</p>
-          <p > <span className="accentText boldText">Mileage : </span> {vehicle && vehicle.nb_of_km} km</p>
-          <p className="accentText boldText">Description : </p>
-          <p> Horses share many of the same physiologic characteristics of people and domestic pets, in that they have a circulatory system, a respiratory system, a nervous system, and so on.</p>
-        </div>
-      </div>
-      <div className="booking">
-        <div className="calendarContainer">
-
-          <Calendar
-            showNeighboringMonth={false}
-            minDetail="month"
-            maxDetail="month"
-            minDate={new Date()}
-            selectRange
-            returnValue="range"
-            tileDisabled={(e) => disableTile(e)}
-            onChange={(e) => showRange(e)}
-          />
-        </div>
-        <div className="confirm">
-          <p className="boldText">Book this vehicle </p>
-          <p>From  {borrowingDate || '...'} to  {returnDate || '...'}</p>
-          <button
-            className="primaryButton"
-            type="button"
-            onClick={(e) => handleClick(e)}
-          >
-            Confirm
-          </button>
+          </div>
+          <div className="confirm">
+            <p className="boldText">Book this vehicle </p>
+            <p>From  {borrowingDate || '...'} to  {returnDate || '...'}</p>
+            <button
+              className="primaryButton"
+              type="button"
+              onClick={(e) => handleClick(e)}
+            >
+              Confirm
+            </button>
+          </div>
         </div>
       </div>
     </div>
+
   </>
   );
 }

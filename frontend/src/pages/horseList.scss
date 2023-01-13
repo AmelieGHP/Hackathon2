@@ -1,73 +1,79 @@
-.horseListPage {
-  padding-top: 60px;
+.rightContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: $backgroundColor;
 
-  & .horseList {
+  .horseListPage {
+    padding-top: 60px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 40px;
-    background: none;
-  }
+    flex-direction: column;
+    align-items: center;
+    margin-left: 360px;
+    margin-top: -110px;
 
-  & .clearButton {
-    background: none;
-    font-family: $textFont;
-    color: $accentColor;
-    font-weight: 700;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  & .filtersBox {
-    height: 112px;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: $shadowCard;
-    background-color: white;
-
-    & .filters {
+    & .horseList {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 60px;
+      margin-top: 40px;
+      background: none;
+    }
 
-      & label {
-        font-family: $textFont;
-        padding: 4px 20px;
-      }
+    & .clearButton {
+      background: none;
+      font-family: $textFont;
+      color: $accentColor;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 10px;
+    }
 
-      & .typeFilter {
+    & .filtersBox {
+      height: 112px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: $shadowCard;
+      background-color: white;
+
+      & .filters {
         display: flex;
-        flex-direction: column;
-      }
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
 
-      & .dropdown {
-        width: 300px;
-        color: $primaryTextColor;
-        border: 1px solid $secondaryTextColor;
-        border-radius: 4px;
-      }
+        & label {
+          font-family: $textFont;
+          padding: 4px 20px;
+        }
 
-      & .calendarsBox {
-        display: flex;
-        gap: 20px;
-
-        & div {
+        & .typeFilter {
           display: flex;
           flex-direction: column;
         }
 
-        & input {
-          height: 38px;
-          width: 200px;
+        & .dropdown {
+          width: 300px;
+          color: $primaryTextColor;
           border: 1px solid $secondaryTextColor;
           border-radius: 4px;
-          padding: 0 20px;
+        }
+
+        & .calendarsBox {
+          display: flex;
+          gap: 20px;
+
+          & div {
+            display: flex;
+            flex-direction: column;
+          }
+
+          & input {
+            height: 38px;
+            width: 200px;
+            border: 1px solid $secondaryTextColor;
+            border-radius: 4px;
+            padding: 0 20px;
+          }
         }
       }
     }

@@ -4,12 +4,14 @@ import Presentation from "@components/Presentation";
 import ListUser from "@components/ListUser";
 import OurVehicles from "../components/OurVehicles";
 import Header from "@components/Header";
+import Banner from "@components/Banner";
 
 function Dashboard() {
   return (
     <div>
       <Header />
-      <div>
+      <div className="rightContainer">
+        <Banner />
         <div className="dashboard">
           <div className="toto">
             <div className="pres">
@@ -27,7 +29,6 @@ function Dashboard() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

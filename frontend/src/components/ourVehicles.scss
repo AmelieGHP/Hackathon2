@@ -5,17 +5,17 @@
   flex-direction: column;
   gap: 16px;
 
-  .our_vehicles {
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-  }
-
   & .clearButton {
-    color: $accentColor;
+    color: $secondaryTextColor;
     font-size: 16px;
+    font-weight: 400;
     font-family: $textFont;
     background: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $accentColor;
+    }
   }
 
   &_list {

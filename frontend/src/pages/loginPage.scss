@@ -2,11 +2,10 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-
-  & .visualLogin {
-    width: auto;
-    flex: 1;
-  }
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: 0;
 
   & .loginSubscribe {
     padding: 80px;
@@ -26,7 +25,6 @@
       display: flex;
       gap: 4px;
       padding-top: 30px;
-      ;
     }
 
     & .clearButton {

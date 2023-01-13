@@ -4,6 +4,7 @@ import UserContext from "@components/context/UserContext";
 import axios from "axios";
 import HorseCard from "@components/HorseCard";
 import Filters from "@components/Filters";
+import Header from "../components/Header";
 
 function Home() {
   const { user } = useContext(UserContext);
@@ -59,7 +60,8 @@ function Home() {
     getHorses();
   }, []);
   console.log(user);
-  return (
+  return (<>
+    <Header />
     <div className="horseListPage">
       <div className="filtersBox">
         <Filters
@@ -134,6 +136,7 @@ function Home() {
           })}
       </div>
     </div>
+  </>
   );
 }
 

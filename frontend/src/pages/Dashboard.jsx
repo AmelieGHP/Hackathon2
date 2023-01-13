@@ -13,20 +13,18 @@ function Dashboard() {
       <div className="rightContainer">
         <Banner />
         <div className="dashboard">
-          <div className="toto">
-            <div className="pres">
-              <Presentation />
-              <hr className="hr1" />
-              <div className="stat">
-                <OurVehicles />
-                <div className="userstat">
-                  <Chart />
-                  <hr className="hr2" />
-                  <ListUser />
-                </div>
-              </div>
+          <Presentation />
+          <hr className="hr1" />
+          <div className="stat">
+            <OurVehicles />
+            <div className="userstat">
+              <Chart />
+              <hr className="hr2" />
+              <ListUser />
             </div>
           </div>
+
+
         </div>
       </div>
     </div>

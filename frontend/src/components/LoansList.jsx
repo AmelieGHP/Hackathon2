@@ -2,24 +2,33 @@ import React from "react";
 import Proptypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
-function VehicleList({ model, type, image, id }) {
-  const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${image}`;
+function VehicleList({ model, type, imageSrc, borrowDate, returnDate, id }) {
+  const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${imageSrc}`;
   const navigate = useNavigate();
   return (
+    <div className="loanList">
+
     <li className="dash_vehicle_elements_list">
       <div className="dash_vehicle_elements_list_image">
         <img src={pathToImages} alt="profile of our horse" />
       </div>
-      <div className="dash_vehicle_elements_list_paragraph">
-        <p>{model}</p>
+      <div className="dash_vehicle_elements_list_paragraph description">
+        <div>
+        <p className="boldText">{model}</p>
         <p>{type}</p>
-      </div>
+        </div>
+        </div>
+        <div>
+        <p>Borrowing date :{borrowDate}</p>
+        <p>Return date :{returnDate}</p>
+        </div>
       <div>
-        <button type="button" onClick={() => navigate(`/info/${id}`)}>
-          Book
+        <button type="button" className="secondaryButton" onClick={() => navigate(`/info/${id}`)}>
+          Cancel
         </button>
       </div>
     </li>
+    </div>
   );
 }
 

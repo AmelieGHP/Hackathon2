@@ -42,7 +42,7 @@ function Header() {
           </svg>
           <p>Our vehicles</p>
         </NavLink>
-        <NavLink to={"/home"} className={({ isActive }) => (isActive ? 'tabFocus' : 'tabDefault')}>
+        <NavLink to={"/reservation"} className={({ isActive }) => (isActive ? 'tabFocus' : 'tabDefault')}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_168_16915)">
               <path d="M18.9508 23.0009H18.9178C18.4068 22.9929 17.9208 22.7759 17.5738 22.4009L15.6558 20.5199C15.2718 20.1229 15.2808 19.4899 15.6778 19.1059C15.6788 19.1049 15.6798 19.1039 15.6808 19.1029C16.0778 18.7219 16.7078 18.7329 17.0908 19.1269L18.9518 20.9499L22.2928 17.6089C22.6828 17.2189 23.3168 17.2189 23.7068 17.6089C24.0968 17.9989 24.0968 18.6329 23.7068 19.0229L20.2858 22.4439C19.9338 22.8009 19.4528 23.0019 18.9508 23.0009V23.0009Z" fill="#B5C5F4" />

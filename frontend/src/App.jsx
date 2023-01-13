@@ -24,7 +24,7 @@ function App() {
           <Route path="/info/:id" element={<HorseInfo />} />
           <Route path="/home" element={<Dashboard />} />
           <Route path="/horseList" element={<HorseList />} />
-          <Route path="/reservation/:id" element={<Reservation />} />
+          <Route path="/reservation" element={<Reservation />} />
         </Routes>
       </UserContext.Provider>
     </div >

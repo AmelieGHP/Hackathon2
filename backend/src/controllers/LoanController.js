@@ -18,7 +18,8 @@ const getLoansByUserId = (req, res) => {
   LoanModel.findLoanByUserId(id)
     .then(([user]) => {
       if (user[0] != null) {
-        res.status(200).json(user);
+        console.log(user)
+        res.status(200).send(user);
       } else {
         res.sendStatus(404);
       }

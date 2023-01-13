@@ -29,6 +29,7 @@ h1 {
   line-height: 92px;
   color: $primaryTextColor;
   font-family: $titleFont;
+  letter-spacing: 2px;
 }
 
 h2 {
@@ -36,6 +37,7 @@ h2 {
   line-height: 52px;
   color: $primaryTextColor;
   font-family: $titleFont;
+  letter-spacing: 1.5px;
 }
 
 h3 {
@@ -43,6 +45,7 @@ h3 {
   line-height: 42px;
   color: $primaryTextColor;
   font-family: $titleFont;
+  letter-spacing: 1px;
 }
 
 h4 {
@@ -119,8 +122,8 @@ input[type="number"] {
 @import "./components/header.scss";
 @import "./components/horseCard.scss";
 @import "./components/chart.scss";
-@import "./components/list.scss";
 @import "./components/presentation.scss";
 @import "./components/listUser.scss";
 @import "./components/visualLogin.scss";
 @import "./components/listUser.scss";
+

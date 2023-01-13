@@ -5,11 +5,13 @@ import Dashboard from "./pages/Dashboard";
 import HorseInfo from "./pages/HorseInfo";
 import HorseList from "./pages/HorseList";
 import LoginPage from "./pages/LoginPage";
+import Header from "@components/Header";
 
 function App() {
   const [user, setUser] = useState("");
   return (
     <div className="App">
+      <Header />
       <UserContext.Provider value={{ user, setUser }}>
         <Routes>
           <Route path="/" element={<LoginPage />} />

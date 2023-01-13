@@ -2,7 +2,6 @@
   padding-top: 60px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
   align-items: center;
   background-color: $backgroundColor; // comment this later
 
@@ -11,15 +10,24 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 60px;
+    margin-top: 40px;
     background: none;
+  }
+
+  & .clearButton {
+    background: none;
+    font-family: $textFont;
+    color: $accentColor;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 10px;
   }
 
   & .filtersBox {
     height: 112px;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 1px 1px 6px grey; // delete this later
-    // box-shadow: $shadowCard;
+    box-shadow: $shadowCard;
 
     & .filters {
       display: flex;

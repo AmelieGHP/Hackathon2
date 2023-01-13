@@ -23,6 +23,7 @@ function Home() {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/vehicles`)
       .then((result) => {
+        console.log(result)
         for (let i = 0; i < result.data.length; i += 1) {
           if (result.data[i].type === "Rocking horse") {
             setStage0Required((array) => [...array, result.data[i]]);
@@ -51,6 +52,10 @@ function Home() {
         console.error(err);
       });
   };
+  const clearFilters = () => {
+    setStage0(true); setStage1(true); setStage2(true); setStage3(true); setStage4(true);
+  }
+
   useEffect(() => {
     getHorses();
   }, []);
@@ -66,7 +71,20 @@ function Home() {
           setStage4={setStage4}
         />
       </div>
+      <button className="clearButton" type="button" onClick={() => clearFilters()}>Show all</button>
       <div className="horseList">
+        {stage2 &&
+          stage2Required.map((horse) => {
+            return (
+              <Link to={`/info/${horse.id_vehicle}`}>
+                <HorseCard
+                  model={horse.model}
+                  type={horse.type}
+                  image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
+                />
+              </Link>
+            );
+          })}
         {stage0 &&
           stage0Required.map((horse) => {
             return (
@@ -81,18 +99,6 @@ function Home() {
           })}
         {stage1 &&
           stage1Required.map((horse) => {
-            return (
-              <Link to={`/info/${horse.id_vehicle}`}>
-                <HorseCard
-                  model={horse.model}
-                  type={horse.type}
-                  image={`${import.meta.env.VITE_BACKEND_URL}${horse.image}`}
-                />
-              </Link>
-            );
-          })}
-        {stage2 &&
-          stage2Required.map((horse) => {
             return (
               <Link to={`/info/${horse.id_vehicle}`}>
                 <HorseCard

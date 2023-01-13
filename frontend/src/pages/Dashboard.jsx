@@ -7,14 +7,20 @@ import OurVehicles from "../components/OurVehicles";
 
 function Dashboard() {
   return (
-    <div>
-      {/* <Header /> */}
-      <div className="dashboard">
-        <Presentation />
-        <div className="stat">
-          <OurVehicles />
-          <Chart />
-          <ListUser />
+    <div className="dashboard">
+      <Header />
+      <div className="toto">
+        <div className="pres">
+          <Presentation />
+          <hr className="hr1" />
+          <div className="stat">
+            <OurVehicles />
+            <div className="userstat">
+              <Chart />
+              <hr className="hr2" />
+              <ListUser />
+            </div>
+          </div>
         </div>
       </div>
     </div>

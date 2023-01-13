@@ -91,8 +91,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `blackMount`.`loan` (
   `id_loan` INT NOT NULL AUTO_INCREMENT,
-  `borrowing_date` DATE NULL,
-  `return_date` DATE NULL,
+  `borrowing_date` VARCHAR(45) NULL,
+  `return_date` VARCHAR(45) NULL,
   `id_vehicle` INT NOT NULL,
   `id_user` INT NOT NULL,
   PRIMARY KEY (`id_loan`, `id_vehicle`, `id_user`),
@@ -161,6 +161,7 @@ INSERT INTO loan (borrowing_date, return_date, id_vehicle, id_user) VALUES
 ("2023-01-24", "2023-01-29", 1, 1),
 ("2023-02-05", "2023-02-17", 2, 5),
 ("2023-02-10", "2023-02-14", 1, 4),
-("2023-03-05", "2023-03-22", 1, 1),
+("2023-03-05", "2023-03-22", 4, 1),
+("2023-02-10", "2023-02-18", 3, 1),
 ("2023-01-19", "2023-01-21", 2, 2)
 ;

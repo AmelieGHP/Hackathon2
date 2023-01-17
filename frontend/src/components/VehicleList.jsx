@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function VehicleList({ model, type, image, id_vehicle }) {
   const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${image}`;
+  console.log(pathToImages)
   const navigate = useNavigate();
   return (
     <li className="dash_vehicle_elements_list">

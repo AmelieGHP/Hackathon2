@@ -32,9 +32,18 @@ const postLoan = async (req) => {
   return request;
 };
 
+const deleteLoan = async (req) => {
+  const { id_loan } = req.query;
+  console.warn(req.query)
+  const deleteFromLoan = await db.query('DELETE FROM loan WHERE id_loan = ?', [id_loan]);
+
+  return deleteFromLoan;
+}
+
 module.exports = {
   findLoanByVehicleId,
   postLoan,
   allLoans,
   findLoanByUserId,
+  deleteLoan
 };

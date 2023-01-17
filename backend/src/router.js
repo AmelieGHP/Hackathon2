@@ -27,6 +27,7 @@ router.get("/loan", loanController.getAllLoans);
 router.get("/loan/:id", loanController.getLoanByVehicleId);
 router.get("/reservation/:id", loanController.getLoansByUserId);
 router.post("/postLoan", loanController.postLoan);
+router.delete("/deleteLoan", loanController.deleteLoan);
 
 // Route pour la création d'un utilisateur
 

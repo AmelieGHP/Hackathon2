@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Proptypes from "prop-types";
-import LoansList from "../components/LoansList";
 import UserContext from "@components/context/UserContext";
+import LoansList from "../components/LoansList";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 
 function Reservation() {
-
-  const { user } = useContext(UserContext)
+  const { user } = useContext(UserContext);
   console.warn(user);
   const [allLoansById, setAllLoansById] = useState([]);
   const [reset, setReset] = useState(true);
@@ -16,7 +15,7 @@ function Reservation() {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/reservation/${id}`)
       .then((res) => {
-        console.log(res)
+        console.log(res);
         setAllLoansById(res.data);
       })
       .catch((err) => {
@@ -29,14 +28,13 @@ function Reservation() {
   }, [reset]);
 
   return (
-
     <div>
       <Header />
       <div className="rightContainer">
         <Banner />
-        {allLoansById ?
+        {allLoansById ? (
           allLoansById.map((el) => {
-            console.log(el)
+            console.log(el);
             return (
               <LoansList
                 key={el.id_loan}
@@ -50,7 +48,10 @@ function Reservation() {
                 setReset={setReset}
               />
             );
-          }) : <p>No reservation yet</p>}
+          })
+        ) : (
+          <p>No reservation yet</p>
+        )}
       </div>
     </div>
   );

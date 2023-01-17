@@ -2,9 +2,9 @@ import React from "react";
 import Chart from "@components/Chart";
 import Presentation from "@components/Presentation";
 import ListUser from "@components/ListUser";
-import OurVehicles from "../components/OurVehicles";
 import Header from "@components/Header";
 import Banner from "@components/Banner";
+import OurVehicles from "../components/OurVehicles";
 
 function Dashboard() {
   return (
@@ -23,8 +23,6 @@ function Dashboard() {
               <ListUser />
             </div>
           </div>
-
-
         </div>
       </div>
     </div>

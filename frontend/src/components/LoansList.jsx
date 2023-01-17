@@ -3,24 +3,33 @@ import Proptypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
-function LoanList({ model, type, imageSrc, borrowDate, returnDate, reset, setReset, id_loan }) {
+function LoanList({
+  model,
+  type,
+  imageSrc,
+  borrowDate,
+  returnDate,
+  reset,
+  setReset,
+  id_loan,
+}) {
   const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${imageSrc}`;
 
   const deleteLoan = () => {
-    axios.delete(`${import.meta.env.VITE_BACKEND_URL}/deleteLoan/?id_loan=${id_loan}`).then(() => {
-
-      setReset(!reset)
-    }
-    )
+    axios
+      .delete(
+        `${import.meta.env.VITE_BACKEND_URL}/deleteLoan/?id_loan=${id_loan}`
+      )
+      .then(() => {
+        setReset(!reset);
+      })
       .catch((err) => {
         console.error(err);
       });
-  }
+  };
 
   return (
     <div className="loanList">
-
       <li className="dash_vehicle_elements_list">
         <div className="dash_vehicle_elements_list_image">
           <img src={pathToImages} alt="profile of our horse" />
@@ -36,12 +45,15 @@ function LoanList({ model, type, imageSrc, borrowDate, returnDate, reset, setRes
           <p>Return date : {returnDate}</p>
         </div>
         <div>
-          <button type="button" className="secondaryButton" onClick={() => deleteLoan()}>
+          <button
+            type="button"
+            className="secondaryButton"
+            onClick={() => deleteLoan()}
+          >
             Cancel
           </button>
         </div>
       </li>
-
     </div>
   );
 }

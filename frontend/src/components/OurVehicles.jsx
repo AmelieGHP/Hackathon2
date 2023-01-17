@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import VehicleList from "./VehicleList";
 import { Link } from "react-router-dom";
+import VehicleList from "./VehicleList";
 
 function OurVehicles() {
   const [allCars, setAllCars] = useState([]);
@@ -29,10 +29,17 @@ function OurVehicles() {
         allCars.map((el) => {
           console.warn(el);
           return (
-            <VehicleList model={el.model} type={el.type} image={el.image} id_vehicle={el.id_vehicle} />
+            <VehicleList
+              model={el.model}
+              type={el.type}
+              image={el.image}
+              id_vehicle={el.id_vehicle}
+            />
           );
         })}
-      <Link to={"/horseList"}><button className="clearButton">See all vehicles</button></Link>
+      <Link to="/horseList">
+        <button className="clearButton">See all vehicles</button>
+      </Link>
     </ul>
   );
 }

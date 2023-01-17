@@ -9,6 +9,19 @@
     margin-left: 360px;
     margin-top: -80px;
 
+    & .backButton {
+      color: #ffffff;
+      background: none;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      margin: 30px 0;
+    }
+
+    & .bottom {
+      color: $secondaryTextColor;
+    }
+
     & .horseCardInfo {
       width: 920px;
       height: 360px;

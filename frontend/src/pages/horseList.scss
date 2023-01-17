@@ -22,7 +22,7 @@
     & .clearButton {
       background: none;
       font-family: $textFont;
-      color: $accentColor;
+      color: $secondaryTextColor;
       font-weight: 700;
       font-size: 16px;
       margin-top: 10px;
@@ -57,6 +57,7 @@
           color: $primaryTextColor;
           border: 1px solid $secondaryTextColor;
           border-radius: 4px;
+          font-family: $textFont;
         }
 
         & .calendarsBox {

@@ -11,23 +11,24 @@
     width: 420px;
     height: auto;
 
-    & a {
-      & img {
+    a {
+      img {
         max-width: 80px;
         max-height: 80px;
         border: 6px solid white;
         border-radius: 50%;
         box-shadow: 4px 4px 20px rgba(56, 78, 119, 0.2);
-        transition: transform all .3s ease-in;
+        transition: 0.3s cubic-bezier(0.6, 0.03, 0.28, 0.98); 
+        transform: scale(1);
 
         &:hover {
+          transition: 0.3s cubic-bezier(0.6, 0.03, 0.28, 0.98);
           transform: scale(1.08);
         }
       }
-      
-      & p {
-        text-align: "center";
-        opacity: "0.5"; 
+      p {
+        text-align: center;
+        opacity: 0.5;
       }
     }
   }

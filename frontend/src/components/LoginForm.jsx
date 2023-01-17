@@ -26,7 +26,7 @@ function LoginForm() {
         })
         .then((res) => {
           const { token } = res.data;
-          console.log(res.data.user);
+          // console.log(res.data.user);
           setUser({
             phone: res.data.user.phone,
             type_of_license: res.data.user.type_of_license,

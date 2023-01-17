@@ -16,6 +16,7 @@
       display: flex;
       align-items: center;
       margin: 30px 0;
+      cursor: pointer;
     }
 
     & .bottom {
@@ -67,7 +68,7 @@
         gap: 8px;
 
         & .boldText {
-          color: $buttonColor;
+          color: $accentColor;
         }
 
         & button {
@@ -89,7 +90,7 @@
 
         &__arrow {
           background: none;
-          color: $buttonColor;
+          color: $accentColor;
           font-size: 20px;
         }
 
@@ -103,7 +104,7 @@
           background-color: #ffffff;
 
           & span {
-            color: $buttonColor;
+            color: $accentColor;
             font-size: 16px;
             font-weight: 700;
             text-transform: capitalize;
@@ -120,7 +121,7 @@
 
         &__weekdays {
           padding-bottom: 10px;
-          border-bottom: 1px solid $buttonColor;
+          border-bottom: 1px solid $accentColor;
 
           &__weekday {
             display: flex;
@@ -136,42 +137,59 @@
 
         &__days {
           &__day {
-            border-bottom: 1px dashed $buttonColor;
+            border-bottom: 1px dashed $accentColor;
             border-radius: 0;
             width: 50px;
             height: 50px;
             padding: 10px;
             background: none;
+            font-weight: 400;
           }
+
         }
       }
 
       &__tile--active {
-        color: #ffffff;
-        background: $buttonColor;
-        font-weight: 400;
+        color: $accentColor;
+        background: #ffffff;
+        font-weight: 700;
         border-radius: 0;
+        background-color: $backgroundColor;
 
         & abbr {
-          background: $buttonColor;
-          font-weight: 700;
+          background: none;
         }
+
+      }
+
+      & .react-calendar__tile--hover {
+        color: $accentColor;
+        background-color: #ffffff;
+        font-weight: 700;
+        background-color: $backgroundColor;
+
+      }
+
+      & button:disabled {
+        cursor: default;
+        font-weight: 400;
+      }
+
+      & button:enabled:hover,
+      & button:enabled:focus {
+        cursor: pointer;
+        color: $accentColor;
+        font-weight: 700;
+        background-color: $backgroundColor;
       }
 
       & .select {
         background-color: #f0f0f0;
-        color: $buttonColor;
-        font-weight: 500;
+        color: $accentColor;
         text-decoration: line-through;
+
       }
     }
 
-    & .notWorked {
-      & .react-calendar__month-view__days {
-        & abbr {
-          opacity: 0.4;
-        }
-      }
-    }
   }
 }

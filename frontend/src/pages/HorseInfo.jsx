@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import Calendar from "react-calendar";
 import isWithinInterval from "date-fns/isWithinInterval";
 import format from "date-fns/format";
@@ -103,6 +104,9 @@ function HorseInfo() {
     <div className="rightContainer">
       <Banner />
       <div className="horseInfo">
+        <button className="backButton boldText" onClick={() => { history.back() }}><IoMdArrowRoundBack color="#ffffff"
+          size={20} style={{ marginRight: "8px" }}
+        /> Go back</button>
         <div className="horseCardInfo">
           <div className="imageContainer">
             {vehicle && (
@@ -148,6 +152,10 @@ function HorseInfo() {
             </button>
           </div>
         </div>
+        <button className="backButton bottom" onClick={() => { history.back() }}><IoMdArrowRoundBack color="#B5C5F4"
+          size={20} style={{ marginRight: "8px" }}
+        />Go back</button>
+
       </div>
     </div>
 

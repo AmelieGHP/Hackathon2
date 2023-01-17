@@ -27,7 +27,7 @@
       height: 360px;
       display: flex;
       flex-direction: row;
-      box-shadow: $shadowCard ;
+      box-shadow: $shadowCard;
       padding: 30px;
       border-radius: 10px;
       gap: 30px;
@@ -43,7 +43,6 @@
         height: 300px;
         width: 300px;
       }
-
     }
 
     & .booking {
@@ -58,7 +57,7 @@
         height: fit-content;
         background-color: #ffffff;
         border-radius: 10px;
-        box-shadow: $shadowCard ;
+        box-shadow: $shadowCard;
       }
 
       & .confirm {
@@ -87,7 +86,6 @@
       &__navigation {
         display: flex;
         justify-content: space-evenly;
-
 
         &__arrow {
           background: none;

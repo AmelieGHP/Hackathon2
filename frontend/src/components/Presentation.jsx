@@ -103,11 +103,11 @@ function Presentation() {
       </div>
       <img
         className="altesse"
-        src={`${import.meta.env.VITE_BACKEND_URL
-          }/assets/vehicles/black-mount-vehicle-image-horse-altesse.jpg`}
+        src={`${
+          import.meta.env.VITE_BACKEND_URL
+        }/assets/vehicles/black-mount-vehicle-image-horse-altesse.jpg`}
         alt="altesse"
       />
-
     </div>
   );
 }

@@ -55,9 +55,41 @@
         & .dropdown {
           width: 300px;
           color: $primaryTextColor;
-          border: 1px solid $secondaryTextColor;
+          border: none;
           border-radius: 4px;
           font-family: $textFont;
+
+          & #react-select-2-listbox {
+            &>div>div:hover {
+              background-color: $backgroundColor;
+            }
+          }
+
+          &>div {
+            border: 1px solid $secondaryTextColor;
+
+            &>div>div {
+              background-color: #ffffff;
+
+              &>div {
+                font-family: $textFont;
+                font-size: 16px;
+              }
+
+              &>div[role=button]:hover {
+                color: $accentColor;
+                background-color: $backgroundColor;
+              }
+            }
+          }
+
+          &>div:focus {
+            outline: 1.5px solid $accentColor;
+          }
+        }
+
+        & input[type=date]:focus {
+          outline: 1.5px solid $accentColor;
         }
 
         & .calendarsBox {

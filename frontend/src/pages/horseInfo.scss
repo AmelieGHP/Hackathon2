@@ -16,6 +16,7 @@
       display: flex;
       align-items: center;
       margin: 30px 0;
+      cursor: pointer;
     }
 
     & .bottom {
@@ -142,19 +143,22 @@
             height: 50px;
             padding: 10px;
             background: none;
+            cursor: pointer;
           }
+
         }
       }
 
       &__tile--active {
-        color: #ffffff;
-        background: $buttonColor;
+        color: $buttonColor;
+        background: #ffffff;
         font-weight: 400;
         border-radius: 0;
 
         & abbr {
-          background: $buttonColor;
+          background: none;
           font-weight: 700;
+          text-decoration: underline;
         }
       }
 
@@ -166,8 +170,17 @@
       }
     }
 
+    & .react-calendar__tile--hover {
+      color: $buttonColor;
+      background-color: #ffffff;
+    }
+
     & .notWorked {
+
+      cursor: default;
+
       & .react-calendar__month-view__days {
+
         & abbr {
           opacity: 0.4;
         }

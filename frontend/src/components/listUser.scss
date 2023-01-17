@@ -8,11 +8,15 @@
     display: flex;
     gap: 30px;
     width: 420px;
-    height: 60px;
-  }
+    height: auto;
 
-  img {
-    width: 60px;
-    border-radius: 50%;
+    a{
+      img {
+        width: 80px;
+        border: 6px solid white;
+        border-radius: 50%;
+        box-shadow: 4px 4px 20px rgba(56, 78, 119, 0.2);
+      }
+    }
   }
 }

@@ -16,7 +16,7 @@ function ListUser() {
             }/assets/employees/Nathalie_Profile.png `}
             alt="utilisateur1"
           />
-          <p style={{ opacity: "0.5", textAlign: "center" }}>Nathalie</p>
+          <p>Nathalie</p>
         </a>
         <a
           href="https://www.linkedin.com/in/amelie-ghp/"
@@ -29,7 +29,7 @@ function ListUser() {
             }/assets/employees/Amelie_Profile.jpg`}
             alt="utilisateur2"
           />
-          <p style={{ opacity: "0.5", textAlign: "center" }}>Amélie</p>
+          <p>Amélie</p>
         </a>
         <a
           href="https://www.linkedin.com/in/naomisantos09/"
@@ -39,10 +39,10 @@ function ListUser() {
           <img
             src={`${
               import.meta.env.VITE_BACKEND_URL
-            }/assets/employees/Naomie_Profile.png`}
+            }/assets/employees/Naomi_Profile.png`}
             alt="utilisateur4"
           />
-          <p style={{ opacity: "0.5", textAlign: "center" }}>Naomie</p>
+          <p>Naomi</p>
         </a>
         <a
           href="https://www.linkedin.com/in/nicolas-michel-019510251/"
@@ -55,7 +55,7 @@ function ListUser() {
             }/assets/employees/Nicolas_Profile.jpg`}
             alt="utilisateur3"
           />
-          <p style={{ opacity: "0.5", textAlign: "center" }}>Nicolas</p>
+          <p>Nicolas</p>
         </a>
       </div>
     </div>

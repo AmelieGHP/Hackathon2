@@ -7,15 +7,27 @@
   & .listEmp {
     display: flex;
     gap: 30px;
+    max-width: 100%;
     width: 420px;
     height: auto;
 
-    a{
-      img {
-        width: 80px;
+    & a {
+      & img {
+        max-width: 80px;
+        max-height: 80px;
         border: 6px solid white;
         border-radius: 50%;
         box-shadow: 4px 4px 20px rgba(56, 78, 119, 0.2);
+        transition: transform all .3s ease-in;
+
+        &:hover {
+          transform: scale(1.08);
+        }
+      }
+      
+      & p {
+        text-align: "center";
+        opacity: "0.5"; 
       }
     }
   }

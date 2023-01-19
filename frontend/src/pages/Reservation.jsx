@@ -1,22 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Proptypes from "prop-types";
-import LoansList from "../components/LoansList";
 import UserContext from "@components/context/UserContext";
+import LoansList from "../components/LoansList";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 
 function Reservation() {
-
-  const { user } = useContext(UserContext)
+  const { user } = useContext(UserContext);
   console.warn(user);
   const [allLoansById, setAllLoansById] = useState([]);
-  // const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${image}`;
+  const [reset, setReset] = useState(true);
   const getAllLoansById = (id) => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/reservation/${id}`)
       .then((res) => {
-        console.log(res)
+        console.log(res);
         setAllLoansById(res.data);
       })
       .catch((err) => {
@@ -26,30 +25,34 @@ function Reservation() {
 
   useEffect(() => {
     getAllLoansById(user.id_user);
-    console.warn(allLoansById);
-  }, []);
+  }, [reset]);
 
   return (
-    
     <div>
       <Header />
-    <div className="rightContainer">
-      <Banner />
-      {allLoansById ?
-        allLoansById.map((el) => {
-          console.log(el)
-          return (
-            <LoansList
-              key={el.id_loan}
-              model={el.model}
-              type={el.type}
-              borrowDate={el.borrowing_date}
-              returnDate={el.return_date}
-              imageSrc={el.image}
-            />
-          );
-        }) : <p>No reservation yet</p>}
-    </div>
+      <div className="rightContainer">
+        <Banner />
+        {allLoansById ? (
+          allLoansById.map((el) => {
+            console.log(el);
+            return (
+              <LoansList
+                key={el.id_loan}
+                id_loan={el.id_loan}
+                model={el.model}
+                type={el.type}
+                borrowDate={el.borrowing_date}
+                returnDate={el.return_date}
+                imageSrc={el.image}
+                reset={reset}
+                setReset={setReset}
+              />
+            );
+          })
+        ) : (
+          <p>No reservation yet</p>
+        )}
+      </div>
     </div>
   );
 }

@@ -27,7 +27,7 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
         </Routes>
       </UserContext.Provider>
-    </div >
+    </div>
   );
 }
 

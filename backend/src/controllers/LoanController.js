@@ -58,9 +58,20 @@ const postLoan = (req, res) => {
     });
 };
 
+const deleteLoan = (req, res) => {
+  LoanModel.deleteLoan(req).then((result) => {
+    console.warn(result);
+    res.sendStatus(200)
+  }).catch((err) => {
+    console.error(err);
+    res.status(500).send("Error canceling the reservation");
+  });
+};
+
 module.exports = {
   getAllLoans,
   getLoanByVehicleId,
   getLoansByUserId,
   postLoan,
+  deleteLoan
 };

@@ -1,41 +1,66 @@
 import React, { useState } from "react";
 import Proptypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function VehicleList({ model, type, imageSrc, borrowDate, returnDate, id }) {
+function LoanList({
+  model,
+  type,
+  imageSrc,
+  borrowDate,
+  returnDate,
+  reset,
+  setReset,
+  id_loan,
+}) {
   const pathToImages = `${import.meta.env.VITE_BACKEND_URL}${imageSrc}`;
-  const [show, setShow] = useState(true);
+
+  const deleteLoan = () => {
+    axios
+      .delete(
+        `${import.meta.env.VITE_BACKEND_URL}/deleteLoan/?id_loan=${id_loan}`
+      )
+      .then(() => {
+        setReset(!reset);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
     <div className="loanList">
-
-{show && <li className= "dash_vehicle_elements_list">
-      <div className= "dash_vehicle_elements_list_image">
-        <img src={pathToImages} alt="profile of our horse" />
-      </div>
-      <div className="dash_vehicle_elements_list_paragraph description">
+      <li className="dash_vehicle_elements_list">
+        <div className="dash_vehicle_elements_list_image">
+          <img src={pathToImages} alt="profile of our horse" />
+        </div>
+        <div className="dash_vehicle_elements_list_paragraph description">
+          <div>
+            <p className="boldText">{model}</p>
+            <p>{type}</p>
+          </div>
+        </div>
         <div>
-        <p className="boldText">{model}</p>
-        <p>{type}</p>
-        </div>
+          <p>Borrowing date : {borrowDate}</p>
+          <p>Return date : {returnDate}</p>
         </div>
         <div>
-        <p>Borrowing date : {borrowDate}</p>
-        <p>Return date : {returnDate}</p>
+          <button
+            type="button"
+            className="secondaryButton"
+            onClick={() => deleteLoan()}
+          >
+            Cancel
+          </button>
         </div>
-      <div>
-        <button type="button" className="secondaryButton" onClick={() => setShow(false)}>
-          Cancel
-        </button>
-      </div>
-    </li>
-}
+      </li>
     </div>
   );
 }
 
-export default VehicleList;
+export default LoanList;
 
-VehicleList.propTypes = {
+LoanList.propTypes = {
   image: Proptypes.string.isRequired,
   model: Proptypes.string.isRequired,
   type: Proptypes.string.isRequired,

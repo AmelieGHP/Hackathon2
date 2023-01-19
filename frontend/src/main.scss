@@ -32,6 +32,7 @@ h1 {
   line-height: 92px;
   color: $primaryTextColor;
   font-family: $titleFont;
+  font-weight: 400;
 }
 
 h2 {
@@ -125,6 +126,14 @@ select {
   &:hover {
     color: $hoverColor;
     border: 1px solid $hoverColor;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 40px;
+    line-height: 52px;
   }
 }
 

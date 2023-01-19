@@ -63,7 +63,7 @@ function HorseInfo() {
         })
         .then((result) => {
           if (result) {
-            navigate("/home", {});
+            navigate("/horselist", {});
           }
         })
         .catch((err) => {

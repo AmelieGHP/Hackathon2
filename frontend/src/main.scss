@@ -129,6 +129,25 @@ select {
   }
 }
 
+.primaryContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  .rightContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    .rightContainerContent {
+      padding: 80px;
+      margin-top: -160px;
+    }
+  }
+
+}
+
 
 @media screen and (max-width: 480px) {
   h1 {
@@ -137,17 +156,17 @@ select {
   }
 }
 
-@import "./pages/dashboard.scss";
-@import "./pages/horseInfo.scss";
-@import "./pages/loginPage.scss";
-@import "./pages/horseList.scss";
+@import "./styles/pages/dashboard.scss";
+@import "./styles/pages/horseInfo.scss";
+@import "./styles/pages/loginPage.scss";
+@import "./styles/pages/horseList.scss";
 
-@import "./components/ourVehicles.scss";
-@import "./components/header.scss";
-@import "./components/horseCard.scss";
-@import "./components/chart.scss";
-@import "./components/presentation.scss";
-@import "./components/listUser.scss";
-@import "./components/visualLogin.scss";
-@import "./components/banner.scss";
-@import "./components/loanList.scss";
+@import "./styles/components/ourVehicles.scss";
+@import "./styles/components/sideBarMenu.scss";
+@import "./styles/components/horseCard.scss";
+@import "./styles/components/chart.scss";
+@import "./styles/components/presentation.scss";
+@import "./styles/components/listUser.scss";
+@import "./styles/components/visualLogin.scss";
+@import "./styles/components/headerBannerHorses.scss";
+@import "./styles/components/loanList.scss";

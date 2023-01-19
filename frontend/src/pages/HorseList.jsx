@@ -4,8 +4,8 @@ import UserContext from "@components/context/UserContext";
 import axios from "axios";
 import HorseCard from "@components/HorseCard";
 import Filters from "@components/Filters";
-import Header from "../components/Header";
-import Banner from "../components/Banner";
+import Header from "../components/SideBarMenu";
+import Banner from "../components/HeaderBannerHorses";
 
 function Home() {
   const { user } = useContext(UserContext);
@@ -66,102 +66,99 @@ function Home() {
   }, []);
   console.log(user);
   return (
-    <>
+    <div className="primaryContainer">
       <Header />
       <div className="rightContainer">
         <Banner />
-        <div className="horseListPage">
-          <div className="filtersBox">
-            <Filters
-              setStage0={setStage0}
-              setStage1={setStage1}
-              setStage2={setStage2}
-              setStage3={setStage3}
-              setStage4={setStage4}
-            />
-          </div>
-          <button
-            className="clearButton"
-            type="button"
-            onClick={() => clearFilters()}
-          >
-            Show all
-          </button>
-          <div className="horseList">
-            {stage2 &&
-              stage2Required.map((horse) => {
-                return (
-                  <Link to={`/info/${horse.id_vehicle}`}>
-                    <HorseCard
-                      model={horse.model}
-                      type={horse.type}
-                      image={`${import.meta.env.VITE_BACKEND_URL}${
-                        horse.image
-                      }`}
-                    />
-                  </Link>
-                );
-              })}
-            {stage0 &&
-              stage0Required.map((horse) => {
-                return (
-                  <Link to={`/info/${horse.id_vehicle}`}>
-                    <HorseCard
-                      model={horse.model}
-                      type={horse.type}
-                      image={`${import.meta.env.VITE_BACKEND_URL}${
-                        horse.image
-                      }`}
-                    />
-                  </Link>
-                );
-              })}
-            {stage1 &&
-              stage1Required.map((horse) => {
-                return (
-                  <Link to={`/info/${horse.id_vehicle}`}>
-                    <HorseCard
-                      model={horse.model}
-                      type={horse.type}
-                      image={`${import.meta.env.VITE_BACKEND_URL}${
-                        horse.image
-                      }`}
-                    />
-                  </Link>
-                );
-              })}
-            {stage3 &&
-              stage3Required.map((horse) => {
-                return (
-                  <Link to={`/info/${horse.id_vehicle}`}>
-                    <HorseCard
-                      model={horse.model}
-                      type={horse.type}
-                      image={`${import.meta.env.VITE_BACKEND_URL}${
-                        horse.image
-                      }`}
-                    />
-                  </Link>
-                );
-              })}
-            {stage4 &&
-              stage4Required.map((horse) => {
-                return (
-                  <Link to={`/info/${horse.id_vehicle}`}>
-                    <HorseCard
-                      model={horse.model}
-                      type={horse.type}
-                      image={`${import.meta.env.VITE_BACKEND_URL}${
-                        horse.image
-                      }`}
-                    />
-                  </Link>
-                );
-              })}
+        <div className="rightContainerContent">
+          <div className="horseListPage">
+            <div className="filtersBox">
+              <Filters
+                setStage0={setStage0}
+                setStage1={setStage1}
+                setStage2={setStage2}
+                setStage3={setStage3}
+                setStage4={setStage4}
+              />
+            </div>
+            <button
+              className="clearButton"
+              type="button"
+              onClick={() => clearFilters()}
+            >
+              Show all
+            </button>
+            <div className="horseList">
+              {stage2 &&
+                stage2Required.map((horse) => {
+                  return (
+                    <Link to={`/info/${horse.id_vehicle}`}>
+                      <HorseCard
+                        model={horse.model}
+                        type={horse.type}
+                        image={`${import.meta.env.VITE_BACKEND_URL}${horse.image
+                          }`}
+                      />
+                    </Link>
+                  );
+                })}
+              {stage0 &&
+                stage0Required.map((horse) => {
+                  return (
+                    <Link to={`/info/${horse.id_vehicle}`}>
+                      <HorseCard
+                        model={horse.model}
+                        type={horse.type}
+                        image={`${import.meta.env.VITE_BACKEND_URL}${horse.image
+                          }`}
+                      />
+                    </Link>
+                  );
+                })}
+              {stage1 &&
+                stage1Required.map((horse) => {
+                  return (
+                    <Link to={`/info/${horse.id_vehicle}`}>
+                      <HorseCard
+                        model={horse.model}
+                        type={horse.type}
+                        image={`${import.meta.env.VITE_BACKEND_URL}${horse.image
+                          }`}
+                      />
+                    </Link>
+                  );
+                })}
+              {stage3 &&
+                stage3Required.map((horse) => {
+                  return (
+                    <Link to={`/info/${horse.id_vehicle}`}>
+                      <HorseCard
+                        model={horse.model}
+                        type={horse.type}
+                        image={`${import.meta.env.VITE_BACKEND_URL}${horse.image
+                          }`}
+                      />
+                    </Link>
+                  );
+                })}
+              {stage4 &&
+                stage4Required.map((horse) => {
+                  return (
+                    <Link to={`/info/${horse.id_vehicle}`}>
+                      <HorseCard
+                        model={horse.model}
+                        type={horse.type}
+                        image={`${import.meta.env.VITE_BACKEND_URL}${horse.image
+                          }`}
+                      />
+                    </Link>
+                  );
+                })}
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

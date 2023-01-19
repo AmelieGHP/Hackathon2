@@ -1,14 +1,8 @@
-.rightContainer {
-  display: flex;
-  flex-direction: column;
-
   .horseListPage {
     padding-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 360px;
-    margin-top: -110px;
 
     & .horseList {
       display: flex;
@@ -113,4 +107,3 @@
       }
     }
   }
-}

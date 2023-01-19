@@ -10,8 +10,7 @@
 
   & .loginSubscribe {
     padding: 80px;
-    flex: 1;
-    width: 100%;
+    width: 640px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +18,10 @@
     & h1 {
       margin-top: 60px;
       margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .accentText {
       text-align: center;
     }
 
@@ -140,13 +143,24 @@
 
     .loginSubscribe {
       padding: 0px 20px;
+      width: 100%;
+      padding-bottom: 40px;
 
       .blackMountBlackLogo {
         display: none;
       }
 
+      h1 {
+        margin-top: 40px;
+      }
+
       form {
         width: 300px;
+
+        .identity {
+          flex-direction: column;
+          width: 100%;
+        }
       }
     }
   }

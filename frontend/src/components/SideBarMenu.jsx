@@ -9,14 +9,13 @@ function Header() {
   const { lastname } = useContext(UserContext).user;
   console.log(firstname);
   return (
-    <div className="header">
+    <div className="sidebarContainer">
       <img src={Logo} alt="Logo Black Mount" />
       <div className="avatar">
         <div className="logo">
           <img
-            src={`${
-              import.meta.env.VITE_BACKEND_URL
-            }/assets/users/black-mount-user-image-nicolas-ryngite.jpg`}
+            src={`${import.meta.env.VITE_BACKEND_URL
+              }/assets/users/black-mount-user-image-nicolas-ryngite.jpg`}
             alt="Avatar Profil"
           />
         </div>

@@ -1,13 +1,14 @@
-.header {
+.sidebarContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 360px;
+  width: 360px;
   height: 100%;
   background-color: white;
   box-shadow: $shadowCard;
   padding: 60px;
   gap: 40px;
+  position: fixed;
 
   .avatar {
     display: flex;

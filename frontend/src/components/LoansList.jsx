@@ -36,15 +36,13 @@ function LoanList({
             <img src={pathToImages} alt="profile of our horse" />
           </div>
           <div className="description">
-            <div>
-              <p className="boldText">{model}</p>
-              <p>{type}</p>
-            </div>
+            <p className="boldText">{model}</p>
+            <p>{type}</p>
           </div>
         </div>
         <div>
-          <p>Borrowing date : {borrowDate}</p>
-          <p>Return date : {returnDate}</p>
+          <p><span className="label">Borrowing date:</span> {borrowDate}</p>
+          <p><span className="label">Return date:</span> {returnDate}</p>
         </div>
         <div>
           <button

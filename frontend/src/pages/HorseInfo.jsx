@@ -7,7 +7,7 @@ import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 import UserContext from "@components/context/UserContext";
 import axios from "axios";
-import Header from "../components/SideBarMenu";
+import Header from "../components/SidebarMenu";
 import Banner from "../components/HeaderBannerHorses";
 
 function HorseInfo() {

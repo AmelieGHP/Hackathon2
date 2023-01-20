@@ -1,6 +1,7 @@
   .vehiclesList {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     padding: 30px;
     gap: 30px;
@@ -21,6 +22,7 @@
 
     .description {
       display: flex;
+      flex-direction: column;
 
       div {
         display: flex;
@@ -28,4 +30,22 @@
         gap: 8px;
       }
     }
+
+    .label {
+      font-weight: 700;
+      color: $accentColor;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    .vehiclesList {
+      flex-direction: column;
+
+      .pictureContent {
+        flex-direction: column;
+      }
+    }
+
+
+
   }

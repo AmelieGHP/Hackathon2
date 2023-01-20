@@ -1,6 +1,6 @@
 .horseCard {
-  width: 260px;
-  height: 405px;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,23 +8,17 @@
   border-radius: 10px;
   box-shadow: $shadowCard;
   background-color: white;
+  gap: 20px;
 
-  & img {
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  img {
     width: 200px;
     height: 200px;
-    margin: 0 0 10px;
     border-radius: 6px;
-  }
-
-  & button {
-    margin: 20px 0 0;
-  }
-
-  & h4 {
-    margin: 8px 0;
-  }
-
-  & h3 {
-    margin: 8px 0;
   }
 }

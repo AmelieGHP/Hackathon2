@@ -3,7 +3,7 @@ import Presentation from "../components/Presentation";
 import ListUser from "../components/ListUser";
 import OurVehicles from "../components/OurVehicles";
 import Chart from "../components/Chart";
-import Header from "../components/SideBarMenu";
+import Header from "../components/SidebarMenu";
 import Banner from "../components/HeaderBannerHorses";
 
 function Dashboard() {

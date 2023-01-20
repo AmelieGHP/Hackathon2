@@ -3,7 +3,7 @@ import axios from "axios";
 import Proptypes from "prop-types";
 import UserContext from "@components/context/UserContext";
 import LoansList from "../components/LoansList";
-import Header from "../components/SideBarMenu";
+import Header from "../components/SidebarMenu";
 import Banner from "../components/HeaderBannerHorses";
 
 function Reservation() {

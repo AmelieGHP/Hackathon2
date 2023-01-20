@@ -104,7 +104,7 @@ select {
   font-size: 16px;
   transition: 0.3s ease-in-out;
   padding: 0 20px;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 
   &:hover {
@@ -119,7 +119,7 @@ select {
   min-width: 89px;
   width: fit-content;
   font-size: 16px;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
   border: 1px solid $buttonColor;
   cursor: pointer;
 
@@ -137,8 +137,10 @@ select {
   .rightContainer {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    position: relative;
+    left: 360px;
+    width: calc(100% - 360px);
 
     .rightContainerContent {
       padding: 80px;
@@ -162,7 +164,7 @@ select {
 @import "./styles/pages/horseList.scss";
 
 @import "./styles/components/ourVehicles.scss";
-@import "./styles/components/sideBarMenu.scss";
+@import "./styles/components/sidebarMenu.scss";
 @import "./styles/components/horseCard.scss";
 @import "./styles/components/chart.scss";
 @import "./styles/components/presentation.scss";

@@ -5,8 +5,10 @@ function HorseCard({ image, model, type }) {
   return (
     <div className="horseCard">
       <img alt="horse" src={image} />
-      <h4>{model}</h4>
-      <p>{type}</p>
+      <div className="content">
+        <h4>{model}</h4>
+        <p>{type}</p>
+      </div>
       <button type="button" className="primaryButton">
         Book
       </button>

@@ -1,109 +1,131 @@
   .horseListPage {
-    padding-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 60px;
+    width: 100%;
 
-    & .horseList {
+    .filtersContainer {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 40px;
-      background: none;
-    }
-
-    & .clearButton {
-      background: none;
-      font-family: $textFont;
-      color: $secondaryTextColor;
-      font-weight: 700;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-
-    & .filtersBox {
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-direction: row;
       height: 112px;
       border-radius: 10px;
-      padding: 20px;
+      padding: 30px;
+      width: 100%;
       box-shadow: $shadowCard;
       background-color: white;
 
-      & .filters {
+      .filters {
         display: flex;
+        flex-direction: row;
+        gap: 20px;
         align-items: center;
-        justify-content: center;
-        gap: 30px;
+      }
 
-        & label {
-          font-family: $textFont;
-          color: $accentColor;
-          padding: 4px 20px;
+      .label {
+        font-weight: 700;
+        color: $accentColor;
+      }
+
+      label {
+        font-family: $textFont;
+        color: $accentColor;
+        padding: 4px 20px;
+      }
+
+      .typeFilter {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .dropdown {
+        width: 150px;
+        color: $primaryTextColor;
+        border: none;
+        border-radius: 4px;
+        font-family: $textFont;
+
+        #react-select-2-listbox {
+          >div>div:hover {
+            background-color: $backgroundColor;
+          }
         }
 
-        & .typeFilter {
+        >div {
+          border: 1px solid $secondaryTextColor;
+
+          >div>div {
+            background-color: #ffffff;
+
+            >div {
+              font-family: $textFont;
+              font-size: 16px;
+            }
+
+            >div[role=button]:hover {
+              color: $accentColor;
+              background-color: $backgroundColor;
+            }
+          }
+        }
+
+        &>div:focus {
+          outline: 1.5px solid $accentColor;
+        }
+      }
+
+      & input[type=date]:focus {
+        outline: 1.5px solid $accentColor;
+      }
+
+      & .calendarsBox {
+        display: flex;
+        gap: 20px;
+
+        & div {
           display: flex;
           flex-direction: column;
         }
 
-        & .dropdown {
-          width: 300px;
-          color: $primaryTextColor;
-          border: none;
+        & input {
+          height: 38px;
+          width: 130px;
+          border: 1px solid $secondaryTextColor;
           border-radius: 4px;
-          font-family: $textFont;
-
-          & #react-select-2-listbox {
-            &>div>div:hover {
-              background-color: $backgroundColor;
-            }
-          }
-
-          &>div {
-            border: 1px solid $secondaryTextColor;
-
-            &>div>div {
-              background-color: #ffffff;
-
-              &>div {
-                font-family: $textFont;
-                font-size: 16px;
-              }
-
-              &>div[role=button]:hover {
-                color: $accentColor;
-                background-color: $backgroundColor;
-              }
-            }
-          }
-
-          &>div:focus {
-            outline: 1.5px solid $accentColor;
-          }
-        }
-
-        & input[type=date]:focus {
-          outline: 1.5px solid $accentColor;
-        }
-
-        & .calendarsBox {
-          display: flex;
-          gap: 20px;
-
-          & div {
-            display: flex;
-            flex-direction: column;
-          }
-
-          & input {
-            height: 38px;
-            width: 200px;
-            border: 1px solid $secondaryTextColor;
-            border-radius: 4px;
-            padding: 0 20px;
-            align-items: center;
-          }
+          padding: 0 20px;
+          align-items: center;
+          background-color: white;
         }
       }
+
+      .buttons {
+        display: flex;
+        gap: 20px;
+
+        .clearButton {
+          background: none;
+          font-family: $textFont;
+          color: $secondaryTextColor;
+          font-weight: 400;
+          font-size: 16px;
+          cursor: pointer;
+
+          &:hover {
+            color: $accentColor;
+          }
+
+        }
+      }
+    }
+
+    .horseList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      width: 100%;
     }
   }

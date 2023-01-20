@@ -1,13 +1,7 @@
-.rightContainer {
-  display: flex;
-  flex-direction: column;
-
   .horseInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 360px;
-    margin-top: -80px;
 
     & .backButton {
       color: #ffffff;
@@ -192,4 +186,3 @@
     }
 
   }
-}

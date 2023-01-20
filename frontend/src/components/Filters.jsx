@@ -59,57 +59,79 @@ function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
     }
   };
 
+  const clearFilters = () => {
+    setStage0(true);
+    setStage1(true);
+    setStage2(true);
+    setStage3(true);
+    setStage4(true);
+  };
+
   useState(() => {
     console.log(selectedOption);
   }, [selectedOption]);
   return (
-    <div className="filters">
-      <p className="accentText boldText">Filter by</p>
-      <div className="typeFilter">
-        <label>Type of license needed</label>
-        <Select
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          options={options}
-          isMulti
-          placeholder="Type of License"
-          className="dropdown"
-        />
-      </div>
-      <div className="calendarsBox">
-        <div>
-          <label htmlFor="startDate"> Pick up date </label>
-          <input
-            type="date"
-            id="startDate"
-            name="startDate"
-            value={startDate}
-            placeholder="Pick up date"
-            onChange={(e) => setStartDate(e.target.value)}
+
+    <div className="filtersContainer">
+      <div className="filters">
+        <p className="label">Filter by</p>
+        <div className="typeFilter">
+          <label>License type</label>
+          <Select
+            onChange={(e) => {
+              handleChange(e);
+            }}
+            options={options}
+            isMulti
+            placeholder="License"
+            className="dropdown"
           />
         </div>
-        <div>
-          <label htmlFor="endDate"> Return date </label>
-          <input
-            type="date"
-            min={startDate}
-            id="endDate"
-            name="endDate"
-            value={endDate}
-            placeholder="Return date"
-            onChange={(e) => setEndDate(e.target.value)}
-          />
+        <div className="calendarsBox">
+          <div>
+            <label htmlFor="startDate"> Pick up date </label>
+            <input
+              type="date"
+              id="startDate"
+              name="startDate"
+              value={startDate}
+              placeholder="Pick up date"
+              onChange={(e) => setStartDate(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="endDate"> Return date </label>
+            <input
+              type="date"
+              min={startDate}
+              id="endDate"
+              name="endDate"
+              value={endDate}
+              placeholder="Return date"
+              onChange={(e) => setEndDate(e.target.value)}
+            />
+          </div>
         </div>
       </div>
-      <button
-        type="button"
-        className="primaryButton"
-        onClick={() => handleClick()}
-      >
-        Search
-      </button>
+      <div className="buttons">
+        <button
+          type="button"
+          className="primaryButton"
+          onClick={() => handleClick()}
+        >
+          Search
+        </button>
+        <button
+          className="clearButton"
+          type="button"
+          onClick={() => clearFilters()}
+        >
+          Show all
+        </button>
+      </div>
     </div>
+
+
   );
 }
 Filters.propTypes = {

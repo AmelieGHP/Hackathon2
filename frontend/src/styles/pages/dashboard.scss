@@ -1,12 +1,6 @@
-.rightContainer {
-  display: flex;
-  flex-direction: column;
-
   .dashboard {
     display: flex;
     align-items: center;
-    margin: 0px 150px 0px 500px;
-    margin-top: -50px;
     gap: 60px;
     flex-direction: column;
     padding-bottom: 80px;
@@ -38,4 +32,3 @@
       border: 0.5px solid $secondaryTextColor;
     }
   }
-}

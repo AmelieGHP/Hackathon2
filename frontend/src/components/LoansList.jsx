@@ -29,20 +29,20 @@ function LoanList({
   };
 
   return (
-    <div className="loanList">
-      <li className="dash_vehicle_elements_list">
-        <div className="dash_vehicle_elements_list_image">
-          <img src={pathToImages} alt="profile of our horse" />
-        </div>
-        <div className="dash_vehicle_elements_list_paragraph description">
-          <div>
+    <div>
+      <li className="vehiclesList">
+        <div className="pictureContent">
+          <div className="dash_vehicle_elements_list_image">
+            <img src={pathToImages} alt="profile of our horse" />
+          </div>
+          <div className="description">
             <p className="boldText">{model}</p>
             <p>{type}</p>
           </div>
         </div>
         <div>
-          <p>Borrowing date : {borrowDate}</p>
-          <p>Return date : {returnDate}</p>
+          <p><span className="label">Borrowing date:</span> {borrowDate}</p>
+          <p><span className="label">Return date:</span> {returnDate}</p>
         </div>
         <div>
           <button

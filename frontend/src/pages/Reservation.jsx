@@ -3,8 +3,8 @@ import axios from "axios";
 import Proptypes from "prop-types";
 import UserContext from "@components/context/UserContext";
 import LoansList from "../components/LoansList";
-import Header from "../components/Header";
-import Banner from "../components/Banner";
+import Header from "../components/SidebarMenu";
+import Banner from "../components/HeaderBannerHorses";
 
 function Reservation() {
   const { user } = useContext(UserContext);
@@ -28,30 +28,32 @@ function Reservation() {
   }, [reset]);
 
   return (
-    <div>
+    <div className="primaryContainer">
       <Header />
       <div className="rightContainer">
         <Banner />
-        {allLoansById ? (
-          allLoansById.map((el) => {
-            console.log(el);
-            return (
-              <LoansList
-                key={el.id_loan}
-                id_loan={el.id_loan}
-                model={el.model}
-                type={el.type}
-                borrowDate={el.borrowing_date}
-                returnDate={el.return_date}
-                imageSrc={el.image}
-                reset={reset}
-                setReset={setReset}
-              />
-            );
-          })
-        ) : (
-          <p>No reservation yet</p>
-        )}
+        <div className="rightContainerContent">
+          {allLoansById ? (
+            allLoansById.map((el) => {
+              console.log(el);
+              return (
+                <LoansList
+                  key={el.id_loan}
+                  id_loan={el.id_loan}
+                  model={el.model}
+                  type={el.type}
+                  borrowDate={el.borrowing_date}
+                  returnDate={el.return_date}
+                  imageSrc={el.image}
+                  reset={reset}
+                  setReset={setReset}
+                />
+              );
+            })
+          ) : (
+            <p>No reservation yet</p>
+          )}
+        </div>
       </div>
     </div>
   );

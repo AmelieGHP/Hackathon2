@@ -32,6 +32,7 @@ h1 {
   line-height: 92px;
   color: $primaryTextColor;
   font-family: $titleFont;
+  font-weight: 400;
 }
 
 h2 {
@@ -103,7 +104,7 @@ select {
   font-size: 16px;
   transition: 0.3s ease-in-out;
   padding: 0 20px;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 
   &:hover {
@@ -118,7 +119,7 @@ select {
   min-width: 89px;
   width: fit-content;
   font-size: 16px;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease;
   border: 1px solid $buttonColor;
   cursor: pointer;
 
@@ -128,17 +129,46 @@ select {
   }
 }
 
-@import "./pages/dashboard.scss";
-@import "./pages/horseInfo.scss";
-@import "./pages/loginPage.scss";
-@import "./pages/horseList.scss";
+.primaryContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 
-@import "./components/ourVehicles.scss";
-@import "./components/header.scss";
-@import "./components/horseCard.scss";
-@import "./components/chart.scss";
-@import "./components/presentation.scss";
-@import "./components/listUser.scss";
-@import "./components/visualLogin.scss";
-@import "./components/banner.scss";
-@import "./components/loanList.scss";
+  .rightContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    left: 360px;
+    width: calc(100% - 360px);
+
+    .rightContainerContent {
+      padding: 80px;
+      margin-top: -160px;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+@import "./styles/pages/dashboard.scss";
+@import "./styles/pages/horseInfo.scss";
+@import "./styles/pages/loginPage.scss";
+@import "./styles/pages/horseList.scss";
+
+@import "./styles/components/ourVehicles.scss";
+@import "./styles/components/sidebarMenu.scss";
+@import "./styles/components/horseCard.scss";
+@import "./styles/components/chart.scss";
+@import "./styles/components/presentation.scss";
+@import "./styles/components/listUser.scss";
+@import "./styles/components/visualLogin.scss";
+@import "./styles/components/headerBannerHorses.scss";
+@import "./styles/components/loanList.scss";

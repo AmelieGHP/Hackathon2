@@ -7,8 +7,8 @@ import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 import UserContext from "@components/context/UserContext";
 import axios from "axios";
-import Header from "../components/Header";
-import Banner from "../components/Banner";
+import Header from "../components/SidebarMenu";
+import Banner from "../components/HeaderBannerHorses";
 
 function HorseInfo() {
   const params = useParams();
@@ -64,7 +64,7 @@ function HorseInfo() {
         })
         .then((result) => {
           if (result) {
-            navigate("/home", {});
+            navigate("/horselist", {});
           }
         })
         .catch((err) => {
@@ -100,107 +100,110 @@ function HorseInfo() {
     }
   };
   return (
-    <>
+    <div className="primaryContainer">
       <Header />
       <div className="rightContainer">
         <Banner />
-        <div className="horseInfo">
-          <button
-            className="backButton boldText"
-            onClick={() => {
-              history.back();
-            }}
-          >
-            <IoMdArrowRoundBack
-              color="#ffffff"
-              size={20}
-              style={{ marginRight: "8px" }}
-            />{" "}
-            Go back
-          </button>
-          <div className="horseCardInfo">
-            <div className="imageContainer">
-              {vehicle && (
-                <img
-                  alt="horse"
-                  src={`${import.meta.env.VITE_BACKEND_URL}${vehicle.image}`}
+        <div className="rightContainerContent">
+          <div className="horseInfo">
+            <button
+              className="backButton boldText"
+              onClick={() => {
+                history.back();
+              }}
+            >
+              <IoMdArrowRoundBack
+                color="#ffffff"
+                size={20}
+                style={{ marginRight: "8px" }}
+              />{" "}
+              Go back
+            </button>
+            <div className="horseCardInfo">
+              <div className="imageContainer">
+                {vehicle && (
+                  <img
+                    alt="horse"
+                    src={`${import.meta.env.VITE_BACKEND_URL}${vehicle.image}`}
+                  />
+                )}
+              </div>
+              <div>
+                <h3>{vehicle && vehicle.model}</h3>
+                <p>
+                  {" "}
+                  <span className="accentText boldText">Type : </span>
+                  {vehicle && vehicle.type}
+                </p>
+                <p>
+                  {" "}
+                  <span className="accentText boldText">Horsepower : </span>{" "}
+                  {vehicle && vehicle.horsepower}
+                </p>
+                <p>
+                  {" "}
+                  <span className="accentText boldText">Seats : </span>{" "}
+                  {vehicle && vehicle.nb_of_places}
+                </p>
+                <p>
+                  {" "}
+                  <span className="accentText boldText">Mileage : </span>{" "}
+                  {vehicle && vehicle.nb_of_km} km
+                </p>
+                <p className="accentText boldText">Description : </p>
+                <p>
+                  {" "}
+                  Horses share many of the same physiologic characteristics of
+                  people and domestic pets, in that they have a circulatory
+                  system, a respiratory system, a nervous system, and so on.
+                </p>
+              </div>
+            </div>
+            <div className="booking">
+              <div className="calendarContainer">
+                <Calendar
+                  showNeighboringMonth={false}
+                  minDetail="month"
+                  maxDetail="month"
+                  minDate={new Date()}
+                  selectRange
+                  returnValue="range"
+                  tileDisabled={(e) => disableTile(e)}
+                  onChange={(e) => showRange(e)}
                 />
-              )}
+              </div>
+              <div className="confirm">
+                <p className="boldText">Book this vehicle </p>
+                <p>
+                  From {borrowingDate || "..."} to {returnDate || "..."}
+                </p>
+                <button
+                  className="primaryButton"
+                  type="button"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Confirm
+                </button>
+              </div>
             </div>
-            <div>
-              <h3>{vehicle && vehicle.model}</h3>
-              <p>
-                {" "}
-                <span className="accentText boldText">Type : </span>
-                {vehicle && vehicle.type}
-              </p>
-              <p>
-                {" "}
-                <span className="accentText boldText">Horsepower : </span>{" "}
-                {vehicle && vehicle.horsepower}
-              </p>
-              <p>
-                {" "}
-                <span className="accentText boldText">Seats : </span>{" "}
-                {vehicle && vehicle.nb_of_places}
-              </p>
-              <p>
-                {" "}
-                <span className="accentText boldText">Mileage : </span>{" "}
-                {vehicle && vehicle.nb_of_km} km
-              </p>
-              <p className="accentText boldText">Description : </p>
-              <p>
-                {" "}
-                Horses share many of the same physiologic characteristics of
-                people and domestic pets, in that they have a circulatory
-                system, a respiratory system, a nervous system, and so on.
-              </p>
-            </div>
-          </div>
-          <div className="booking">
-            <div className="calendarContainer">
-              <Calendar
-                showNeighboringMonth={false}
-                minDetail="month"
-                maxDetail="month"
-                minDate={new Date()}
-                selectRange
-                returnValue="range"
-                tileDisabled={(e) => disableTile(e)}
-                onChange={(e) => showRange(e)}
+            <button
+              className="backButton bottom"
+              onClick={() => {
+                history.back();
+              }}
+            >
+              <IoMdArrowRoundBack
+                color="#B5C5F4"
+                size={20}
+                style={{ marginRight: "8px" }}
               />
-            </div>
-            <div className="confirm">
-              <p className="boldText">Book this vehicle </p>
-              <p>
-                From {borrowingDate || "..."} to {returnDate || "..."}
-              </p>
-              <button
-                className="primaryButton"
-                type="button"
-                onClick={(e) => handleClick(e)}
-              >
-                Confirm
-              </button>
-            </div>
+              Go back
+            </button>
           </div>
-          <button
-            className="backButton bottom"
-            onClick={() => {
-              history.back();
-            }}
-          >
-            <IoMdArrowRoundBack
-              color="#B5C5F4"
-              size={20}
-              style={{ marginRight: "8px" }}
-            />
-            Go back
-          </button>
         </div>
+
       </div>
-    </>
+    </div>
   );
 }
 

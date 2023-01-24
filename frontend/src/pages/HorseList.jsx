@@ -7,6 +7,7 @@ import Filters from "@components/Filters";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Banner from "../components/HeaderBannerHorses";
+import FiltersCollapsible from "../components/FiltersCollapsible";
 
 function Home() {
   const { user } = useContext(UserContext);
@@ -75,22 +76,28 @@ function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isMobile = windowDimension <= 1024;
+  const isTabletOrMobile = windowDimension < 1025;
+  const isMobile = windowDimension <= 600;
 
   return (
     <div className="primaryContainer">
-      {isMobile ? (<Navbar />) : (<Sidebar />)}
+      {isTabletOrMobile ? (<Navbar />) : (<Sidebar />)}
       <div className="rightContainer">
         <Banner />
         <div className="rightContainerContent">
           <div className="horseListPage">
-            <Filters
+            {isMobile ? (<FiltersCollapsible
               setStage0={setStage0}
               setStage1={setStage1}
               setStage2={setStage2}
               setStage3={setStage3}
               setStage4={setStage4}
-            />
+            />) : (<Filters setStage0={setStage0}
+              setStage1={setStage1}
+              setStage2={setStage2}
+              setStage3={setStage3}
+              setStage4={setStage4} />)}
+
             <div className="horseList">
               {stage2 &&
                 stage2Required.map((horse) => {

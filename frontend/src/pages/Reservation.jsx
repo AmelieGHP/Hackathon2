@@ -43,11 +43,11 @@ function Reservation() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isMobile = windowDimension <= 1024;
+  const isTabletOrMobile = windowDimension <= 1024;
 
   return (
     <div className="primaryContainer">
-      {isMobile ? (<Navbar />) : (<Sidebar />)}
+      {isTabletOrMobile ? (<Navbar />) : (<Sidebar />)}
       <div className="rightContainer">
         <Banner />
         <div className="rightContainerContent">

@@ -127,5 +127,13 @@
       justify-content: center;
       gap: 60px;
       width: 100%;
+
+      @media screen and (max-width: 600px) {
+        gap: 40px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      gap: 40px;
     }
   }

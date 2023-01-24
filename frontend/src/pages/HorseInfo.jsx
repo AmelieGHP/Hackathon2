@@ -7,7 +7,8 @@ import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 import UserContext from "@components/context/UserContext";
 import axios from "axios";
-import Header from "../components/SidebarMenu";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
 import Banner from "../components/HeaderBannerHorses";
 
 function HorseInfo() {
@@ -99,9 +100,26 @@ function HorseInfo() {
       return result;
     }
   };
+
+  const [windowDimension, setWindowDimension] = useState(null);
+
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimension(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowDimension <= 1024;
   return (
     <div className="primaryContainer">
-      <Header />
+      {isMobile ? (<Navbar />) : (<Sidebar />)}
       <div className="rightContainer">
         <Banner />
         <div className="rightContainerContent">

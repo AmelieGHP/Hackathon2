@@ -7,10 +7,10 @@ import UserContext from "./context/UserContext";
 function Header() {
   const { firstname } = useContext(UserContext).user;
   const { lastname } = useContext(UserContext).user;
-  console.log(firstname);
+
   return (
     <div className="sidebarContainer">
-      <img src={Logo} alt="Logo Black Mount" />
+      <NavLink to="/home"><img src={Logo} alt="Logo Black Mount" /></NavLink>
       <div className="avatar">
         <div className="logo">
           <img
@@ -104,7 +104,6 @@ function Header() {
           <p>My reservations</p>
         </NavLink>
       </div>
-
       <div className="mileage">
         <img src={Horse} alt="" />
         <div className="data">

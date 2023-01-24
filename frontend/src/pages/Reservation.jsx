@@ -3,7 +3,8 @@ import axios from "axios";
 import Proptypes from "prop-types";
 import UserContext from "@components/context/UserContext";
 import LoansList from "../components/LoansList";
-import Header from "../components/SidebarMenu";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
 import Banner from "../components/HeaderBannerHorses";
 
 function Reservation() {
@@ -27,9 +28,26 @@ function Reservation() {
     getAllLoansById(user.id_user);
   }, [reset]);
 
+  const [windowDimension, setWindowDimension] = useState(null);
+
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimension(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowDimension <= 1024;
+
   return (
     <div className="primaryContainer">
-      <Header />
+      {isMobile ? (<Navbar />) : (<Sidebar />)}
       <div className="rightContainer">
         <Banner />
         <div className="rightContainerContent">

@@ -4,12 +4,15 @@
   align-items: center;
   gap: 30px;
 
+
   & .listEmp {
     display: flex;
     gap: 30px;
     max-width: 100%;
-    width: 420px;
     height: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
     a {
       img {
@@ -32,5 +35,10 @@
         color: $accentColor;
       }
     }
+
+    @media screen and (max-width: 600px) {
+      padding: 0px 40px;
+    }
   }
+
 }

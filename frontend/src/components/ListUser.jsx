@@ -11,9 +11,8 @@ function ListUser() {
           rel="noreferrer"
         >
           <img
-            src={`${
-              import.meta.env.VITE_BACKEND_URL
-            }/assets/employees/Nathalie_Profile.png `}
+            src={`${import.meta.env.VITE_BACKEND_URL
+              }/assets/employees/Nathalie_Profile.png `}
             alt="utilisateur1"
           />
           <p>Nathalie</p>
@@ -24,9 +23,8 @@ function ListUser() {
           rel="noreferrer"
         >
           <img
-            src={`${
-              import.meta.env.VITE_BACKEND_URL
-            }/assets/employees/Amelie_Profile.jpg`}
+            src={`${import.meta.env.VITE_BACKEND_URL
+              }/assets/employees/Amelie_Profile.jpg`}
             alt="utilisateur2"
           />
           <p>Amélie</p>
@@ -37,9 +35,8 @@ function ListUser() {
           rel="noreferrer"
         >
           <img
-            src={`${
-              import.meta.env.VITE_BACKEND_URL
-            }/assets/employees/Naomi_Profile.png`}
+            src={`${import.meta.env.VITE_BACKEND_URL
+              }/assets/employees/Naomi_Profile.png`}
             alt="utilisateur4"
           />
           <p>Naomi</p>
@@ -50,9 +47,8 @@ function ListUser() {
           rel="noreferrer"
         >
           <img
-            src={`${
-              import.meta.env.VITE_BACKEND_URL
-            }/assets/employees/Nicolas_Profile.jpg`}
+            src={`${import.meta.env.VITE_BACKEND_URL
+              }/assets/employees/Nicolas_Profile.jpg`}
             alt="utilisateur3"
           />
           <p>Nicolas</p>

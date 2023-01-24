@@ -42,7 +42,8 @@ const Navbar = () => {
                 <div className='tabs'>
                     <NavLink
                         to="/home"
-                        className="tab"
+                        className={({ isActive }) => (isActive ? "tabFocus" : "tabDefault")}
+                        onClick={() => closeMenu()}
                     >
                         <svg
                             width="24"
@@ -64,7 +65,8 @@ const Navbar = () => {
                     </NavLink>
                     <NavLink
                         to="/horselist"
-                        className="tab"
+                        className={({ isActive }) => (isActive ? "tabFocus" : "tabDefault")}
+                        onClick={() => closeMenu()}
                     >
                         <svg
                             width="24"
@@ -89,7 +91,8 @@ const Navbar = () => {
                     </NavLink>
                     <NavLink
                         to="/reservation"
-                        className="tab"
+                        className={({ isActive }) => (isActive ? "tabFocus" : "tabDefault")}
+                        onClick={() => closeMenu()}
                     >
                         <svg
                             width="24"
@@ -117,7 +120,7 @@ const Navbar = () => {
                         <p>My reservations</p>
                     </NavLink>
                     <div className='separator'></div>
-                    <NavLink to="/" className="tab">
+                    <NavLink to="/" className={({ isActive }) => (isActive ? "tabFocus" : "tabDefault")} onClick={() => closeMenu()}>
                         <svg
                             width="24"
                             height="24"
@@ -145,7 +148,7 @@ const Navbar = () => {
                     </NavLink>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

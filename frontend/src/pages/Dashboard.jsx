@@ -33,14 +33,14 @@ function Dashboard() {
       <div className="rightContainer">
         <Banner />
         <div className="rightContainerContent">
-          <div className="dashboard">
+          <div className="dashboardContainer">
             <Presentation />
-            <hr className="hr1" />
-            <div className="stat">
+            <hr className="separator1" />
+            <div className="dashboardSecondPart">
               <OurVehicles />
-              <div className="userstat">
+              <div className="statsAndTeam">
                 <Chart />
-                <hr className="hr2" />
+                <hr className="separator2" />
                 <ListUser />
               </div>
             </div>

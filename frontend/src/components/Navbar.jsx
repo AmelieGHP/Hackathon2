@@ -23,7 +23,7 @@ const Navbar = () => {
     return (
 
         <div className='navbarContainer'>
-            <button onClick={handleToggle}>{navbarOpen ? (<img src={CrossIcon} className="CrossIcon" />) : (<img src={MenuIcon} />)}</button>
+            <button onClick={handleToggle}>{navbarOpen ? (<img src={CrossIcon} />) : (<img src={MenuIcon} />)}</button>
             <NavLink to="/home"><img src={Logo} alt="Logo Black Mount" /></NavLink>
             <div className={navbarOpen ? "navbarContent" : "navbarClosed"}>
                 <div className="avatar">

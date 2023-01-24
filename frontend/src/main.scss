@@ -145,10 +145,34 @@ select {
     .rightContainerContent {
       padding: 80px;
       margin-top: -160px;
+
+      @media (min-width: 600px) and (max-width: 1024px) {
+        padding: 80px 40px;
+        margin-top: -160px;
+      }
+
+      @media screen and (max-width: 600px) {
+        padding: 80px 20px;
+        margin-top: -140px;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      position: inherit;
+      width: 100%;
+      margin-top: 60px;
     }
   }
 
+  @media screen and (max-width: 1024px) {
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+  }
 }
+
 
 
 @media screen and (max-width: 480px) {
@@ -164,11 +188,12 @@ select {
 @import "./styles/pages/horseList.scss";
 
 @import "./styles/components/ourVehicles.scss";
-@import "./styles/components/sidebarMenu.scss";
+@import "./styles/components/sidebar.scss";
+@import "./styles/components/navbar.scss";
 @import "./styles/components/horseCard.scss";
 @import "./styles/components/chart.scss";
 @import "./styles/components/presentation.scss";
 @import "./styles/components/listUser.scss";
 @import "./styles/components/visualLogin.scss";
-@import "./styles/components/headerBannerHorses.scss";
+@import "./styles/components/horsesBanner.scss";
 @import "./styles/components/loanList.scss";

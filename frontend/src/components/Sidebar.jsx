@@ -15,7 +15,7 @@ function Header() {
         <div className="logo">
           <img
             src={`${import.meta.env.VITE_BACKEND_URL
-              }/assets/users/black-mount-user-image-nicolas-ryngite.jpg`}
+              }/assets/users/black-mount-user-image-default.jpg`}
             alt="Avatar Profil"
           />
         </div>

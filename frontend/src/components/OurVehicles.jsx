@@ -34,6 +34,7 @@ function OurVehicles() {
               type={el.type}
               image={el.image}
               id_vehicle={el.id_vehicle}
+              key={el.id_vehicle}
             />
           );
         })}

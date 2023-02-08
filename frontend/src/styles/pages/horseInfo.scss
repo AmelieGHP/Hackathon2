@@ -1,208 +1,203 @@
-  .horseInfo {
+.horseInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -40px;
+  gap: 40px;
+
+  .backButton {
+    color: #ffffff;
+    background: none;
+    font-size: 16px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: -40px;
-    gap: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
 
-    .backButton {
-      color: #ffffff;
-      background: none;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      cursor: pointer;
+  .bottom {
+    color: $secondaryTextColor;
+  }
+
+  .horseCardInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: $shadowCard;
+    padding: 30px;
+    border-radius: 10px;
+    gap: 30px;
+    background-color: #ffffff;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
-    .bottom {
-      color: $secondaryTextColor;
-    }
-
-    .horseCardInfo {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      box-shadow: $shadowCard;
-      padding: 30px;
-      border-radius: 10px;
-      gap: 30px;
-      background-color: #ffffff;
-
-      h3 {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      img {
-        border-radius: 6px;
-        height: 300px;
-        width: 300px;
-
-        @media screen and (max-width: 600px) {
-          height: auto;
-          width: 100%;
-        }
-      }
+    img {
+      border-radius: 6px;
+      height: 300px;
+      width: 300px;
 
       @media screen and (max-width: 600px) {
-        margin-top: -20px;
-        flex-direction: column;
-      }
-    }
-
-    .booking {
-      display: flex;
-      align-items: center;
-      height: fit-content;
-      gap: 60px;
-
-      & .calendarContainer {
-        width: fit-content;
-        height: fit-content;
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: $shadowCard;
-      }
-
-      & .confirm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-
-        & .boldText {
-          color: $accentColor;
-        }
-
-        & button {
-          margin-top: 20px;
-        }
-      }
-
-      @media screen and (max-width: 600px) {
-        flex-direction: column;
-        gap: 40px;
-      }
-    }
-
-    .react-calendar {
-      height: fit-content;
-      max-width: 400px;
-      margin: 1vh auto;
-      font-family: $textFont;
-      padding: 20px;
-
-      &__navigation {
-        display: flex;
-        justify-content: space-evenly;
-
-        &__arrow {
-          background: none;
-          color: $accentColor;
-          font-size: 20px;
-        }
-
-        &__prev2-button {
-          display: none;
-        }
-
-        &__label {
-          flex-grow: 0 !important;
-          padding: 5px 10px;
-          background-color: #ffffff;
-
-          & span {
-            color: $accentColor;
-            font-size: 16px;
-            font-weight: 700;
-            text-transform: capitalize;
-          }
-        }
-
-        &__next2-button {
-          display: none;
-        }
-      }
-
-      &__month-view {
-        margin-top: 20px;
-
-        &__weekdays {
-          padding-bottom: 10px;
-          border-bottom: 1px solid $accentColor;
-
-          &__weekday {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            & abbr {
-              text-transform: capitalize;
-              text-decoration: none;
-            }
-          }
-        }
-
-        &__days {
-          &__day {
-            border-bottom: 1px dashed $accentColor;
-            border-radius: 0;
-            width: 50px;
-            height: 50px;
-            padding: 10px;
-            background: none;
-            font-weight: 400;
-          }
-
-        }
-      }
-
-      &__tile--active {
-        color: $accentColor;
-        background: #ffffff;
-        font-weight: 700;
-        border-radius: 0;
-        background-color: $backgroundColor;
-
-        & abbr {
-          background: none;
-        }
-
-      }
-
-      & .react-calendar__tile--hover {
-        color: $accentColor;
-        background-color: #ffffff;
-        font-weight: 700;
-        background-color: $backgroundColor;
-
-      }
-
-      & button:disabled {
-        cursor: default;
-        font-weight: 400;
-      }
-
-      & button:enabled:hover,
-      & button:enabled:focus {
-        cursor: pointer;
-        color: $accentColor;
-        font-weight: 700;
-        background-color: $backgroundColor;
-      }
-
-      & .select {
-        background-color: #f0f0f0;
-        color: $accentColor;
-        text-decoration: line-through;
-
+        height: auto;
+        width: 100%;
       }
     }
 
     @media screen and (max-width: 600px) {
       margin-top: -20px;
+      flex-direction: column;
+    }
+  }
+
+  .booking {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 60px;
+
+    & .calendarContainer {
+      width: fit-content;
+      height: fit-content;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: $shadowCard;
     }
 
+    & .confirm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      & .boldText {
+        color: $accentColor;
+      }
+
+      & button {
+        margin-top: 20px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      gap: 40px;
+    }
   }
+
+  .react-calendar {
+    height: fit-content;
+    max-width: 400px;
+    margin: 1vh auto;
+    font-family: $textFont;
+    padding: 20px;
+
+    &__navigation {
+      display: flex;
+      justify-content: space-evenly;
+
+      &__arrow {
+        background: none;
+        color: $accentColor;
+        font-size: 20px;
+      }
+
+      &__prev2-button {
+        display: none;
+      }
+
+      &__label {
+        flex-grow: 0 !important;
+        padding: 5px 10px;
+        background-color: #ffffff;
+
+        & span {
+          color: $accentColor;
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: capitalize;
+        }
+      }
+
+      &__next2-button {
+        display: none;
+      }
+    }
+
+    &__month-view {
+      margin-top: 20px;
+
+      &__weekdays {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $accentColor;
+
+        &__weekday {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          & abbr {
+            text-transform: capitalize;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &__days {
+        &__day {
+          border-bottom: 1px dashed $accentColor;
+          border-radius: 0;
+          width: 50px;
+          height: 50px;
+          padding: 10px;
+          background: none;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &__tile--active {
+      color: $accentColor;
+      background: #ffffff;
+      font-weight: 700;
+      border-radius: 0;
+      background-color: $backgroundColor;
+
+      & abbr {
+        background: none;
+      }
+    }
+
+    & .react-calendar__tile--hover {
+      color: $accentColor;
+      background-color: #ffffff;
+      font-weight: 700;
+      background-color: $backgroundColor;
+    }
+
+    & button:disabled {
+      cursor: default;
+      font-weight: 400;
+    }
+
+    & button:enabled:hover,
+    & button:enabled:focus {
+      cursor: pointer;
+      color: $accentColor;
+      font-weight: 700;
+      background-color: $backgroundColor;
+    }
+
+    & .select {
+      background-color: #f0f0f0;
+      color: $accentColor;
+      text-decoration: line-through;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-top: -20px;
+  }
+}

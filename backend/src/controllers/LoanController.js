@@ -18,7 +18,7 @@ const getLoansByUserId = (req, res) => {
   LoanModel.findLoanByUserId(id)
     .then(([user]) => {
       if (user[0] != null) {
-        console.log(user)
+        console.log(user);
         res.status(200).send(user);
       } else {
         res.sendStatus(404);
@@ -37,7 +37,7 @@ const getLoanByVehicleId = (req, res) => {
       if (loan[0] != null) {
         res.status(200).send(loan);
       } else {
-        res.sendStatus(404);
+        res.sendStatus(204);
       }
     })
     .catch((err) => {
@@ -59,13 +59,15 @@ const postLoan = (req, res) => {
 };
 
 const deleteLoan = (req, res) => {
-  LoanModel.deleteLoan(req).then((result) => {
-    console.warn(result);
-    res.sendStatus(200)
-  }).catch((err) => {
-    console.error(err);
-    res.status(500).send("Error canceling the reservation");
-  });
+  LoanModel.deleteLoan(req)
+    .then((result) => {
+      console.warn(result);
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error canceling the reservation");
+    });
 };
 
 module.exports = {
@@ -73,5 +75,5 @@ module.exports = {
   getLoanByVehicleId,
   getLoansByUserId,
   postLoan,
-  deleteLoan
+  deleteLoan,
 };

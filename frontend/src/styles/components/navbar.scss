@@ -1,119 +1,118 @@
 .navbarContainer {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  box-shadow: $shadowCard;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .navbarContent {
     display: flex;
-    align-items: center;
-    padding: 0px 20px;
-    width: 100%;
-    height: 60px;
     background-color: white;
     box-shadow: $shadowCard;
-    justify-content: space-between;
     position: fixed;
-    z-index: 10;
+    top: 60px;
+    left: 0;
+    width: 360px;
+    padding: 20px;
+    animation: MoveToRight 0.3s ease-in-out;
+    flex-direction: column;
+    height: 100%;
+    gap: 40px;
+    padding: 40px;
+    align-items: center;
 
-    button {
-        background-color: transparent;
-        cursor: pointer;
+    @keyframes MoveToRight {
+      0% {
+        transform: translateX(-300px);
+      }
+
+      100% {
+        transform: translateX(0px);
+      }
     }
 
-    .navbarContent {
+    .avatar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+
+      div {
         display: flex;
-        background-color: white;
-        box-shadow: $shadowCard;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 360px;
-        padding: 20px;
-        animation: MoveToRight 0.3s ease-in-out;
         flex-direction: column;
-        height: 100%;
-        gap: 40px;
-        padding: 40px;
         align-items: center;
 
-        @keyframes MoveToRight {
-            0% {
-                transform: translateX(-300px);
-            }
-
-            100% {
-                transform: translateX(0px);
-            }
+        p {
+          color: $accentColor;
         }
 
-        .avatar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-
-            img {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-            }
-
-            div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                p {
-                    color: $accentColor;
-                }
-
-                h3 {
-                    font-size: 20px;
-                    line-height: 32px;
-                }
-            }
+        h3 {
+          font-size: 20px;
+          line-height: 32px;
         }
-
-        .tabs {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 20px;
-
-            .tabDefault {
-                display: flex;
-                flex-direction: row;
-                gap: 16px;
-                align-items: center;
-                transition: 0.3s ease-in-out;
-
-                p {
-                    color: $secondaryTextColor;
-                    font-weight: 400;
-                }
-            }
-
-            .tabFocus {
-                display: flex;
-                flex-direction: row;
-                gap: 16px;
-                align-items: center;
-                transition: 0.3s ease-in-out;
-
-                p {
-                    color: $accentColor;
-                    font-weight: 700;
-                }
-
-                path {
-                    fill: $accentColor;
-                }
-            }
-
-            .separator {
-                border: 1px solid $backgroundColor;
-                margin: 20px 0px;
-            }
-        }
+      }
     }
 
-    .navbarClosed {
-        display: none;
-    }
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 20px;
 
+      .tabDefault {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+
+        p {
+          color: $secondaryTextColor;
+          font-weight: 400;
+        }
+      }
+
+      .tabFocus {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+
+        p {
+          color: $accentColor;
+          font-weight: 700;
+        }
+
+        path {
+          fill: $accentColor;
+        }
+      }
+
+      .separator {
+        border: 1px solid $backgroundColor;
+        margin: 20px 0px;
+      }
+    }
+  }
+
+  .navbarClosed {
+    display: none;
+  }
 }

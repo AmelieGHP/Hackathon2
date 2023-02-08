@@ -16,7 +16,6 @@ function Reservation() {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/reservation/${id}`)
       .then((res) => {
-        console.log(res);
         setAllLoansById(res.data);
       })
       .catch((err) => {
@@ -47,13 +46,12 @@ function Reservation() {
 
   return (
     <div className="primaryContainer">
-      {isTabletOrMobile ? (<Navbar />) : (<Sidebar />)}
+      {isTabletOrMobile ? <Navbar /> : <Sidebar />}
       <div className="rightContainer">
         <Banner />
         <div className="rightContainerContent">
           {allLoansById ? (
             allLoansById.map((el) => {
-              console.log(el);
               return (
                 <LoansList
                   key={el.id_loan}
@@ -87,5 +85,5 @@ Reservation.propTypes = {
     lastname: Proptypes.string.isRequired,
     phone: Proptypes.string.isRequired,
     type_of_license: Proptypes.string.isRequired,
-  }),
+  }).isRequired,
 };

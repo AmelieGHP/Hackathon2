@@ -2,7 +2,18 @@ import React, { useState } from "react";
 import Proptypes from "prop-types";
 import Select from "react-select";
 
-function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
+function Filters({
+  setStage0,
+  setStage1,
+  setStage2,
+  setStage3,
+  setStage4,
+  startDate,
+  setStartDate,
+  endDate,
+  setEndDate,
+  setSearch,
+}) {
   const options = [
     { value: "0", label: "None" },
     { value: "1", label: "BHS stage 1" },
@@ -11,19 +22,17 @@ function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
     { value: "4", label: "BHS stage 4" },
   ];
   const [selectedOption, setSelectedOption] = useState([]);
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+
   const handleChange = (e) => {
     const tempArray = [];
     for (let i = 0; i < e.length; i++) {
       const { value } = e[i];
       tempArray.push(value);
-      console.log(e[i].value);
     }
-    console.log(tempArray);
     setSelectedOption(tempArray);
   };
   const handleClick = () => {
+    setSearch(true);
     if (selectedOption.length > 0) {
       if (selectedOption.includes("0")) {
         setStage0(true);
@@ -65,13 +74,12 @@ function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
     setStage2(true);
     setStage3(true);
     setStage4(true);
+    setStartDate("");
+    setEndDate("");
+    setSearch(false);
   };
 
-  useState(() => {
-    console.log(selectedOption);
-  }, [selectedOption]);
   return (
-
     <div className="filtersContainer">
       <div className="filters">
         <p className="label">Filter by</p>
@@ -96,7 +104,9 @@ function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
               name="startDate"
               value={startDate}
               placeholder="Pick up date"
-              onChange={(e) => setStartDate(e.target.value)}
+              onChange={(e) => {
+                setStartDate(e.target.value);
+              }}
             />
           </div>
           <div>
@@ -130,20 +140,18 @@ function Filters({ setStage0, setStage1, setStage2, setStage3, setStage4 }) {
         </button>
       </div>
     </div>
-
-
   );
 }
 Filters.propTypes = {
-  stage0: Proptypes.node.isRequired,
   setStage0: Proptypes.node.isRequired,
-  stage1: Proptypes.node.isRequired,
   setStage1: Proptypes.node.isRequired,
-  stage2: Proptypes.node.isRequired,
   setStage2: Proptypes.node.isRequired,
-  stage3: Proptypes.node.isRequired,
   setStage3: Proptypes.node.isRequired,
-  stage4: Proptypes.node.isRequired,
   setStage4: Proptypes.node.isRequired,
+  startDate: Proptypes.node.isRequired,
+  setStartDate: Proptypes.node.isRequired,
+  endDate: Proptypes.node.isRequired,
+  setEndDate: Proptypes.node.isRequired,
+  setSearch: Proptypes.node.isRequired,
 };
 export default Filters;

@@ -1,137 +1,132 @@
 .collapsibleFiltersContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: $shadowCard;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  gap: 30px;
+
+  .collapsibleFilters {
     display: flex;
-    align-items: center;
-    flex-direction: column;
     width: 100%;
-    box-shadow: $shadowCard;
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
+    justify-content: space-between;
+    flex-direction: row;
+    cursor: pointer;
+
+    .label {
+      font-weight: 700;
+      color: $accentColor;
+    }
+  }
+
+  .filtersContent {
+    display: flex;
+    flex-direction: column;
     gap: 30px;
+    width: 100%;
 
-    .collapsibleFilters {
-
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        flex-direction: row;
-        cursor: pointer;
-
-        .label {
-            font-weight: 700;
-            color: $accentColor;
-        }
-
+    .filters {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
     }
 
-    .filtersContent {
+    label {
+      font-family: $textFont;
+      color: $accentColor;
+      padding: 4px 20px;
+    }
+
+    .typeFilter {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .dropdown {
+      width: 100%;
+      color: $primaryTextColor;
+      border: none;
+      border-radius: 4px;
+      font-family: $textFont;
+
+      #react-select-2-listbox {
+        > div > div:hover {
+          background-color: $backgroundColor;
+        }
+      }
+
+      > div {
+        border: 1px solid $secondaryTextColor;
+
+        > div > div {
+          background-color: #ffffff;
+
+          > div {
+            font-family: $textFont;
+            font-size: 16px;
+          }
+
+          > div[role="button"]:hover {
+            color: $accentColor;
+            background-color: $backgroundColor;
+          }
+        }
+      }
+
+      & > div:focus {
+        outline: 1.5px solid $accentColor;
+      }
+    }
+
+    & input[type="date"]:focus {
+      outline: 1.5px solid $accentColor;
+    }
+
+    & .calendarsBox {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      width: 100%;
+
+      & div {
         display: flex;
         flex-direction: column;
-        gap: 30px;
-        width: 100%;
+      }
 
-        .filters {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
-        label {
-            font-family: $textFont;
-            color: $accentColor;
-            padding: 4px 20px;
-        }
-
-        .typeFilter {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .dropdown {
-            width: 100%;
-            color: $primaryTextColor;
-            border: none;
-            border-radius: 4px;
-            font-family: $textFont;
-
-            #react-select-2-listbox {
-                >div>div:hover {
-                    background-color: $backgroundColor;
-                }
-            }
-
-            >div {
-                border: 1px solid $secondaryTextColor;
-
-                >div>div {
-                    background-color: #ffffff;
-
-                    >div {
-                        font-family: $textFont;
-                        font-size: 16px;
-                    }
-
-                    >div[role=button]:hover {
-                        color: $accentColor;
-                        background-color: $backgroundColor;
-                    }
-                }
-            }
-
-            &>div:focus {
-                outline: 1.5px solid $accentColor;
-            }
-        }
-
-        & input[type=date]:focus {
-            outline: 1.5px solid $accentColor;
-        }
-
-        & .calendarsBox {
-            display: flex;
-            gap: 20px;
-            flex-direction: column;
-            width: 100%;
-
-            & div {
-                display: flex;
-                flex-direction: column;
-            }
-
-            & input {
-                height: 38px;
-                width: auto;
-                border: 1px solid $secondaryTextColor;
-                border-radius: 4px;
-                padding: 0 20px;
-                align-items: center;
-                background-color: white;
-            }
-        }
-
-        .buttons {
-            display: flex;
-            gap: 20px;
-            flex-direction: column;
-            align-items: center;
-
-            .clearButton {
-                background: none;
-                font-family: $textFont;
-                color: $secondaryTextColor;
-                font-weight: 400;
-                font-size: 16px;
-                cursor: pointer;
-
-                &:hover {
-                    color: $accentColor;
-                }
-
-            }
-        }
-
+      & input {
+        height: 38px;
+        width: auto;
+        border: 1px solid $secondaryTextColor;
+        border-radius: 4px;
+        padding: 0 20px;
+        align-items: center;
+        background-color: white;
+      }
     }
 
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      align-items: center;
+
+      .clearButton {
+        background: none;
+        font-family: $textFont;
+        color: $secondaryTextColor;
+        font-weight: 400;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          color: $accentColor;
+        }
+      }
+    }
+  }
 }

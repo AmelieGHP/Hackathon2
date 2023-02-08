@@ -8,7 +8,6 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/HeaderBannerHorses";
 
 function Dashboard() {
-
   const [windowDimension, setWindowDimension] = useState(null);
 
   useEffect(() => {
@@ -26,10 +25,9 @@ function Dashboard() {
 
   const isTabletOrMobile = windowDimension <= 1024;
 
-
   return (
     <div className="primaryContainer">
-      {isTabletOrMobile ? (<Navbar />) : (<Sidebar />)}
+      {isTabletOrMobile ? <Navbar /> : <Sidebar />}
       <div className="rightContainer">
         <Banner />
         <div className="rightContainerContent">

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Proptypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function LoanList({
@@ -41,8 +40,12 @@ function LoanList({
           </div>
         </div>
         <div>
-          <p><span className="label">Borrowing date:</span> {borrowDate}</p>
-          <p><span className="label">Return date:</span> {returnDate}</p>
+          <p>
+            <span className="label">Borrowing date:</span> {borrowDate}
+          </p>
+          <p>
+            <span className="label">Return date:</span> {returnDate}
+          </p>
         </div>
         <div>
           <button
@@ -61,8 +64,12 @@ function LoanList({
 export default LoanList;
 
 LoanList.propTypes = {
-  image: Proptypes.string.isRequired,
+  imageSrc: Proptypes.string.isRequired,
   model: Proptypes.string.isRequired,
   type: Proptypes.string.isRequired,
-  id: Proptypes.number.isRequired,
+  id_loan: Proptypes.number.isRequired,
+  borrowDate: Proptypes.string.isRequired,
+  returnDate: Proptypes.string.isRequired,
+  reset: Proptypes.node.isRequired,
+  setReset: Proptypes.node.isRequired,
 };

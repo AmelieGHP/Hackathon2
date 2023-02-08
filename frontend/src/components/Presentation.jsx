@@ -31,10 +31,13 @@ function Presentation() {
           </div>
         </div>
       </div>
-      <img className="horseImage"
-        src={`${import.meta.env.VITE_BACKEND_URL
-          }/assets/vehicles/black-mount-vehicle-image-horse-altesse.jpg`}
-        alt="altesse" />
+      <img
+        className="horseImage"
+        src={`${
+          import.meta.env.VITE_BACKEND_URL
+        }/assets/vehicles/black-mount-vehicle-image-horse-altesse.jpg`}
+        alt="altesse"
+      />
     </div>
   );
 }

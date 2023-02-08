@@ -1,5 +1,5 @@
 .horseCard {
-  width: 100%;
+  width: fit-content;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -21,4 +21,8 @@
     height: 200px;
     border-radius: 6px;
   }
+}
+
+.hidden {
+  display: none;
 }

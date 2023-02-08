@@ -11,20 +11,29 @@ function Login() {
     <div className="loginPage">
       <VisualLogin />
       <div className="heroBanner">
-        <img className="blackMountWhiteLogo" src={whiteLogo} alt="Black Mount Logo White" width="220px" />
+        <img
+          className="blackMountWhiteLogo"
+          src={whiteLogo}
+          alt="Black Mount Logo White"
+          width="220px"
+        />
       </div>
       <div className="loginSubscribe">
-        <img className="blackMountBlackLogo" src={blackLogo} alt="Black Mount Logo Black" width="220px" />
+        <img
+          className="blackMountBlackLogo"
+          src={blackLogo}
+          alt="Black Mount Logo Black"
+          width="220px"
+        />
         <h1>{userExist ? "Hello rider!" : "Welcome!"}</h1>
         <p className="accentText">
-          {userExist ? "Welcome back! " : "Create your account! "}Please enter your details.
+          {userExist ? "Welcome back! " : "Create your account! "}Please enter
+          your details.
         </p>
         {userExist ? <LoginForm /> : <SubscribeForm />}
         <div className="switchContainer">
           <p className="accentText">
-            {userExist
-              ? "Don't have an account?"
-              : "Already have an account?"}
+            {userExist ? "Don't have an account?" : "Already have an account?"}
           </p>
           <button
             type="button"

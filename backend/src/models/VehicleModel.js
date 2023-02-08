@@ -26,7 +26,7 @@ const findVehiclesAndLoans = () => {
     LEFT JOIN loan 
     ON vehicle.id_vehicle = loan.id_vehicle `
   );
-}
+};
 
 //  Requête pour chercher la date d'emprunt et de retour
 const findDatesOfBorrowing = (id) => {

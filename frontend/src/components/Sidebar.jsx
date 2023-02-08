@@ -10,12 +10,15 @@ function Header() {
 
   return (
     <div className="sidebarContainer">
-      <NavLink to="/home"><img src={Logo} alt="Logo Black Mount" /></NavLink>
+      <NavLink to="/home">
+        <img src={Logo} alt="Logo Black Mount" />
+      </NavLink>
       <div className="avatar">
         <div className="logo">
           <img
-            src={`${import.meta.env.VITE_BACKEND_URL
-              }/assets/users/black-mount-user-image-default.jpg`}
+            src={`${
+              import.meta.env.VITE_BACKEND_URL
+            }/assets/users/black-mount-user-image-default.jpg`}
             alt="Avatar Profil"
           />
         </div>

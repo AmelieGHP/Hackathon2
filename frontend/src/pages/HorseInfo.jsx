@@ -29,7 +29,6 @@ function HorseInfo() {
         axios
           .get(`${import.meta.env.VITE_BACKEND_URL}/loan/${id}`, [id])
           .then((result) => {
-            console.log(result.data);
             if (result.data.length >= 0) {
               for (let i = 0; i < result.data.length; i++) {
                 const start = result.data[i].borrowing_date;
@@ -54,7 +53,6 @@ function HorseInfo() {
       let id_user_forSure = id_user;
       if (id_user === undefined || id_user === null) {
         id_user_forSure = 2;
-        console.log(id_user_forSure);
       }
       axios
         .post(`${import.meta.env.VITE_BACKEND_URL}/postLoan`, {
@@ -120,12 +118,13 @@ function HorseInfo() {
 
   return (
     <div className="primaryContainer">
-      {isTabletOrMobile ? (<Navbar />) : (<Sidebar />)}
+      {isTabletOrMobile ? <Navbar /> : <Sidebar />}
       <div className="rightContainer">
         <Banner />
         <div className="rightContainerContent">
           <div className="horseInfo">
             <button
+              type="button"
               className="backButton boldText"
               onClick={() => {
                 history.back();
@@ -156,7 +155,9 @@ function HorseInfo() {
                 </p>
                 <p>
                   {" "}
-                  <span className="accentText boldText">Horsepower : </span>{" "}
+                  <span className="accentText boldText">
+                    Horsepower :{" "}
+                  </span>{" "}
                   {vehicle && vehicle.horsepower}
                 </p>
                 <p>
@@ -206,6 +207,7 @@ function HorseInfo() {
               </div>
             </div>
             <button
+              type="button"
               className="backButton bottom"
               onClick={() => {
                 history.back();
@@ -220,7 +222,6 @@ function HorseInfo() {
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -120,6 +120,7 @@ function FiltersCollapsible({
                   type="date"
                   id="startDate"
                   name="startDate"
+                  min={new Date().toISOString().slice(0, -8).split("T")[0]}
                   value={startDate}
                   placeholder="Pick up date"
                   onChange={(e) => setStartDate(e.target.value)}
